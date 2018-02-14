@@ -21,9 +21,9 @@
                         <button type="submit">Buscar</button>
                     </form>
                 </li>
-                <li><a href="SignIn.java">Registrarse</a></li>
+                <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
                 <li><a href="FrontServlet?command=Login">Login</a></li>
-                <li><a href="ShoppingCart.java"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
+                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
         <h1>Login</h1>

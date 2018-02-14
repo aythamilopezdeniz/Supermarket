@@ -1,4 +1,4 @@
-package Servlet;
+package Commands;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
