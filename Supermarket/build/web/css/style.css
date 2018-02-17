@@ -1,5 +1,6 @@
 /*Bar SignIn/Login*/
 body {
+    font-size: 1em;
     font-family: serif;
     background-color: beige;
 }
@@ -38,56 +39,6 @@ button, input {
     padding: 1% 0% 1% 0%;
 }
 
-/*Menu Bar*/
-.nav {
-    margin-top: -1%;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav li {
-    line-height: 3rem;
-    position: relative;
-    width: 250px;
-}
-
-nav li ul {
-    display: none;
-    position: absolute;
-}
-
-nav ul {
-    background-color: coral;
-    display: table;
-    width: 100%;
-}
-
-nav > ul > li {
-    float: left;
-}
-
-nav ul ul ul {
-/*    display: none;*/
-}
-
-/*Submenu1 Bar*/
-/*.submenu1 {
-    display: none;
-}*/
-
-/*Submenu2 Bar*/
-nav > ul > li > ul {
-    display: none;
-    top: 100%;
-}
-
-nav ul ul ul {
-    top: 0;
-    left: 100%;
-}
-
 /*Elementos comunes*/
 body, .SignIn-Login ul, nav ul {
     margin: 0;
@@ -103,61 +54,97 @@ body, .SignIn-Login ul, nav ul {
     padding: 0% 1% 0% 1%;
 }
 
+/*Barra Menu*/
+nav ul {
+    padding: 0;
+    list-style: none; /*Quetar estilo a la lista*/
+}
+
+nav li {
+    line-height: 3rem; /*Altura*/
+    position: relative; /*Insertar los elementos dentro*/
+}
+
+.menu ul {
+    position: absolute; /*Dejar los elementos dentro del li fuera*/
+}
+
 nav a {
-    color:white;
+    width: 150px;
+    color: white;
     display: block;
-    transition: .6s;
-    padding: 0 2.5em;
-    font-size: 0.9em;
-    text-align: center;
+    transition: .4s; /*Retardo para quitar el foco*/
+    padding: 0 5em; /* Darle anchura al enlace*/
+    text-decoration: none;
 }
 
 nav a:hover {
     color: white;
+    background: rgba(142,86,66, 0.5);
     text-decoration: none;
-    background: rgba(0,0,0,.5);
 }
 
-nav li:hover ul {
-    display: block;
-}
-
-nav li ul:hover li {
-    display: block;
-}
-
-.jumbotron {
-    background-color: #f4511e;
-    color: #fff;
-    padding: 100px 25px;
-}
-.container-fluid {
-    padding: 60px 50px;
-}
-.bg-grey {
-    background-color: #f6f6f6;
-}
-.logo-small {
-    color: #f4511e;
-    font-size: 50px;
-}
-.logo {
-    color: #f4511e;
-    font-size: 200px;
-}
-.thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-}
-.thumbnail img {
+/*Menu*/
+.menu {
+    margin: 0;
     width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
+    display: table;
+    background: coral;
 }
-@media screen and (max-width: 768px) {
-    .col-sm-4 {
-        text-align: center;
-        margin: 25px 0;
-    }
+
+.menu > li {
+    float: left; /*Flotar contenido a la izquierda*/
 }
+
+/*Submenu 1*/
+nav li li {
+    width: 100%;
+    max-height: 0;
+    transition: all .5s;
+    overflow: hidden;
+    background: coral;
+}
+
+nav li:hover > ul > li {
+    max-height: 100%;
+    overflow: visible;
+}
+
+.menu > li > ul {
+    top: 100%;
+}
+
+/*Submenu 2*/
+.menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+/*Login*/
+.login {
+    margin-left: 40%;
+    margin-right: 35%;
+}
+
+.login fieldset {
+    margin-right: 40%;
+    border: 1px solid black;
+    padding: 0% 4%;
+}
+
+.login legend {
+    margin-left: 30%;
+    margin-bottom: 0;
+    border: 0;
+}
+
+.login input.user {
+    margin-left: 9%;
+    
+}
+
+.login input.password {
+    margin-left: 1%;
+}
+
+.login input.session {margin: 5px 35%;}
