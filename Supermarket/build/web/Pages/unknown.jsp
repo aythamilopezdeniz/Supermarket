@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Supermercado Torres: Compra alimentación, ocio, hogar, moda.</title>
+        <title>Página Errónea</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
@@ -26,7 +26,8 @@
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
-        <!--<h1>!Página desconocida¡</h1>-->
+        
+        <!-- Página Errónea -->
         <h1>404 Error Page</h1>
         <!--<p class="zoom-area"><b>CSS</b> animations to make a cool 404 page. </p>-->
         <section class="error-container">

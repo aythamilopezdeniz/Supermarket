@@ -26,10 +26,9 @@ body {
     background-color: white;
 }
 
-button, input {
+.SignIn-Login button, input {
     color: black;
     border-radius: 3px;
-    border size: 2px;
 }
 
 .SignIn-Login {
@@ -120,34 +119,53 @@ nav li:hover > ul > li {
     left: 100%;
 }
 
-/*Login*/
-.login {
+/*Login & Register*/
+.login, .Register {
     margin-left: 40%;
     margin-right: 35%;
 }
 
 .login fieldset {
-    margin-right: 40%;
+    width: 220px;
     border: 1px solid black;
     padding: 0% 4%;
 }
 
-.login legend {
-    margin-left: 30%;
+.login legend, .Register legend {
     margin-bottom: 0;
     border: 0;
 }
 
 .login input.user {
     margin-left: 9%;
-    
 }
 
 .login input.password {
     margin-left: 1%;
 }
 
-.login input.session {margin: 5px 35%;}
+.login input.session, .Register input.register {
+    color: black;
+    margin: 5px 35%;
+}
+
+.Register fieldset {
+    width: 250px;
+    border: 1px solid black;
+    padding: 0% 4%;
+}
+
+.Register input.nombre {
+    margin-left: 2%;
+}
+
+.Register input.date {
+    color: black;
+}
+
+.Register input.user {
+    margin-left: 3%;
+}
 
 /*Style Error Page*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');

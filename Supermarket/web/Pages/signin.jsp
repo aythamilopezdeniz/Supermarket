@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Página Errónea</title>
+        <title>Registro</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
@@ -27,16 +27,26 @@
             </ul>
         </header>
         
-        <!-- Página Errónea -->
-        <h1>404 Error Page</h1>
-        <!--<p class="zoom-area"><b>CSS</b> animations to make a cool 404 page. </p>-->
-        <section class="error-container">
-            <span><span>4</span></span>
-            <span>0</span>
-            <span><span>4</span></span>
-        </section>
-        <div class="link-container">
-            <a target="_blank" href="index.html" class="more-link">Visite la página original</a>
-        </div>
+        <!-- Registro -->
+        <form class="Register" method="post" action="">
+            <fieldset>
+                <legend>Registro</legend>
+                <label for="nombre">Nombre</label>
+                <input class="nombre" type="text" name="nombre" value=""><br>
+                <label for="apellido1">Apellidos</label>
+                <input class="appellidos" type="text" name="apellidos" value=""><br>
+                <label for="usuario">Fecha de Nacimiento</label>
+                <input class="date" type="date" name="date" value=""><br>
+                <label for="usuario">Usuario</label>
+                <input class="user" type="text" name="user" value=""><br>
+                <label for="correo">Correo Electrónico</label>
+                <input class="correo" type="email" name="email" value=""><br>
+                <label for="password">Contraseña</label>
+                <input class="password" type="password" name="password" value=""><br>
+                <label for="password">Repetir Contraseña</label>
+                <input class="password" type="text" name="password" value=""><br>
+                <input class="register" type="submit" value="Registrarse">
+            </fieldset>
+        </form>
     </body>
 </html>

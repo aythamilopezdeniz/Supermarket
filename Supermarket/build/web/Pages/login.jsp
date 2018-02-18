@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Supermercado Torres: Compra alimentación, ocio, hogar, moda.</title>
+        <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
@@ -26,10 +26,11 @@
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
-        <!--<h1>Login</h1>-->
+
+        <!-- Login -->
         <form class="login" method="post" action="">
             <fieldset>
-                <legend>Visitante</legend>
+                <legend>Identificarse</legend>
                 <label for="usuario">Usuario</label>
                 <input class="user" type="text" name="user" value=""><br>
                 <label for="usuario">Contraseña</label>
