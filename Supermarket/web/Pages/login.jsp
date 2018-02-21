@@ -14,7 +14,7 @@
         <!-- Header -->
         <header class="SignIn-Login">
             <ul>
-                <li><a class="title" href="index.html">Supermercado Torres</a></li>
+                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
                 <li>
                     <form>
                         <input type="text" name="search" placeholder="Buscar producto" required="">
@@ -28,13 +28,13 @@
         </header>
 
         <!-- Login -->
-        <form class="login" method="post" action="">
+        <form class="login" method="post" action="index.jsp">
             <fieldset>
                 <legend>Identificarse</legend>
                 <label for="usuario">Usuario</label>
-                <input class="user" type="text" name="user" value=""><br>
+                <input class="user" type="text" name="user" value="<%=request.getParameter("user")%>"><br>
                 <label for="usuario">Contraseña</label>
-                <input class="password" type="text" name="password" value=""><br>
+                <input class="password" type="text" name="password" value="<%=request.getParameter("password")%>"><br>
                 <input class="session" type="submit" value="Iniciar Sesión">
             </fieldset>
         </form>

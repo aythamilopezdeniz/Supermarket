@@ -21,7 +21,7 @@
                     </form>
                 </li>
                 <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="FrontServlet?command=Login">Login</a></li>
+                <li><a href="FrontServlet?command=Login&user=user1&password=user1">Login</a></li>
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
@@ -39,7 +39,7 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <style> img {max-height: 300px;}</style>
-                       <img src="images/indexView/imagen1.jpg" alt="imagen1.jpg" width="1920" height="500">
+                    <img src="images/indexView/imagen1.jpg" alt="imagen1.jpg" width="1920" height="500">
                 </div>
                 <div class="item">
                     <img src="images/indexView/imagen2.jpg" alt="imagen2.jpg" width="1920" height="500">
@@ -59,42 +59,272 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        
+
         <!-- Navegación -->
         <nav>
             <ul class="menu">
-                <li><a href="">Bebidas</a>
+                <li><a href="FrontServlet?command=Drinks">Bebidas</a>
                     <ul>
-                        <li><a href="">Refresco</a>
+                        <li><a href="FrontServlet?command=Refreshments">Refresco</a>
                             <ul>
-                                <li><a href="">De Sabores</a></li>
-                                <li><a href="">Deportivos</a></li>
+                                <li><a href="FrontServlet?command=Flavor">De Sabores</a></li>
+                                <li><a href="FrontServlet?command=Light">Deportivos</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Vino</a></li>
-                        <li><a href="">Agua</a></li>
-                        <li><a href="">Zumos</a></li>
+                        <li><a href="FrontServlet?command=Wine">Vino</a></li>
+                        <li><a href="FrontServlet?command=Water">Agua</a></li>
+                        <li><a href="FrontServlet?command=Juices">Zumos</a></li>
                     </ul>
                 </li>
-                <li><a href="">Alimentación</a>
+                <li><a href="FrontServlet?command=Food">Alimentación</a>
                     <ul>
-                        <li><a href="">Lácteos</a></li>
-                        <li><a href="">Pastas</a></li>
-                        <li><a href="">Preparados</a></li>
-                        <li><a href="">Congelados</a></li>
+                        <li><a href="FrontServlet?command=DiaryProducts">Lácteos</a></li>
+                        <li><a href="FrontServlet?command=Pasta">Pastas</a></li>
+                        <li><a href="FrontServlet?command=Preparations">Preparados</a></li>
+                        <li><a href="FrontServlet?command=Frozen">Congelados</a></li>
                     </ul>
                 </li>
-                <li><a href="">Droguería</a></li>
-                <li><a href="">Papelería</a></li>
-                <li><a href="">Automóvil</a>
+                <li><a href="FrontServlet?command=Drugstore">Droguería</a></li>
+                <li><a href="FrontServlet?command=StationerShop">Papelería</a></li>
+                <li><a href="FrontServlet?command=Car">Automóvil</a>
                     <ul>
-                        <li><a href="">Accesorios</a></li>
-                        <li><a href="">Limpieza</a></li>
+                        <li><a href="FrontServlet?command=Accessories">Accesorios</a></li>
+                        <li><a href="FrontServlet?command=Cleaning">Limpieza</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        
+
         <!-- Artículos -->
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Don Simón Naranja</div>
+                <a target="_blank" href="images/articulos/zumos/don-simon-naranja-escalar.jpg">
+                    <img src="images/articulos/zumos/don-simon-naranja-escalar.jpg" alt="Don Simon">
+                </a>
+                <h4>1.43 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Colimoro Montepulciano</div>
+                <a target="_blank" href="images/articulos/vinos/Colimoro-Montepulciano-escalar.jpg">
+                    <img src="images/articulos/vinos/Colimoro-Montepulciano-escalar.jpg" alt="Colimoro Montepulciano">
+                </a>
+                <h4>2.60 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Juver Melocotón</div>
+                <a target="_blank" href="images/articulos/zumos/juver-melocoton-escalar.jpg">
+                    <img src="images/articulos/zumos/juver-melocoton-escalar.jpg" alt="Juver Melocotón">
+                </a>
+                <h4>1.34 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Romaneira</div>
+                <a target="_blank" href="images/articulos/vinos/Romaneira-escalar.jpg">
+                    <img src="images/articulos/vinos/Romaneira-escalar.jpg" alt="Romaneira">
+                </a>
+                <h4>3.60 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Juver Piña</div>
+                <a target="_blank" href="images/articulos/zumos/juver-piña-escalar.jpg">
+                    <img src="images/articulos/zumos/juver-piña-escalar.jpg" alt="Juver Piña">
+                </a>
+                <h4>1.44 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Fernando Castilla</div>
+                <a target="_blank" href="images/articulos/vinos/Fernando-castilla-escalar.jpg">
+                    <img src="images/articulos/vinos/Fernando-castilla-escalar.jpg" alt="Fernando Castilla">
+                </a>
+                <h4>2.89 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Libby's Naranja</div>
+                <a target="_blank" href="images/articulos/zumos/libby's-naranja-1L-escalar.jpg">
+                    <img src="images/articulos/zumos/libby's-naranja-1L-escalar.jpg" alt="Libby's Naranja">
+                </a>
+                <h4>1.60 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Joel Gott</div>
+                <a target="_blank" href="images/articulos/vinos/Joel-Gott-escalar.jpg">
+                    <img src="images/articulos/vinos/Joel-Gott-escalar.jpg" alt="Joel Gott">
+                </a>
+                <h4>3.10 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Pago de los Capellanes</div>
+                <a target="_blank" href="images/articulos/vinos/Pago-de-los-Capellanes-escalar.jpg">
+                    <img src="images/articulos/vinos/Pago-de-los-Capellanes-escalar.jpg" alt="Pago de los Capellanes">
+                </a>
+                <h4>2.90 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Pepsi 2L</div>
+                <a target="_blank" href="images/articulos/refrescos/sabores/Pepsi-2L-escalar.png">
+                    <img src="images/articulos/refrescos/sabores/Pepsi-2L-escalar.png" alt="Pepsi 2L">
+                </a>
+                <h4>1.90 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Coca cola</div>
+                <a target="_blank" href="images/articulos/refrescos/sabores/coca-cola-lata-escalar.jpg">
+                    <img src="images/articulos/refrescos/sabores/coca-cola-lata-escalar.jpg" alt="Coca cola">
+                </a>
+                <h4>1.20 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Fanta</div>
+                <a target="_blank" href="images/articulos/refrescos/sabores/fanta-lata-escalar.jpg">
+                    <img src="images/articulos/refrescos/sabores/fanta-lata-escalar.jpg" alt="Fanta">
+                </a>
+                <h4>1.15 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Pepsi Lata</div>
+                <a target="_blank" href="images/articulos/refrescos/sabores/pepsi-lata-escalar.jpg">
+                    <img src="images/articulos/refrescos/sabores/pepsi-lata-escalar.jpg" alt="Pepsi Lata">
+                </a>
+                <h4>1.35 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Sprite 1.5L</div>
+                <a target="_blank" href="images/articulos/refrescos/sabores/sprite-1.5L-escalar.jpg">
+                    <img src="images/articulos/refrescos/sabores/sprite-1.5L-escalar.jpg" alt="Sprite 1.5L">
+                </a>
+                <h4>1.75 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Sprite Lata</div>
+                <a target="_blank" href="images/articulos/refrescos/sabores/sprite-lata-escalar.jpg">
+                    <img src="images/articulos/refrescos/sabores/sprite-lata-escalar.jpg" alt="Sprite Lata">
+                </a>
+                <h4>1.20 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Coca Cola Light</div>
+                <a target="_blank" href="images/articulos/refrescos/light/coca-cola-light-escalar.jpg">
+                    <img src="images/articulos/refrescos/light/coca-cola-light-escalar.jpg" alt="Coca Cola Light">
+                </a>
+                <h4>1.20 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Fanta Light</div>
+                <a target="_blank" href="images/articulos/refrescos/light/fanta-light-escalar.jpg">
+                    <img src="images/articulos/refrescos/light/fanta-light-escalar.jpg" alt="Fanta Light">
+                </a>
+                <h4>1.15 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Pepsi Light</div>
+                <a target="_blank" href="images/articulos/refrescos/light/pepsi-Light-escalar.jpg">
+                    <img src="images/articulos/refrescos/light/pepsi-Light-escalar.jpg" alt="Pepsi Light">
+                </a>
+                <h4>1.35 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Sprite Light</div>
+                <a target="_blank" href="images/articulos/refrescos/light/sprite-light-escalar.jpg">
+                    <img src="images/articulos/refrescos/light/sprite-light-escalar.jpg" alt="Sprite Light">
+                </a>
+                <h4>1.20 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Bezolla 1.5L</div>
+                <a target="_blank" href="images/articulos/agua/bezolla-1.5L-escalar.jpg">
+                    <img src="images/articulos/agua/bezolla-1.5L-escalar.jpg" alt="Bezolla 1.5L">
+                </a>
+                <h4>0.95 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Firgas 1.5L</div>
+                <a target="_blank" href="images/articulos/agua/firgas-1.5L-escalar.jpg">
+                    <img src="images/articulos/agua/firgas-1.5L-escalar.jpg" alt="Firgas 1.5L">
+                </a>
+                <h4>1.05 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Font Vella 1.5L</div>
+                <a target="_blank" href="images/articulos/agua/font-vella-1.5L-escalar.jpg">
+                    <img src="images/articulos/agua/font-vella-1.5L-escalar.jpg" alt="Font Vella 1.5L">
+                </a>
+                <h4>1.15 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="desc">Teror Sin Gas</div>
+                <a target="_blank" href="images/articulos/agua/teror-sin-gas-1.5L-escalar.jpg">
+                    <img src="images/articulos/agua/teror-sin-gas-1.5L-escalar.jpg" alt="Teror Sin Gas">
+                </a>
+                <h4>1.10 €</h4>
+                <div class="desc"><a href="#">Añadir al Carro</a></div>
+            </div>
+        </div>
     </body>
 </html>

@@ -14,7 +14,7 @@
         <!-- Header -->
         <header class="SignIn-Login">
             <ul>
-                <li><a class="title" href="index.html">Supermercado Torres</a></li>
+                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
                 <li>
                     <form>
                         <input type="text" name="search" placeholder="Buscar producto" required="">

@@ -12,9 +12,10 @@
     </head>
     <body>
         <!-- Header -->
+        <% if(session.getAttribute("user")==null){ %>
         <header class="SignIn-Login">
             <ul>
-                <li><a class="title" href="index.html">Supermercado Torres</a></li>
+                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
                 <li>
                     <form>
                         <input type="text" name="search" placeholder="Buscar producto" required="">
@@ -22,10 +23,26 @@
                     </form>
                 </li>
                 <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="FrontServlet?command=Login">Login</a></li>
+                <li><a href="FrontServlet?command=Login&user=user1&password=user1">Login</a></li>
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
+        <% } else { %>
+        <header class="SignIn-Login">
+            <ul>
+                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
+                <li>
+                    <form>
+                        <input type="text" name="search" placeholder="Buscar producto" required="">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </li>
+                <li><p><%=session.getAttribute("user")%></p></li>
+                <li><a href="FrontServlet?command=Logout">Cerrar Sesión</a></li>
+                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
+            </ul>
+        </header>
+        <% } %>
         
         <!-- Página Errónea -->
         <h1>404 Error Page</h1>
