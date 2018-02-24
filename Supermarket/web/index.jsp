@@ -1,3 +1,7 @@
+<%@page import="Model.Article"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Commands.ShoppingCart"%>
+<%@page import="Model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +16,23 @@
     </head>
     <body>
         <!-- Header -->
-        <% if(session.getAttribute("user")==null){ %>
+        <%  if(request.getParameter("user")!=null && request.getParameter("password")!=null) {
+                session.setAttribute("user", request.getParameter("user"));
+                session.setAttribute("password", request.getParameter("password"));
+            }
+            if(session.isNew()) {
+                Cart shoppingCart = new Cart();
+                session.setAttribute("shoppingCart", shoppingCart);
+            }
+            if(request.getParameter("command")!=null){
+                Cart shoppingCart = (Cart) session.getAttribute("shoppingCart");
+                shoppingCart.addArticle(new Article(request.getParameter("nameArticle"), 
+                        request.getParameter("imageArticle"), 
+                        request.getParameter("pvpArticle")));
+            }
+            
+            if(session.getAttribute("user")==null) {
+        %>
         <header class="SignIn-Login">
             <ul>
                 <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
@@ -23,7 +43,7 @@
                     </form>
                 </li>
                 <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="FrontServlet?command=Login&user=user1&password=user1">Login</a></li>
+                <li><a href="FrontServlet?command=Login">Login</a></li>
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
@@ -81,33 +101,33 @@
         <!-- Navegación -->
         <nav>
             <ul class="menu">
-                <li><a href="FrontServlet?command=Drinks">Bebidas</a>
+                <li><a href="FrontServlet?command=Categoria&window=drinks">Bebidas</a>
                     <ul>
-                        <li><a href="FrontServlet?command=Refreshments">Refresco</a>
+                        <li><a href="FrontServlet?command=Categoria&window=refreshments">Refresco</a>
                             <ul>
-                                <li><a href="FrontServlet?command=Flavor">De Sabores</a></li>
-                                <li><a href="FrontServlet?command=Light">Deportivos</a></li>
+                                <li><a href="FrontServlet?command=Categoria&window=flavor">De Sabores</a></li>
+                                <li><a href="FrontServlet?command=Categoria&window=light">Deportivos</a></li>
                             </ul>
                         </li>
-                        <li><a href="FrontServlet?command=Wine">Vino</a></li>
-                        <li><a href="FrontServlet?command=Water">Agua</a></li>
-                        <li><a href="FrontServlet?command=Juices">Zumos</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=wine">Vino</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=water">Agua</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=juices">Zumos</a></li>
                     </ul>
                 </li>
-                <li><a href="FrontServlet?command=Food">Alimentación</a>
+                <li><a href="FrontServlet?command=Categoria&window=food">Alimentación</a>
                     <ul>
-                        <li><a href="FrontServlet?command=DiaryProducts">Lácteos</a></li>
-                        <li><a href="FrontServlet?command=Pasta">Pastas</a></li>
-                        <li><a href="FrontServlet?command=Preparations">Preparados</a></li>
-                        <li><a href="FrontServlet?command=Frozen">Congelados</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=diaryProducts">Lácteos</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=pasta">Pastas</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=preparations">Preparados</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=frozen">Congelados</a></li>
                     </ul>
                 </li>
-                <li><a href="FrontServlet?command=Drugstore">Droguería</a></li>
-                <li><a href="FrontServlet?command=StationerShop">Papelería</a></li>
-                <li><a href="FrontServlet?command=Car">Automóvil</a>
+                <li><a href="FrontServlet?command=Categoria&window=drugstore">Droguería</a></li>
+                <li><a href="FrontServlet?command=Categoria&window=stationerShop">Papelería</a></li>
+                <li><a href="FrontServlet?command=Categoria&window=car">Automóvil</a>
                     <ul>
-                        <li><a href="FrontServlet?command=Accessories">Accesorios</a></li>
-                        <li><a href="FrontServlet?command=Cleaning">Limpieza</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=accessories">Accesorios</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=cleaning">Limpieza</a></li>
                     </ul>
                 </li>
             </ul>
@@ -120,8 +140,26 @@
                 <a target="_blank" href="images/articulos/zumos/don-simon-naranja-escalar.jpg">
                     <img src="images/articulos/zumos/don-simon-naranja-escalar.jpg" alt="Don Simon">
                 </a>
-                <h4>1.43 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.43 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Don Simon Naranja">
+                        <input type="hidden" name="imageArticle" value="images/articulos/zumos/don-simon-naranja-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.43">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                    <%
+                    //Cart shoppingCart = (Cart) session.getAttribute("shoppingCart");
+                    //shoppingCart.addArticle(new Article("Don Simón Naranja", "images/articulos/zumos/don-simon-naranja-escalar.jpg", "1.43"));
+                    //out.println(shoppingCart.getArticle("Don Simón Naranja"));
+                    //shoppingCart.addArticle("Don Simón Naranja", "", "1.43");
+                    //shoppingCart.addArticle("Don Simón Naranja", "images/articulos/zumos/don-simon-naranja-escalar.jpg", "1.43");
+                    //shoppingCart.setCart("Don Simón Naranja");
+                    //shoppingCart.setCart("images/articulos/zumos/don-simon-naranja-escalar.jpg");
+                    //shoppingCart.setCart("1.43");
+                    %>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -130,8 +168,16 @@
                 <a target="_blank" href="images/articulos/vinos/Colimoro-Montepulciano-escalar.jpg">
                     <img src="images/articulos/vinos/Colimoro-Montepulciano-escalar.jpg" alt="Colimoro Montepulciano">
                 </a>
-                <h4>2.60 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.60 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Colimoro Montepulciano">
+                        <input type="hidden" name="imageArticle" value="images/articulos/vinos/Colimoro-Montepulciano-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.60">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -140,8 +186,16 @@
                 <a target="_blank" href="images/articulos/zumos/juver-melocoton-escalar.jpg">
                     <img src="images/articulos/zumos/juver-melocoton-escalar.jpg" alt="Juver Melocotón">
                 </a>
-                <h4>1.34 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.34 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Juver Melocoton">
+                        <input type="hidden" name="imageArticle" value="images/articulos/zumos/juver-melocoton-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.34">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -150,18 +204,34 @@
                 <a target="_blank" href="images/articulos/vinos/Romaneira-escalar.jpg">
                     <img src="images/articulos/vinos/Romaneira-escalar.jpg" alt="Romaneira">
                 </a>
-                <h4>3.60 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.60 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Romaneira">
+                        <input type="hidden" name="imageArticle" value="images/articulos/vinos/Romaneira-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.60">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Juver Piña</div>
-                <a target="_blank" href="images/articulos/zumos/juver-piña-escalar.jpg">
-                    <img src="images/articulos/zumos/juver-piña-escalar.jpg" alt="Juver Piña">
+                <a target="_blank" href="images/articulos/zumos/juver-pina-escalar.jpg">
+                    <img src="images/articulos/zumos/juver-pina-escalar.jpg" alt="Juver Piña">
                 </a>
-                <h4>1.44 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.44 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Juver Pina">
+                        <input type="hidden" name="imageArticle" value="images/articulos/zumos/juver-pina-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.44">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -170,8 +240,16 @@
                 <a target="_blank" href="images/articulos/vinos/Fernando-castilla-escalar.jpg">
                     <img src="images/articulos/vinos/Fernando-castilla-escalar.jpg" alt="Fernando Castilla">
                 </a>
-                <h4>2.89 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.89 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Fernando Castilla">
+                        <input type="hidden" name="imageArticle" value="images/articulos/vinos/Fernando-castilla-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.89">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -180,8 +258,16 @@
                 <a target="_blank" href="images/articulos/zumos/libby's-naranja-1L-escalar.jpg">
                     <img src="images/articulos/zumos/libby's-naranja-1L-escalar.jpg" alt="Libby's Naranja">
                 </a>
-                <h4>1.60 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.60 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Libby's Naranja">
+                        <input type="hidden" name="imageArticle" value="images/articulos/zumos/libby's-naranja-1L-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.60">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -190,8 +276,16 @@
                 <a target="_blank" href="images/articulos/vinos/Joel-Gott-escalar.jpg">
                     <img src="images/articulos/vinos/Joel-Gott-escalar.jpg" alt="Joel Gott">
                 </a>
-                <h4>3.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Don Simon Naranja">
+                        <input type="hidden" name="imageArticle" value="images/articulos/vinos/Joel-Gott-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -200,8 +294,16 @@
                 <a target="_blank" href="images/articulos/vinos/Pago-de-los-Capellanes-escalar.jpg">
                     <img src="images/articulos/vinos/Pago-de-los-Capellanes-escalar.jpg" alt="Pago de los Capellanes">
                 </a>
-                <h4>2.90 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.90 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pago de los Capellanes">
+                        <input type="hidden" name="imageArticle" value="images/articulos/vinos/Pago-de-los-Capellanes-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.90">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -210,8 +312,16 @@
                 <a target="_blank" href="images/articulos/refrescos/sabores/Pepsi-2L-escalar.png">
                     <img src="images/articulos/refrescos/sabores/Pepsi-2L-escalar.png" alt="Pepsi 2L">
                 </a>
-                <h4>1.90 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.90 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pepsi 2L">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/sabores/Pepsi-2L-escalar.png">
+                        <input type="hidden" name="pvpArticle" value="1.90">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -220,8 +330,16 @@
                 <a target="_blank" href="images/articulos/refrescos/sabores/coca-cola-lata-escalar.jpg">
                     <img src="images/articulos/refrescos/sabores/coca-cola-lata-escalar.jpg" alt="Coca cola">
                 </a>
-                <h4>1.20 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.20 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Coca cola">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/sabores/coca-cola-lata-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.20">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -230,8 +348,16 @@
                 <a target="_blank" href="images/articulos/refrescos/sabores/fanta-lata-escalar.jpg">
                     <img src="images/articulos/refrescos/sabores/fanta-lata-escalar.jpg" alt="Fanta">
                 </a>
-                <h4>1.15 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.15 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Fanta">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/sabores/fanta-lata-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.15">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -240,8 +366,16 @@
                 <a target="_blank" href="images/articulos/refrescos/sabores/pepsi-lata-escalar.jpg">
                     <img src="images/articulos/refrescos/sabores/pepsi-lata-escalar.jpg" alt="Pepsi Lata">
                 </a>
-                <h4>1.35 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.35 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pepsi Lata">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/sabores/pepsi-lata-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.35">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -250,8 +384,16 @@
                 <a target="_blank" href="images/articulos/refrescos/sabores/sprite-1.5L-escalar.jpg">
                     <img src="images/articulos/refrescos/sabores/sprite-1.5L-escalar.jpg" alt="Sprite 1.5L">
                 </a>
-                <h4>1.75 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.75 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Sprite 1.5L">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/sabores/sprite-1.5L-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.75">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -260,8 +402,16 @@
                 <a target="_blank" href="images/articulos/refrescos/sabores/sprite-lata-escalar.jpg">
                     <img src="images/articulos/refrescos/sabores/sprite-lata-escalar.jpg" alt="Sprite Lata">
                 </a>
-                <h4>1.20 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.20 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Sprite Lata">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/sabores/sprite-lata-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.20">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -270,8 +420,16 @@
                 <a target="_blank" href="images/articulos/refrescos/light/coca-cola-light-escalar.jpg">
                     <img src="images/articulos/refrescos/light/coca-cola-light-escalar.jpg" alt="Coca Cola Light">
                 </a>
-                <h4>1.20 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.20 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Coca cola Light">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/light/coca-cola-light-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.20">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -280,8 +438,16 @@
                 <a target="_blank" href="images/articulos/refrescos/light/fanta-light-escalar.jpg">
                     <img src="images/articulos/refrescos/light/fanta-light-escalar.jpg" alt="Fanta Light">
                 </a>
-                <h4>1.15 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.15 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Fanta Light">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/light/fanta-light-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.15">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -290,8 +456,16 @@
                 <a target="_blank" href="images/articulos/refrescos/light/pepsi-Light-escalar.jpg">
                     <img src="images/articulos/refrescos/light/pepsi-Light-escalar.jpg" alt="Pepsi Light">
                 </a>
-                <h4>1.35 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.35 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pepsi Light">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/light/pepsi-Light-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.35">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -300,8 +474,16 @@
                 <a target="_blank" href="images/articulos/refrescos/light/sprite-light-escalar.jpg">
                     <img src="images/articulos/refrescos/light/sprite-light-escalar.jpg" alt="Sprite Light">
                 </a>
-                <h4>1.20 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.20 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Sprite Light">
+                        <input type="hidden" name="imageArticle" value="images/articulos/refrescos/light/sprite-light-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.20">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -310,8 +492,16 @@
                 <a target="_blank" href="images/articulos/agua/bezolla-1.5L-escalar.jpg">
                     <img src="images/articulos/agua/bezolla-1.5L-escalar.jpg" alt="Bezolla 1.5L">
                 </a>
-                <h4>0.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>0.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Bezolla 1.5L">
+                        <input type="hidden" name="imageArticle" value="images/articulos/agua/bezolla-1.5L-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="0.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -320,8 +510,16 @@
                 <a target="_blank" href="images/articulos/agua/firgas-1.5L-escalar.jpg">
                     <img src="images/articulos/agua/firgas-1.5L-escalar.jpg" alt="Firgas 1.5L">
                 </a>
-                <h4>1.05 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.05 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Figas 1.5L">
+                        <input type="hidden" name="imageArticle" value="images/articulos/agua/firgas-1.5L-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.05">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -330,8 +528,16 @@
                 <a target="_blank" href="images/articulos/agua/font-vella-1.5L-escalar.jpg">
                     <img src="images/articulos/agua/font-vella-1.5L-escalar.jpg" alt="Font Vella 1.5L">
                 </a>
-                <h4>1.15 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.15 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Font Vella">
+                        <input type="hidden" name="imageArticle" value="images/articulos/agua/font-vella-1.5L-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.15">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -340,148 +546,268 @@
                 <a target="_blank" href="images/articulos/agua/teror-sin-gas-1.5L-escalar.jpg">
                     <img src="images/articulos/agua/teror-sin-gas-1.5L-escalar.jpg" alt="Teror Sin Gas">
                 </a>
-                <h4>1.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Terror Sin Gas">
+                        <input type="hidden" name="imageArticle" value="images/articulos/agua/teror-sin-gas-1.5L-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Ariel</div>
-                <a target="_blank" href="images/articulos/droguería/ariel-escalar.jpg">
-                    <img src="images/articulos/droguería/ariel-escalar.jpg" alt="Ariel">
+                <a target="_blank" href="images/articulos/drogueria/ariel-escalar.jpg">
+                    <img src="images/articulos/drogueria/ariel-escalar.jpg" alt="Ariel">
                 </a>
-                <h4>3.45 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.45 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Ariel">
+                        <input type="hidden" name="imageArticle" value="images/articulos/drogueria/ariel-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.45">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Colón</div>
-                <a target="_blank" href="images/articulos/droguería/colon-escalar.jpg">
-                    <img src="images/articulos/droguería/colon-escalar.jpg" alt="Colón">
+                <a target="_blank" href="images/articulos/drogueria/colon-escalar.jpg">
+                    <img src="images/articulos/drogueria/colon-escalar.jpg" alt="Colón">
                 </a>
-                <h4>4.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Colon">
+                        <input type="hidden" name="imageArticle" value="images/articulos/drogueria/colon-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Mimosin Vaporesse</div>
-                <a target="_blank" href="images/articulos/droguería/mimosin-vaporesse-escalar.jpg">
-                    <img src="images/articulos/droguería/mimosin-vaporesse-escalar.jpg" alt="Mimosin Vaporesse">
+                <a target="_blank" href="images/articulos/drogueria/mimosin-vaporesse-escalar.jpg">
+                    <img src="images/articulos/drogueria/mimosin-vaporesse-escalar.jpg" alt="Mimosin Vaporesse">
                 </a>
-                <h4>3.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Mimosin Vaporosse">
+                        <input type="hidden" name="imageArticle" value="images/articulos/drogueria/mimosin-vaporesse-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Norit</div>
-                <a target="_blank" href="images/articulos/droguería/norit-escalar.jpg">
-                    <img src="images/articulos/droguería/norit-escalar.jpg" alt="Norit">
+                <a target="_blank" href="images/articulos/drogueria/norit-escalar.jpg">
+                    <img src="images/articulos/drogueria/norit-escalar.jpg" alt="Norit">
                 </a>
-                <h4>3.60 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.60 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Norit">
+                        <input type="hidden" name="imageArticle" value="images/articulos/drogueria/norit-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.60">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Vanish</div>
-                <a target="_blank" href="images/articulos/droguería/vanish-escalar.jpg">
-                    <img src="images/articulos/droguería/vanish-escalar.jpg" alt="Vanish">
+                <a target="_blank" href="images/articulos/drogueria/vanish-escalar.jpg">
+                    <img src="images/articulos/drogueria/vanish-escalar.jpg" alt="Vanish">
                 </a>
-                <h4>4.20 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.20 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Vanish">
+                        <input type="hidden" name="imageArticle" value="images/articulos/drogueria/vanish-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.20">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Airport Mochila Azul</div>
-                <a target="_blank" href="images/articulos/papelería/airport-mochila-azul-escalar.jpg">
-                    <img src="images/articulos/papelería/airport-mochila-azul-escalar.jpg" alt="Airport Mochila Azul">
+                <a target="_blank" href="images/articulos/papeleria/airport-mochila-azul-escalar.jpg">
+                    <img src="images/articulos/papeleria/airport-mochila-azul-escalar.jpg" alt="Airport Mochila Azul">
                 </a>
-                <h4>10.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>10.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Airport Mochila Azul">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/airport-mochila-azul-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="10.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Airport Mochila Vintage</div>
-                <a target="_blank" href="images/articulos/papelería/airport-mochila-vintage-escalar.jpg">
-                    <img src="images/articulos/papelería/airport-mochila-vintage-escalar.jpg" alt="Airport Mochila Vintage">
+                <a target="_blank" href="images/articulos/papeleria/airport-mochila-vintage-escalar.jpg">
+                    <img src="images/articulos/papeleria/airport-mochila-vintage-escalar.jpg" alt="Airport Mochila Vintage">
                 </a>
-                <h4>15.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>15.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Airport Mochila Vintage">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/airport-mochila-vintage-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Bic Cristal Soft Azul</div>
-                <a target="_blank" href="images/articulos/papelería/bic-cristal-soft-azul-escalar.jpg">
-                    <img src="images/articulos/papelería/bic-cristal-soft-azul-escalar.jpg" alt="Bic Cristal Soft Azul">
+                <a target="_blank" href="images/articulos/papeleria/bic-cristal-soft-azul-escalar.jpg">
+                    <img src="images/articulos/papeleria/bic-cristal-soft-azul-escalar.jpg" alt="Bic Cristal Soft Azul">
                 </a>
-                <h4>9.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>9.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Bic Cristal Soft Azul">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/bic-cristal-soft-azul-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="9.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Oxford Cuaderno</div>
-                <a target="_blank" href="images/articulos/papelería/oxford-cuaderno-escalar.jpg">
-                    <img src="images/articulos/papelería/oxford-cuaderno-escalar.jpg" alt="Oxford Cuaderno">
+                <a target="_blank" href="images/articulos/papeleria/oxford-cuaderno-escalar.jpg">
+                    <img src="images/articulos/papeleria/oxford-cuaderno-escalar.jpg" alt="Oxford Cuaderno">
                 </a>
-                <h4>3.30 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.30 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Oxford Cuaderno">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/oxford-cuaderno-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.30">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Pacsa Cuaderno 3x3</div>
-                <a target="_blank" href="images/articulos/papelería/pacsa-cuaderno-3x3-escalar.jpg">
-                    <img src="images/articulos/papelería/pacsa-cuaderno-3x3-escalar.jpg" alt="Pacsa Cuaderno 3x3">
+                <a target="_blank" href="images/articulos/papeleria/pacsa-cuaderno-3x3-escalar.jpg">
+                    <img src="images/articulos/papeleria/pacsa-cuaderno-3x3-escalar.jpg" alt="Pacsa Cuaderno 3x3">
                 </a>
-                <h4>1.50 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.50 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pacsa Cuaderno 3x3">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pacsa-cuaderno-3x3-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.50">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Pacsa Cuaderno 4x4</div>
-                <a target="_blank" href="images/articulos/papelería/pacsa-cuaderno-4x4-escalar.jpg">
-                    <img src="images/articulos/papelería/pacsa-cuaderno-4x4-escalar.jpg" alt="Pacsa Cuaderno 4x4">
+                <a target="_blank" href="images/articulos/papeleria/pacsa-cuaderno-4x4-escalar.jpg">
+                    <img src="images/articulos/papeleria/pacsa-cuaderno-4x4-escalar.jpg" alt="Pacsa Cuaderno 4x4">
                 </a>
-                <h4>3.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pacsa Cuaderno 4x4">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pacsa-cuaderno-4x4-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Estuche Patrulla Canina</div>
-                <a target="_blank" href="images/articulos/papelería/patrulla-canina-estuche-escalar.jpg">
-                    <img src="images/articulos/papelería/patrulla-canina-estuche-escalar.jpg" alt="Estuche Patrulla Canina">
+                <a target="_blank" href="images/articulos/papeleria/patrulla-canina-estuche-escalar.jpg">
+                    <img src="images/articulos/papeleria/patrulla-canina-estuche-escalar.jpg" alt="Estuche Patrulla Canina">
                 </a>
-                <h4>5.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>5.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Estuche Patrulla Canina">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/patrulla-canina-estuche-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="5.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Pilot Super Grip Azul</div>
-                <a target="_blank" href="images/articulos/papelería/pilot-super-grip-azul-escalar.jpg">
-                    <img src="images/articulos/papelería/pilot-super-grip-azul-escalar.jpg" alt="Pilot Super Grip Azul">
+                <a target="_blank" href="images/articulos/papeleria/pilot-super-grip-azul-escalar.jpg">
+                    <img src="images/articulos/papeleria/pilot-super-grip-azul-escalar.jpg" alt="Pilot Super Grip Azul">
                 </a>
-                <h4>3.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pilot Super Grip Azul">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pilot-super-grip-azul-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">UniBall Eye Ub-150</div>
-                <a target="_blank" href="images/articulos/papelería/uni-ball-eye-ub-150-escalar.jpg">
-                    <img src="images/articulos/papelería/uni-ball-eye-ub-150-escalar.jpg" alt="UniBall Eye Ub-150">
+                <a target="_blank" href="images/articulos/papeleria/uni-ball-eye-ub-150-escalar.jpg">
+                    <img src="images/articulos/papeleria/uni-ball-eye-ub-150-escalar.jpg" alt="UniBall Eye Ub-150">
                 </a>
-                <h4>2.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="UniBall Eye Ub-150">
+                        <input type="hidden" name="imageArticle" value="images/articulos/papeleria/uni-ball-eye-ub-150-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -490,8 +816,16 @@
                 <a target="_blank" href="images/articulos/pastas/ecolecera-espaguettis-escalar.jpg">
                     <img src="images/articulos/pastas/ecolecera-espaguettis-escalar.jpg" alt="Ecolecera Espaguettis">
                 </a>
-                <h4>1.75 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>1.75 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Ecolecera Espaguettis">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/ecolecera-espaguettis-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="1.75">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -500,8 +834,16 @@
                 <a target="_blank" href="images/articulos/pastas/gallo-espaguettis-escalar.jpg">
                     <img src="images/articulos/pastas/gallo-espaguettis-escalar.jpg" alt="Gallo Espaguettis">
                 </a>
-                <h4>2.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Gallo Espaguettis">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/gallo-espaguettis-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -510,8 +852,16 @@
                 <a target="_blank" href="images/articulos/pastas/gallo-fideos-escalar.jpg">
                     <img src="images/articulos/pastas/gallo-fideos-escalar.jpg" alt="Gallo Fideos">
                 </a>
-                <h4>3.65 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.65 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Gallo Fideos">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/gallo-fideos-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.65">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -520,8 +870,16 @@
                 <a target="_blank" href="images/articulos/pastas/gallo-macarrones-escalar.jpg">
                     <img src="images/articulos/pastas/gallo-macarrones-escalar.jpg" alt="Gallo Macarrones">
                 </a>
-                <h4>4.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Gallo Macarrones">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/gallo-macarrones-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -530,8 +888,16 @@
                 <a target="_blank" href="images/articulos/pastas/gallo-sedalis-espaguettis-escalar.jpg">
                     <img src="images/articulos/pastas/gallo-sedalis-espaguettis-escalar.jpg" alt="Gallo Sedalis Espaguettis">
                 </a>
-                <h4>3.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Gallo Segalis Espaguettis">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/gallo-sedalis-espaguettis-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -540,8 +906,16 @@
                 <a target="_blank" href="images/articulos/pastas/gallo-sin-gluten-macarrones-escalar.jpg">
                     <img src="images/articulos/pastas/gallo-sin-gluten-macarrones-escalar.jpg" alt="Gallo Sin Gluten Macarrones">
                 </a>
-                <h4>4.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Gallo Sin Gluten Macarrones">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/gallo-sin-gluten-macarrones-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -550,8 +924,16 @@
                 <a target="_blank" href="images/articulos/pastas/romero-fideos-escalar.jpg">
                     <img src="images/articulos/pastas/romero-fideos-escalar.jpg" alt="Romero fideos">
                 </a>
-                <h4>3.65 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.65 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Romero Fideos">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/romero-fideos-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.65">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -560,8 +942,16 @@
                 <a target="_blank" href="images/articulos/pastas/romero-macarrones-escalar.jpg">
                     <img src="images/articulos/pastas/romero-macarrones-escalar.jpg" alt="Romero Macarrones">
                 </a>
-                <h4>4.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Romero Macarrones">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/romero-macarrones-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -570,8 +960,16 @@
                 <a target="_blank" href="images/articulos/pastas/sam-mills-macarrones-escalar.jpg">
                     <img src="images/articulos/pastas/sam-mills-macarrones-escalar.jpg" alt="Sam Mills Macarrones">
                 </a>
-                <h4>4.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Sam Mills Macarrones">
+                        <input type="hidden" name="imageArticle" value="images/articulos/pastas/sam-mills-macarrones-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -580,8 +978,16 @@
                 <a target="_blank" href="images/articulos/preparados/Carretilla-alubias-escalar.jpg">
                     <img src="images/articulos/preparados/Carretilla-alubias-escalar.jpg" alt="Carretilla Alubias">
                 </a>
-                <h4>6.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>6.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Carretilla Alubias">
+                        <input type="hidden" name="imageArticle" value="images/articulos/preparados/Carretilla-alubias-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="6.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -590,8 +996,16 @@
                 <a target="_blank" href="images/articulos/preparados/Carretilla-arroz-con-pollo-al-curry-escalar.jpg">
                     <img src="images/articulos/preparados/Carretilla-arroz-con-pollo-al-curry-escalar.jpg" alt="Carretilla Arroz con Pollo al Curry">
                 </a>
-                <h4>7.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>7.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Carretilla Arroz con pollo al Curry">
+                        <input type="hidden" name="imageArticle" value="images/articulos/preparados/Carretilla-arroz-con-pollo-al-curry-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="7.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -600,18 +1014,34 @@
                 <a target="_blank" href="images/articulos/preparados/Isabel-albondigas-con-atun-escalar.jpg">
                     <img src="images/articulos/preparados/Isabel-albondigas-con-atun-escalar.jpg" alt="Isable Albóndigas con Atún">
                 </a>
-                <h4>5.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>5.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Isabel Albondigas con Atun">
+                        <input type="hidden" name="imageArticle" value="images/articulos/preparados/Isabel-albondigas-con-atun-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="5.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Louriño Albóndigas con Guisantes</div>
-                <a target="_blank" href="images/articulos/preparados/Louriño-albondigas-con-guisantes-escalar.jpg">
-                    <img src="images/articulos/preparados/Louriño-albondigas-con-guisantes-escalar.jpg" alt="Louriño Algóndigas con Guisantes">
+                <a target="_blank" href="images/articulos/preparados/Lourino-albondigas-con-guisantes-escalar.jpg">
+                    <img src="images/articulos/preparados/Lourino-albondigas-con-guisantes-escalar.jpg" alt="Louriño Algóndigas con Guisantes">
                 </a>
-                <h4>6.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>6.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Lourino Albondigas con Guisantes">
+                        <input type="hidden" name="imageArticle" value="images/articulos/preparados/Lourino-albondigas-con-guisantes-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="6.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -620,8 +1050,16 @@
                 <a target="_blank" href="images/articulos/preparados/Yatekomo-arroz-3-delicias-escalar.jpg">
                     <img src="images/articulos/preparados/Yatekomo-arroz-3-delicias-escalar.jpg" alt="Yatekomo Arroz 3 Delicias">
                 </a>
-                <h4>5.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>5.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Yatekomo Arroz 3 Delicias">
+                        <input type="hidden" name="imageArticle" value="images/articulos/preparados/Yatekomo-arroz-3-delicias-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="5.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -630,8 +1068,16 @@
                 <a target="_blank" href="images/articulos/automovil/accesorios/Rolmovil-cubre-volante-escalar.jpg">
                     <img src="images/articulos/automovil/accesorios/Rolmovil-cubre-volante-escalar.jpg" alt="Rolmovil Cubre Volante">
                 </a>
-                <h4>15.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>15.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Rolmovil Cubre Volante">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/accesorios/Rolmovil-cubre-volante-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -640,8 +1086,16 @@
                 <a target="_blank" href="images/articulos/automovil/accesorios/Rolmovil-extintor-escalar.jpg">
                     <img src="images/articulos/automovil/accesorios/Rolmovil-extintor-escalar.jpg" alt="Rolmovil Extintor">
                 </a>
-                <h4>19.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>19.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Rolmovil Extintor">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/accesorios/Rolmovil-extintor-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="19.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -650,8 +1104,16 @@
                 <a target="_blank" href="images/articulos/automovil/accesorios/Rolmovil-parasol-escalar.jpg">
                     <img src="images/articulos/automovil/accesorios/Rolmovil-parasol-escalar.jpg" alt="Rolmovil Parasol">
                 </a>
-                <h4>14.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>14.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Rolmovil Parasol">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/accesorios/Rolmovil-parasol-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="14.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -660,8 +1122,16 @@
                 <a target="_blank" href="images/articulos/automovil/accesorios/Rolmovil-triangulo-de-emergencia-escalar.jpg">
                     <img src="images/articulos/automovil/accesorios/Rolmovil-triangulo-de-emergencia-escalar.jpg" alt="Rolmovil Triángulo de Emergencia">
                 </a>
-                <h4>29.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>29.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Rolmovil Triangulo de Emergencia">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/accesorios/Rolmovil-triangulo-de-emergencia-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="29.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -670,8 +1140,16 @@
                 <a target="_blank" href="images/articulos/automovil/limpieza/air-wick-2d-ambientador-escalar.jpg">
                     <img src="images/articulos/automovil/limpieza/air-wick-2d-ambientador-escalar.jpg" alt="Air-Wick 2D Ambientador">
                 </a>
-                <h4>9.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>9.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Air-Wick 2D Ambientador">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/limpieza/air-wick-2d-ambientador-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="9.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -680,8 +1158,16 @@
                 <a target="_blank" href="images/articulos/automovil/limpieza/arbre-magique-ambientador-escalar.jpg">
                     <img src="images/articulos/automovil/limpieza/arbre-magique-ambientador-escalar.jpg" alt="Arbre Magique Ambientador">
                 </a>
-                <h4>5.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>5.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Arbre Magique Ambientador">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/limpieza/arbre-magique-ambientador-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="5.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -690,8 +1176,16 @@
                 <a target="_blank" href="images/articulos/automovil/limpieza/krafft-limpia-parabrisas-escalar.jpg">
                     <img src="images/articulos/automovil/limpieza/krafft-limpia-parabrisas-escalar.jpg" alt="Krafft Limpia Parabrisas">
                 </a>
-                <h4>18.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>18.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Krafft Limpia Parabrisas">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/limpieza/krafft-limpia-parabrisas-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="18.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -700,8 +1194,16 @@
                 <a target="_blank" href="images/articulos/automovil/limpieza/rolmovil-ambientador-escalar.jpg">
                     <img src="images/articulos/automovil/limpieza/rolmovil-ambientador-escalar.jpg" alt="Rolmovil Ambientador">
                 </a>
-                <h4>19.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>19.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Rolmovil Ambientador">
+                        <input type="hidden" name="imageArticle" value="images/articulos/automovil/limpieza/rolmovil-ambientador-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="19.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -710,8 +1212,16 @@
                 <a target="_blank" href="images/articulos/congelados/carne/abadan-alas-de-pollo-escalar.jpg">
                     <img src="images/articulos/congelados/carne/abadan-alas-de-pollo-escalar.jpg" alt="Abadan Alas de Pollo">
                 </a>
-                <h4>14.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>14.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Abadan Alas de Pollo">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/carne/abadan-alas-de-pollo-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="14.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -720,8 +1230,16 @@
                 <a target="_blank" href="images/articulos/congelados/carne/meet-beef-albondigas-escalar.jpg">
                     <img src="images/articulos/congelados/carne/meet-beef-albondigas-escalar.jpg" alt="Meet Beef Albóndigas">
                 </a>
-                <h4>15.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>15.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Meet Beef Albondigas">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/carne/meet-beef-albondigas-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -730,8 +1248,16 @@
                 <a target="_blank" href="images/articulos/congelados/carne/meet-chicken-solimillo-de-pollo-escalar.jpg">
                     <img src="images/articulos/congelados/carne/meet-chicken-solimillo-de-pollo-escalar.jpg" alt="Meet Chicken Solomillo de Pollo">
                 </a>
-                <h4>18.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>18.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Meet Chicken Solomillo de Pollo">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/carne/meet-chicken-solomillo-de-pollo-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="18.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -740,8 +1266,16 @@
                 <a target="_blank" href="images/articulos/congelados/pescado/campos-bocados-de-atun-escalar.jpg">
                     <img src="images/articulos/congelados/pescado/campos-bocados-de-atun-escalar.jpg" alt="Campos Bocados de Atún">
                 </a>
-                <h4>14.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>14.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Campos Bocados de Atun">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/pescado/campos-bocados-de-atun-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="14.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -750,8 +1284,16 @@
                 <a target="_blank" href="images/articulos/congelados/pescado/campos-filetes-de-atun-escalar.jpg">
                     <img src="images/articulos/congelados/pescado/campos-filetes-de-atun-escalar.jpg" alt="Campos Filetes de Atún">
                 </a>
-                <h4>16.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>16.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Campos Filetes de Atun">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/pescado/campos-filetes-de-atun-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="16.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -760,8 +1302,16 @@
                 <a target="_blank" href="images/articulos/congelados/pescado/findus-bacalado-rebosado-escalar.jpg">
                     <img src="images/articulos/congelados/pescado/findus-bacalado-rebosado-escalar.jpg" alt="Findus Bacalado Rebosado">
                 </a>
-                <h4>15.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>15.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Findus Bacalado Rebosado">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/pescado/findus-bacalado-rebosado-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -770,8 +1320,16 @@
                 <a target="_blank" href="images/articulos/congelados/pescado/pescanova-anillos-a-la-romana-escalar.jpg">
                     <img src="images/articulos/congelados/pescado/pescanova-anillos-a-la-romana-escalar.jpg" alt="Pescanova Anillos a la Romana">
                 </a>
-                <h4>15.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>15.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Pescanova Anillos a la Romana">
+                        <input type="hidden" name="imageArticle" value="images/articulos/congelados/pescado/pescanova-anillos-a-la-romana-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -780,8 +1338,16 @@
                 <a target="_blank" href="images/articulos/lacteos/huevos/dagu-12u-escalar.jpg">
                     <img src="images/articulos/lacteos/huevos/dagu-12u-escalar.jpg" alt="Huevos Dagu 12 Unidades">
                 </a>
-                <h4>5.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>5.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Huevos Dagu 12 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/huevos/dagu-12u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="5.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -790,18 +1356,34 @@
                 <a target="_blank" href="images/articulos/lacteos/huevos/los-rancheros-6u-escalar.jpg">
                     <img src="images/articulos/lacteos/huevos/los-rancheros-6u-escalar.jpg" alt="Huevos Los Rancheros 6 Unidades">
                 </a>
-                <h4>4.55 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.55 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Huevos Los Rancheros 6 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/huevos/los-rancheros-6u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.55">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
             <div class="gallery">
-                <div class="desc">Huevos Pazo de Villane 6 Unidades</div>
+                <div class="desc">Huevos Pazo de Vilane 6 Unidades</div>
                 <a target="_blank" href="images/articulos/lacteos/huevos/pazo-de-vilane-6u-escalar.jpg">
                     <img src="images/articulos/lacteos/huevos/pazo-de-vilane-6u-escalar.jpg" alt="Huevos Pazo de Villane 6 Unidades">
                 </a>
-                <h4>4.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>4.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Huevos Pazo de Vilane 6 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/huevos/pazo-de-vilane-6u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="4.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -810,8 +1392,16 @@
                 <a target="_blank" href="images/articulos/lacteos/huevos/pitas-12u-escalar.jpg">
                     <img src="images/articulos/lacteos/huevos/pitas-12u-escalar.jpg" alt="Huevos Pitas 12 Unidades">
                 </a>
-                <h4>6.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>6.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Huevos Pitas 12 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/huevos/pitas-12u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="6.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -820,8 +1410,16 @@
                 <a target="_blank" href="images/articulos/lacteos/yogur/activia-limon-4u-escalar.jpg">
                     <img src="images/articulos/lacteos/yogur/activia-limon-4u-escalar.jpg" alt="Yogur Activia Limón 4 Unidades">
                 </a>
-                <h4>2.45 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.45 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Yogur Activia Limón 4 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/yogur/activia-limon-4u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -830,8 +1428,16 @@
                 <a target="_blank" href="images/articulos/lacteos/yogur/danone-4u-escalar.jpg">
                     <img src="images/articulos/lacteos/yogur/danone-4u-escalar.jpg" alt="Yogur Danone 4 Unidades">
                 </a>
-                <h4>2.35 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.35 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Yogur Danone 4 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/yogur/danone-4u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.35">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -840,8 +1446,16 @@
                 <a target="_blank" href="images/articulos/lacteos/yogur/danone-limon-4u-escalar.jpg">
                     <img src="images/articulos/lacteos/yogur/danone-limon-4u-escalar.jpg" alt="Yogur Danone Limón 4 Unidades">
                 </a>
-                <h4>2.25 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.25 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Yogur Danone Limon 4 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/yogur/danone-limon-4u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.25">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -850,8 +1464,16 @@
                 <a target="_blank" href="images/articulos/lacteos/yogur/danone-natillas-4u-escalar.jpg">
                     <img src="images/articulos/lacteos/yogur/danone-natillas-4u-escalar.jpg" alt="Natillas Danone 4 Unidades">
                 </a>
-                <h4>2.65 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.65 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Natillas Danone 4 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/yogur/danone-natillas-4u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.65">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -860,8 +1482,16 @@
                 <a target="_blank" href="images/articulos/lacteos/yogur/kalise-variado-8u-escalar.jpg">
                     <img src="images/articulos/lacteos/yogur/kalise-variado-8u-escalar.jpg" alt="Yogur Kalise Variado 8 Unidades">
                 </a>
-                <h4>3.45 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.45 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Yogur Kalise Variado 8 Unidades">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/yogur/kalise-variado-8u-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.45">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -870,8 +1500,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/asturiana-desnatada-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/asturiana-desnatada-escalar.jpg" alt="Leche Asturiana Desnatada">
                 </a>
-                <h4>2.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Asturiana Desnatada">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/asturiana-desnatada-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -880,8 +1518,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/asturiana-entera-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/asturiana-entera-escalar.jpg" alt="Leche Asturiana Entera">
                 </a>
-                <h4>2.95 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.95 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Asturiana Entera">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/asturiana-entera-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -890,8 +1536,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/calo-entera-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/calo-entera-escalar.jpg" alt="Leche Calo Entera">
                 </a>
-                <h4>2.75 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.75 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Calo Entera">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/calo-entera-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.75">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -900,8 +1554,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/celgan-desnatada-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/celgan-desnatada-escalar.jpg" alt="Leche Celgan Desnatada">
                 </a>
-                <h4>3.10 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.10 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Celgan Desnatada">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/celgan-desnatada-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -910,8 +1572,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/celta-entera-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/celta-entera-escalar.jpg" alt="Leche Celta Entera">
                 </a>
-                <h4>2.85 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>2.85 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Celta Entera">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/celta-entera-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="2.85">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -920,8 +1590,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/pascual-desnatada-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/pascual-desnatada-escalar.jpg" alt="Leche Pascual Desnatada">
                 </a>
-                <h4>3.25 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.25 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Pascual Desnatada">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/pascual-desnatada-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.25">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -930,8 +1608,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/pascual-entera-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/pascual-entera-escalar.jpg" alt="Leche Pascual Entera">
                 </a>
-                <h4>3.15 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.15 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Pascual Entera">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/pascual-entera-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.15">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -940,8 +1626,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/puleva-desnatada-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/puleva-desnatada-escalar.jpg" alt="Leche Puleva Desnatada">
                 </a>
-                <h4>3.45 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.45 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Puleva Desnatada">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/puleva-desnatada-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.45">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="responsive">
@@ -950,8 +1644,16 @@
                 <a target="_blank" href="images/articulos/lacteos/leche/puleva-entera-escalar.jpg">
                     <img src="images/articulos/lacteos/leche/puleva-entera-escalar.jpg" alt="Leche Puleva Entera">
                 </a>
-                <h4>3.45 €</h4>
-                <div class="desc"><a href="#">Añadir al Carro</a></div>
+                <h6>3.45 €</h6>
+                <div class="desc"><!--<a href="#">Añadir al Carro</a>-->
+                    <form method="post" action="FrontServlet?command=Product">
+                        <input type="hidden" name="nameArticle" value="Leche Puleva Entera">
+                        <input type="hidden" name="imageArticle" value="images/articulos/lacteos/leche/puleva-entera-escalar.jpg">
+                        <input type="hidden" name="pvpArticle" value="3.45">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
             </div>
         </div>
     </body>

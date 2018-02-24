@@ -184,6 +184,10 @@ div.gallery:hover {
     border: 1px solid #777;
 }
 
+.desc input {
+    color: black;
+}
+
 .desc a {
     padding: 1em;
     color: white;

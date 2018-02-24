@@ -11,6 +11,7 @@
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <%if(session.getAttribute("user") == null) {%>
         <!-- Header -->
         <header class="SignIn-Login">
             <ul>
@@ -48,5 +49,6 @@
                 <input class="register" type="submit" value="Registrarse">
             </fieldset>
         </form>
+        <%} else response.sendRedirect("FrontServlet?command=Unknown");%>
     </body>
 </html>

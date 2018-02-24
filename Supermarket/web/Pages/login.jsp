@@ -11,6 +11,7 @@
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <%if(session.getAttribute("user") == null) {%>
         <!-- Header -->
         <header class="SignIn-Login">
             <ul>
@@ -32,11 +33,12 @@
             <fieldset>
                 <legend>Identificarse</legend>
                 <label for="usuario">Usuario</label>
-                <input class="user" type="text" name="user" value="<%=request.getParameter("user")%>"><br>
+                <input class="user" type="text" name="user"><br>
                 <label for="usuario">Contraseña</label>
-                <input class="password" type="text" name="password" value="<%=request.getParameter("password")%>"><br>
+                <input class="password" type="password" name="password"><br>
                 <input class="session" type="submit" value="Iniciar Sesión">
             </fieldset>
         </form>
+        <%} else response.sendRedirect("FrontServlet?command=Unknown");%>
     </body>
 </html>

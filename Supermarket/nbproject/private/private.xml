@@ -3,20 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/Pages/login.jsp</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/index.html</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/UnknownCommand.java</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/CommandHelper.java</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/css/style.css</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/FrontCommand.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/Product.java</file>
             <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/Comando.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/Categoria.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/CommandHelper.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Model/Cart.java</file>
             <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/ShoppingCart.java</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/Login.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/Pages/drinks.jsp</file>
             <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/index.jsp</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/Login.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Model/Article.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/FrontCommand.java</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/Pages/login.jsp</file>
             <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Servlet/FrontServlet.java</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/Pages/unknown.jsp</file>
-            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/src/java/Commands/Logout.java</file>
             <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/Pages/shoppingCart.jsp</file>
+            <file>file:/G:/Universidad/Cuarto%20Curso/Segundo%20Cuatrimestre/Arquitectura%20del%20Software/Prácticas/Práctica%201%20-%20Patrón%20Front%20Controller%20y%20Control%20Sesión/master/Supermarket/web/css/style.css</file>
         </group>
     </open-files>
 </project-private>
