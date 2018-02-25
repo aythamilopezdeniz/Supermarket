@@ -101,33 +101,33 @@
         <!-- Navegación -->
         <nav>
             <ul class="menu">
-                <li><a href="FrontServlet?command=Categoria&window=drinks">Bebidas</a>
+                <li><a href="FrontServlet?command=Categoria&window=/Pages/drinks.jsp">Bebidas</a>
                     <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=refreshments">Refresco</a>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/refreshments.jsp">Refresco</a>
                             <ul>
-                                <li><a href="FrontServlet?command=Categoria&window=flavor">De Sabores</a></li>
-                                <li><a href="FrontServlet?command=Categoria&window=light">Deportivos</a></li>
+                                <li><a href="FrontServlet?command=Categoria&window=/Pages/flavor.jsp">De Sabores</a></li>
+                                <li><a href="FrontServlet?command=Categoria&window=/Pages/light.jsp">Deportivos</a></li>
                             </ul>
                         </li>
-                        <li><a href="FrontServlet?command=Categoria&window=wine">Vino</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=water">Agua</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=juices">Zumos</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/wine.jsp">Vino</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/water.jsp">Agua</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/juices.jsp">Zumos</a></li>
                     </ul>
                 </li>
-                <li><a href="FrontServlet?command=Categoria&window=food">Alimentación</a>
+                <li><a href="FrontServlet?command=Categoria&window=/Pages/food.jsp">Alimentación</a>
                     <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=diaryProducts">Lácteos</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=pasta">Pastas</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=preparations">Preparados</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=frozen">Congelados</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/diaryProducts.jsp">Lácteos</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/pasta.jsp">Pastas</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/preparations.jsp">Preparados</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/frozen.jsp">Congelados</a></li>
                     </ul>
                 </li>
-                <li><a href="FrontServlet?command=Categoria&window=drugstore">Droguería</a></li>
-                <li><a href="FrontServlet?command=Categoria&window=stationerShop">Papelería</a></li>
-                <li><a href="FrontServlet?command=Categoria&window=car">Automóvil</a>
+                <li><a href="FrontServlet?command=Categoria&window=/Pages/drugstore.jsp">Droguería</a></li>
+                <li><a href="FrontServlet?command=Categoria&window=/Pages/stationerShop.jsp">Papelería</a></li>
+                <li><a href="FrontServlet?command=Categoria&window=/Pages/car.jsp">Automóvil</a>
                     <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=accessories">Accesorios</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=cleaning">Limpieza</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/accessories.jsp">Accesorios</a></li>
+                        <li><a href="FrontServlet?command=Categoria&window=/Pages/cleaning.jsp">Limpieza</a></li>
                     </ul>
                 </li>
             </ul>

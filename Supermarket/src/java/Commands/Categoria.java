@@ -9,7 +9,7 @@ public class Categoria extends FrontCommand {
     public void process() throws ServletException, IOException {
         Comando comando = Comando.find(request.getParameter("command"));
         request.setAttribute("helper", new CommandHelper(comando));
-        forward("/Pages/" + request.getParameter("window") + ".jsp");
+        forward(request.getParameter("window"));
     }
     
 }
