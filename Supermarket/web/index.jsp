@@ -1709,7 +1709,7 @@
         <div class="responsive">
             <div class="gallery">
                 <div class="desc">Meet Chicken Solomillo de Pollo</div>
-                <img src="images/articulos/congelados/carne/meet-chicken-solimillo-de-pollo-escalar.jpg" alt="Meet Chicken Solomillo de Pollo">
+                <img src="images/articulos/congelados/carne/meet-chicken-solomillo-de-pollo-escalar.jpg" alt="Meet Chicken Solomillo de Pollo">
                 <h6>18.95 €</h6>
                 <div class="desc">
                     <form method="post" action="FrontServlet">

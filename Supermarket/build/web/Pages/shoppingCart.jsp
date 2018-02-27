@@ -109,7 +109,7 @@
                                 <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue conprando</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
                                 <td class="hidden-xs text-center"><strong>Total </strong><%=shoppingCart.calculatePriceCart() + " €"%></td>
-                                <td><a href="#" class="btn btn-success btn-block">Continuar Pedido <i class="fa fa-angle-right"></i></a></td>
+                                <td><a href="FrontServlet?command=Redirect&window=/Pages/registerCashOrder.jsp" class="btn btn-success btn-block">Continuar Pedido <i class="fa fa-angle-right"></i></a></td>
                             </tr>
                         </tfoot><%
                         }

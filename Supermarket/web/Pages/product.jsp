@@ -50,7 +50,20 @@
         <div>
             <h5><%=article.get(0)%></h5>
             <div><img src="<%=article.get(1)%>"></div>
-            <div>Precio <%=article.get(2) + " €"%></div>
+            <div>Precio <%=article.get(2) + " €"%>
+                <form method="post" action="FrontServlet">
+                    <!--<input type="hidden" name="nameArticle" value="Don Simon Naranja">-->
+                    <input type="text" name="nameArticle" value="<%=article.get(0)%>">
+                    <!--<input type="hidden" name="imageArticle" value="images/articulos/zumos/don-simon-naranja-escalar.jpg">-->
+                    <input type="text" name="imageArticle" value="<%=article.get(1)%>">
+                    <!--<input type="hidden" name="pvpArticle" value="1.43">-->
+                    <input type="text" name="pvpArticle" value="<%=article.get(2)%>">
+                    <input type="text" name="window" value="<%=request.getParameter("window")%>">
+                    <input type="text" name="idProducto" value="<%=request.getParameter("idProducto")%>">
+                    <input type="text" name="command" value="Product">
+                    <input type="submit" value="Añadir al Carro">
+                </form>
+            </div>
         </div>
     </body>
 </html>
