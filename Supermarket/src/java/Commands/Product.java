@@ -1,5 +1,7 @@
 package Commands;
 
+import Model.Article;
+import Model.Cart;
 import java.io.IOException;
 import javax.servlet.ServletException;
 
@@ -7,8 +9,10 @@ public class Product extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        Comando comando = Comando.find(request.getParameter("command"));
-        request.setAttribute("helper", new CommandHelper(comando));
+        Cart shoppingCart = getCart();
+        shoppingCart.addArticle(new Article(request.getParameter("nameArticle"),
+                request.getParameter("imageArticle"),
+                request.getParameter("pvpArticle")));
         forward(request.getParameter("window"));
     }
 }

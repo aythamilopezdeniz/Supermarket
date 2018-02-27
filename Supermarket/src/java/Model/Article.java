@@ -46,6 +46,6 @@ public class Article {
     }
     
     public double calculatePrice(String pvpArticle, int cantidad) {
-        return (Double.parseDouble(pvp)*cantidad);
+        return (Double.parseDouble(pvp)*Math.round(cantidad*100)/100);
     }
 }

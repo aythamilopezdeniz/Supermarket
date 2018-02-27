@@ -37,7 +37,7 @@ public class Cart {
                 cart.remove(cart.indexOf(article.getNombre()));
         }
     }
-    
+
     public boolean repeteadArticle(String name) {
         for (Article articles : cart) {
             if(articles.getNombre().equals(name))

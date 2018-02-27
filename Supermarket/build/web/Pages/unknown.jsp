@@ -23,7 +23,7 @@
                     </form>
                 </li>
                 <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="FrontServlet?command=Login&user=user1&password=user1">Login</a></li>
+                <li><a href="Pages/login.jsp">Login</a></li>
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
@@ -53,7 +53,7 @@
             <span><span>4</span></span>
         </section>
         <div class="link-container">
-            <a target="_blank" href="index.html" class="more-link">Visite la página original</a>
+            <a target="_blank" href="index.jsp" class="more-link">Visite la página original</a>
         </div>
     </body>
 </html>

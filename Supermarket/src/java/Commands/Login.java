@@ -8,10 +8,13 @@ public class Login extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        Comando comando = Comando.find(request.getParameter("command"));
-        request.setAttribute("helper", new CommandHelper(comando));
         HttpSession session = request.getSession();
+        createSession(session);
+        forward("/index.jsp");
+    }
+
+    private void createSession(HttpSession session) {
         session.setAttribute("user", request.getParameter("user"));
-        forward("/Pages/login.jsp");
+        session.setAttribute("password", request.getParameter("password"));
     }
 }

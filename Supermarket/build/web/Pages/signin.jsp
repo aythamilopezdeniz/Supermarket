@@ -23,7 +23,7 @@
                     </form>
                 </li>
                 <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="FrontServlet?command=Login">Login</a></li>
+                <li><a href="/Supermarket/Pages/login.jsp">Login</a></li>
                 <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
             </ul>
         </header>
