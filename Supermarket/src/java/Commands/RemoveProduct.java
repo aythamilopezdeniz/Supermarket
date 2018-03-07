@@ -3,10 +3,11 @@ package Commands;
 import java.io.IOException;
 import javax.servlet.ServletException;
 
-public class ShoppingCart extends FrontCommand {
+public class RemoveProduct extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        forward("/Pages/shoppingCart.jsp");
+        /*Eliminar Producto del carrito*/
+        forward(request.getParameter("window"));
     }
 }

@@ -5,81 +5,20 @@
 <html>
     <head>
         <title>Papelería</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <%@include file="/PageStyle/head.jsp"%>
     </head>
     <body>
+        <!-- Header -->
         <%
-            if(session.getAttribute("user")==null) {
+            if (session.getAttribute("user") == null && session.getAttribute("password") == null) {
         %>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="Pages/login.jsp">Login</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
-        <% } else { %>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><p><%=session.getAttribute("user")%></p></li>
-                <li><a href="FrontServlet?command=Logout">Cerrar Sesión</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
-        <%}%>
+            <%@include file="/PageStyle/nonActiveSession.jsp"%>
+        <% } else {%>
+            <%@include file="/PageStyle/sessionActive.jsp"%>
+        <% }%>
         
         <!-- Navegación -->
-        <nav>
-            <ul class="menu">
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/drinks.jsp">Bebidas</a>
-                    <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/refreshments.jsp">Refresco</a>
-                            <ul>
-                                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/Refreshments/flavor.jsp">De Sabores</a></li>
-                                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/Refreshments/light.jsp">Deportivos</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/wine.jsp">Vino</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/water.jsp">Agua</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/juices.jsp">Zumos</a></li>
-                    </ul>
-                </li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/food.jsp">Alimentación</a>
-                    <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/diaryProducts.jsp">Lácteos</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/pasta.jsp">Pastas</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/preparations.jsp">Preparados</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/frozen.jsp">Congelados</a></li>
-                    </ul>
-                </li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drugstore/drugstore.jsp">Droguería</a></li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/StationerShop/stationerShop.jsp">Papelería</a></li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Car/car.jsp">Automóvil</a>
-                    <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Car/accessories.jsp">Accesorios</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Car/cleaning.jsp">Limpieza</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <%@include file="/PageStyle/menu.jsp"%>
         
         <!-- Artículos -->
         <div class="responsive">
@@ -92,6 +31,7 @@
                         <input type="hidden" name="nameArticle" value="Airport Mochila Azul">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/airport-mochila-azul-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="10.95">
+                        <input type="hidden" name="descriptionArticle" value="Para los que les gusta ir con colores llamativos, esta mochila turquesa les proporciona no solo diseño sino confort al usar.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto29">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -101,6 +41,7 @@
                         <input type="hidden" name="nameArticle" value="Airport Mochila Azul">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/airport-mochila-azul-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="10.95">
+                        <input type="hidden" name="descriptionArticle" value="Para los que les gusta ir con colores llamativos, esta mochila turquesa les proporciona no solo diseño sino confort al usar.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -118,6 +59,7 @@
                         <input type="hidden" name="nameArticle" value="Airport Mochila Vintage">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/airport-mochila-vintage-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="descriptionArticle" value="Mochila Vintage Puma con compartimentos y espaldar acolchado para mayor comodidad al transportar, AIRPORT.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto30">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -127,6 +69,7 @@
                         <input type="hidden" name="nameArticle" value="Airport Mochila Vintage">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/airport-mochila-vintage-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="15.95">
+                        <input type="hidden" name="descriptionArticle" value="Mochila Vintage Puma con compartimentos y espaldar acolchado para mayor comodidad al transportar, AIRPORT.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -144,6 +87,7 @@
                         <input type="hidden" name="nameArticle" value="Bic Cristal Soft Azul">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/bic-cristal-soft-azul-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="9.10">
+                        <input type="hidden" name="descriptionArticle" value="Duran hasta 2 veces más que un bolígrafo común.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto31">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -153,6 +97,7 @@
                         <input type="hidden" name="nameArticle" value="Bic Cristal Soft Azul">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/bic-cristal-soft-azul-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="9.10">
+                        <input type="hidden" name="descriptionArticle" value="Duran hasta 2 veces más que un bolígrafo común.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -170,6 +115,7 @@
                         <input type="hidden" name="nameArticle" value="Oxford Cuaderno">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/oxford-cuaderno-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="3.30">
+                        <input type="hidden" name="descriptionArticle" value="Cuaderno de tamaño A5, con cuadrícula de 4x4 mm, 80 hojas y tapas encuadernadas OXFORD.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto32">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -179,6 +125,7 @@
                         <input type="hidden" name="nameArticle" value="Oxford Cuaderno">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/oxford-cuaderno-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="3.30">
+                        <input type="hidden" name="descriptionArticle" value="Cuaderno de tamaño A5, con cuadrícula de 4x4 mm, 80 hojas y tapas encuadernadas OXFORD.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -196,6 +143,7 @@
                         <input type="hidden" name="nameArticle" value="Pacsa Cuaderno 3x3">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pacsa-cuaderno-3x3-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.50">
+                        <input type="hidden" name="descriptionArticle" value="Cuaderno de cuadrícula de 3x3 con margen, 80 hojas y tapa dura, PACSA.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto33">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -205,6 +153,7 @@
                         <input type="hidden" name="nameArticle" value="Pacsa Cuaderno 3x3">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pacsa-cuaderno-3x3-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.50">
+                        <input type="hidden" name="descriptionArticle" value="Cuaderno de cuadrícula de 3x3 con margen, 80 hojas y tapa dura, PACSA.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -222,6 +171,7 @@
                         <input type="hidden" name="nameArticle" value="Pacsa Cuaderno 4x4">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pacsa-cuaderno-4x4-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="descriptionArticle" value="Dispone de tapas de polipropileno de alta resistencia y microperforado con encuadernación con espiral metálica. Las hojas de este cuaderno son de papel extrablanco.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto34">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -231,6 +181,7 @@
                         <input type="hidden" name="nameArticle" value="Pacsa Cuaderno 4x4">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pacsa-cuaderno-4x4-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="descriptionArticle" value="Dispone de tapas de polipropileno de alta resistencia y microperforado con encuadernación con espiral metálica. Las hojas de este cuaderno son de papel extrablanco.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -248,6 +199,8 @@
                         <input type="hidden" name="nameArticle" value="Estuche Patrulla Canina">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/patrulla-canina-estuche-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="5.10">
+                        <input type="hidden" name="descriptionArticle" value="El estuche incluye: 1 portaminas, 1 bolígrafo, 4 reglas, 1 sacapuntas, 1 libro para colorear y 18 rotuladores.
+Producto no recomendado para menores de 3 años.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto35">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -257,6 +210,8 @@
                         <input type="hidden" name="nameArticle" value="Estuche Patrulla Canina">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/patrulla-canina-estuche-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="5.10">
+                        <input type="hidden" name="descriptionArticle" value="El estuche incluye: 1 portaminas, 1 bolígrafo, 4 reglas, 1 sacapuntas, 1 libro para colorear y 18 rotuladores.
+Producto no recomendado para menores de 3 años.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -274,6 +229,7 @@
                         <input type="hidden" name="nameArticle" value="Pilot Super Grip Azul">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pilot-super-grip-azul-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="descriptionArticle" value="Tinta con base de aceite color azul. Estos bolígrafos al tener tinta con base de aceite, hace que escribir cueste muy poco esfuerzo, ya que se convierte en una acción muy fluida.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto36">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -283,6 +239,7 @@
                         <input type="hidden" name="nameArticle" value="Pilot Super Grip Azul">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/pilot-super-grip-azul-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="3.10">
+                        <input type="hidden" name="descriptionArticle" value="Tinta con base de aceite color azul. Estos bolígrafos al tener tinta con base de aceite, hace que escribir cueste muy poco esfuerzo, ya que se convierte en una acción muy fluida.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -300,6 +257,7 @@
                         <input type="hidden" name="nameArticle" value="UniBall Eye Ub-150">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/uni-ball-eye-ub-150-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="descriptionArticle" value="La tinta pigmentada de estos bolígrafos es resistente al agua y a la luz, lo que los confiere una escritura suave y constante.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto37">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -309,6 +267,7 @@
                         <input type="hidden" name="nameArticle" value="UniBall Eye Ub-150">
                         <input type="hidden" name="imageArticle" value="images/articulos/papeleria/uni-ball-eye-ub-150-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="2.95">
+                        <input type="hidden" name="descriptionArticle" value="La tinta pigmentada de estos bolígrafos es resistente al agua y a la luz, lo que los confiere una escritura suave y constante.">
                         <input type="hidden" name="window" value="/Pages/StationerShop/stationerShop.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">

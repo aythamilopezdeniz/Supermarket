@@ -19,6 +19,7 @@ public class SeeProduct extends FrontCommand {
         producto.add(request.getParameter("nameArticle"));
         producto.add(request.getParameter("imageArticle"));
         producto.add(request.getParameter("pvpArticle"));
+        producto.add(request.getParameter("descriptionArticle"));
         session.setAttribute(request.getParameter("idProducto"), producto);
     }
 }

@@ -5,82 +5,19 @@
 <html>
     <head>
         <title>Zumos</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <%@include file="/PageStyle/head.jsp"%>
     </head>
     <body>
         <%
             if(session.getAttribute("user")==null) {
         %>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="Pages/login.jsp">Login</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
+            <%@include file="/PageStyle/nonActiveSession.jsp"%>
         <% } else {%>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><p><%=session.getAttribute("user")%></p></li>
-                <li><a href="FrontServlet?command=Logout">Cerrar Sesión</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
-        <% } %>
+            <%@include file="/PageStyle/sessionActive.jsp"%>
+        <% }%>
         
         <!-- Navegación -->
-        <nav>
-            <ul class="menu">
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/drinks.jsp">Bebidas</a>
-                    <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/refreshments.jsp">Refresco</a>
-                            <ul>
-                                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/Refreshments/flavor.jsp">De Sabores</a></li>
-                                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/Refreshments/light.jsp">Deportivos</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/wine.jsp">Vino</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/water.jsp">Agua</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Drinks/juices.jsp">Zumos</a></li>
-                    </ul>
-                </li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/food.jsp">Alimentación</a>
-                    <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/diaryProducts.jsp">Lácteos</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/pasta.jsp">Pastas</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/preparations.jsp">Preparados</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Food/frozen.jsp">Congelados</a></li>
-                    </ul>
-                </li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Drugstore/drugstore.jsp">Droguería</a></li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/StationerShop/stationerShop.jsp">Papelería</a></li>
-                <li><a href="FrontServlet?command=Categoria&window=/Pages/Car/car.jsp">Automóvil</a>
-                    <ul>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Car/accessories.jsp">Accesorios</a></li>
-                        <li><a href="FrontServlet?command=Categoria&window=/Pages/Car/cleaning.jsp">Limpieza</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <%@include file="/PageStyle/menu.jsp"%>
         
         <!-- Artículos -->
         <div class="responsive">
@@ -93,6 +30,7 @@
                         <input type="hidden" name="nameArticle" value="Don Simon Naranja">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/don-simon-naranja-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.43">
+                        <input type="hidden" name="descriptionArticle" value="El nectar de naranja Don Simon es el unico en el mercado elaborado con zumo exprimido, diferenciandose de otros nectares de la competencia hechos con zumo de naranja a base de concentrado.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto1">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -102,6 +40,7 @@
                         <input type="hidden" name="nameArticle" value="Don Simon Naranja">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/don-simon-naranja-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.43">
+                        <input type="hidden" name="descriptionArticle" value="El nectar de naranja Don Simon es el unico en el mercado elaborado con zumo exprimido, diferenciandose de otros nectares de la competencia hechos con zumo de naranja a base de concentrado.">
                         <input type="hidden" name="window" value="/Pages/Drinks/juices.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -119,6 +58,7 @@
                         <input type="hidden" name="nameArticle" value="Juver Melocoton">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/juver-melocoton-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.34">
+                        <input type="hidden" name="descriptionArticle" value="Juver Disfruta es la mejor opción para controlar los azúcares y calorías de tu dieta de una forma sana y deliciosa.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto3">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -128,6 +68,7 @@
                         <input type="hidden" name="nameArticle" value="Juver Melocoton">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/juver-melocoton-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.34">
+                        <input type="hidden" name="descriptionArticle" value="Juver Disfruta es la mejor opción para controlar los azúcares y calorías de tu dieta de una forma sana y deliciosa.">
                         <input type="hidden" name="window" value="/Pages/Drinks/juices.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -145,6 +86,7 @@
                         <input type="hidden" name="nameArticle" value="Juver Pina">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/juver-pina-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.44">
+                        <input type="hidden" name="descriptionArticle" value="Todo el sabor de la fruta sin azúcares añadidos y pocas calorías. Juver Disfruta es la mejor opción para controlar los azúcares y calorías de tu dieta de una forma sana y deliciosa.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto5">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -154,6 +96,7 @@
                         <input type="hidden" name="nameArticle" value="Juver Pina">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/juver-pina-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.44">
+                        <input type="hidden" name="descriptionArticle" value="Todo el sabor de la fruta sin azúcares añadidos y pocas calorías. Juver Disfruta es la mejor opción para controlar los azúcares y calorías de tu dieta de una forma sana y deliciosa.">
                         <input type="hidden" name="window" value="/Pages/Drinks/juices.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">
@@ -171,6 +114,7 @@
                         <input type="hidden" name="nameArticle" value="Libby's Naranja">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/libby's-naranja-1L-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.60">
+                        <input type="hidden" name="descriptionArticle" value="Zumo de naranja a partir de zumo de naranja concentrado, pulpa de naranja.">
                         <input type="hidden" name="window" value="/Pages/product.jsp">
                         <input type="hidden" name="idProducto" value="producto7">
                         <input type="hidden" name="command" value="SeeProduct">
@@ -180,6 +124,7 @@
                         <input type="hidden" name="nameArticle" value="Libby's Naranja">
                         <input type="hidden" name="imageArticle" value="images/articulos/zumos/libby's-naranja-1L-escalar.jpg">
                         <input type="hidden" name="pvpArticle" value="1.60">
+                        <input type="hidden" name="descriptionArticle" value="Zumo de naranja a partir de zumo de naranja concentrado, pulpa de naranja.">
                         <input type="hidden" name="window" value="/Pages/Drinks/juices.jsp">
                         <input type="hidden" name="command" value="Product">
                         <input type="submit" value="Añadir al Carro">

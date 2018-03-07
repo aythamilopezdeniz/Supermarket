@@ -1,13 +1,11 @@
-package Commands;
-
+import Commands.FrontCommand;
 import java.io.IOException;
 import javax.servlet.ServletException;
 
-public class Categoria extends FrontCommand {
+public class ShoppingCart extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        forward(request.getParameter("window"));
+        //forward("/Pages/shoppingCart.jsp");
     }
-    
 }

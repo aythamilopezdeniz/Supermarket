@@ -4,66 +4,76 @@
 <html>
     <head>
         <title>Características</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <%@include file="/PageStyle/head.jsp"%>
     </head>
     <body>
         <%
             if(session.getAttribute("user")==null) {
         %>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="Pages/login.jsp">Login</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
+            <%@include file="/PageStyle/nonActiveSession.jsp"%>
         <% } else {%>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><p><%=session.getAttribute("user")%></p></li>
-                <li><a href="FrontServlet?command=Logout">Cerrar Sesión</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
-        <% } 
+            <%@include file="/PageStyle/sessionActive.jsp"%>
+        <% }
             ArrayList<String> article = (ArrayList<String>) session.getAttribute(request.getParameter("idProducto"));
         %>
-        <div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <div class="media">
+                            <img class="mr-3" src="<%=article.get(1)%>" alt="">
+                            <div class="media-body">
+                                <h5 class="mt-0"><%=article.get(0)%></h5>
+                                <%=article.get(3)%>
+                            </div>
+                        </div>
+                    </th>
+                    <th id="price"><%=article.get(2)+" €"%></th>
+                    <th>
+                        <form class="product" method="post" action="FrontServlet">
+                            <input type="hidden" name="nameArticle" value="<%=article.get(0)%>">
+                            <input type="hidden" name="imageArticle" value="<%=article.get(1)%>">
+                            <input type="hidden" name="pvpArticle" value="<%=article.get(2)%>"><br>
+                            <input type="hidden" name="descriptionArticle" value="<%=article.get(3)%>"><br>
+                            <input type="hidden" name="window" value="<%=request.getParameter("window")%>">
+                            <input type="hidden" name="idProducto" value="<%=request.getParameter("idProducto")%>">
+                            <input type="hidden" name="command" value="Product">
+                            <button type="submit" value=""><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+                        </form>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        
+
+        <!--<div>
             <h5><%=article.get(0)%></h5>
             <div><img src="<%=article.get(1)%>"></div>
             <div>Precio <%=article.get(2) + " €"%>
                 <form method="post" action="FrontServlet">
                     <!--<input type="hidden" name="nameArticle" value="Don Simon Naranja">-->
-                    <input type="text" name="nameArticle" value="<%=article.get(0)%>">
+                    <!--<input type="text" name="nameArticle" value="<%=article.get(0)%>">
                     <!--<input type="hidden" name="imageArticle" value="images/articulos/zumos/don-simon-naranja-escalar.jpg">-->
-                    <input type="text" name="imageArticle" value="<%=article.get(1)%>">
+                    <!--<input type="text" name="imageArticle" value="<%=article.get(1)%>">
                     <!--<input type="hidden" name="pvpArticle" value="1.43">-->
-                    <input type="text" name="pvpArticle" value="<%=article.get(2)%>">
+                    <!--<input type="text" name="pvpArticle" value="<%=article.get(2)%>"><br>
+                    <input type="text" name="descriptionArticle" value="<%=article.get(3)%>"><br>
                     <input type="text" name="window" value="<%=request.getParameter("window")%>">
                     <input type="text" name="idProducto" value="<%=request.getParameter("idProducto")%>">
                     <input type="text" name="command" value="Product">
                     <input type="submit" value="Añadir al Carro">
                 </form>
             </div>
-        </div>
+        </div>-->
     </body>
 </html>

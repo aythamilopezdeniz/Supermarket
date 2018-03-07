@@ -26,7 +26,7 @@ body {
     background-color: white;
 }
 
-.SignIn-Login button, input {
+button, input, #modalHome, #modalLocal, #search {
     color: black;
     border-radius: 3px;
 }
@@ -36,6 +36,10 @@ body {
     list-style: none;
     text-align: center;
     padding: 1% 0% 1% 0%;
+}
+
+input[type="text"] {
+    color: black;
 }
 
 /*Elementos comunes*/
@@ -339,4 +343,36 @@ a.more-link {
     text-decoration: none;
   margin-top: 50px;
   letter-spacing: 1px;
+}
+
+/*Registrar Pedido*/
+.modal-content {
+    padding: 2% 2% 2% 2%;
+}
+
+.modal-dialog form {
+    margin-bottom: 1%;
+}
+
+/*Ver Producto*/
+img.mr-3 {
+    width: 5%;
+    float: left;
+    margin-right: 1%;
+}
+
+h5.mt-0 {
+    margin: 0;
+}
+
+th#price {
+    width: 5%;
+}
+
+.product {
+    margin-top: -100%;
+}
+
+.product button .glyphicon-shopping-cart {
+    color: black;
 }

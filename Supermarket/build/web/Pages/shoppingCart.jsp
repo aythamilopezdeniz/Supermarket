@@ -5,50 +5,15 @@
 <html>
     <head>
         <title>Shopping Cart</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css"/>
-        <!--<link id="bootstrap-css" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
-        <link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <%@include file="/PageStyle/head.jsp"%>
     </head>
     <body>
         <!-- Header -->
         <% if(session.getAttribute("user")==null){ %>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><a href="FrontServlet?command=SignIn">Registrarse</a></li>
-                <li><a href="/Supermarket/Pages/login.jsp">Login</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
-        <% } else { %>
-        <header class="SignIn-Login">
-            <ul>
-                <li><a class="title" href="index.jsp">Supermercado Torres</a></li>
-                <li>
-                    <form>
-                        <input type="text" name="search" placeholder="Buscar producto" required="">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </li>
-                <li><p><%=session.getAttribute("user")%></p></li>
-                <li><a href="FrontServlet?command=Logout">Cerrar Sesión</a></li>
-                <li><a href="FrontServlet?command=ShoppingCart"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>
-            </ul>
-        </header>
-        <%}%>
+            <%@include file="/PageStyle/nonActiveSession.jsp"%>
+        <% } else {%>
+            <%@include file="/PageStyle/sessionActive.jsp"%>
+        <% }%>
         
         <!-- Carrito -->
         <div class="container">
@@ -64,7 +29,6 @@
                 </thead>
                 <tbody>
                     <%
-            //}
             if (!session.isNew()) {
                 Cart shoppingCart = (Cart) session.getAttribute("shoppingCart");
                 if (shoppingCart != null) {
@@ -90,12 +54,15 @@
                                 <td data-th="Subtotal" class="text-center"><%=(article.calculatePrice(article.getPvp(), article.getCantidad()))%></td>
                                 <td class="actions" data-th="">
                                     <!--<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>-->
-                                    <form method="post" action="FrontServlet?command=Product">
-                                        <!--<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i>-->
+                                    <form method="post" action="FrontServlet">
+                                        <input type="hidden" name="nameArticle" value="<%=article.getNombre()%>">
+                                        <input type="hidden" name="imageArticle" value="<%=article.getImage()%>">
+                                        <input type="hidden" name="pvpArticle" value="<%=article.getPvp()%>"><br>
                                         <input type="hidden" name="window" value="/Pages/shoppingCart.jsp">
+                                        <input type="hidden" name="command" value="RemoveProduct">
+                                        <!--<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i>-->
                                         <%//shoppingCart.removeArticle(article);%>
-                                        <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i>
-                                        </button>
+                                        <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -106,7 +73,7 @@
                                 <td class="text-center"><strong>Total </strong></td>
                             </tr>
                             <tr>
-                                <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue conprando</a></td>
+                                <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue comprando</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
                                 <td class="hidden-xs text-center"><strong>Total </strong><%=shoppingCart.calculatePriceCart() + " €"%></td>
                                 <td><a href="FrontServlet?command=Redirect&window=/Pages/registerCashOrder.jsp" class="btn btn-success btn-block">Continuar Pedido <i class="fa fa-angle-right"></i></a></td>
