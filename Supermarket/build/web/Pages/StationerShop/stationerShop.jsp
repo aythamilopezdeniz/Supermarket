@@ -1,3 +1,5 @@
+<%@page import="DB.ArticleDB"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Model.Article"%>
 <%@page import="Model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,7 +23,40 @@
         <%@include file="/PageStyle/menu.jsp"%>
         
         <!-- Artículos -->
+        <% for (Article articles : (ArrayList<Article>)ArticleDB.getTypeArticle("papeleria")) { %>
         <div class="responsive">
+            <div class="gallery">
+                <div class="desc"><%=articles.getNombre()%></div>
+                <img src="<%=articles.getImage()%>" alt="<%=articles.getNombre()%>">
+                <h6><%=articles.getPvp()%> €</h6>
+                <div class="desc">
+                    <form method="post" action="FrontServlet">
+                        <input type="hidden" name="nameArticle" value="<%=articles.getNombre()%>">
+                        <input type="hidden" name="imageArticle" value="<%=articles.getImage()%>">
+                        <input type="hidden" name="pvpArticle" value="<%=articles.getPvp()%>">
+                        <input type="hidden" name="descriptionArticle" value="<%=articles.getDescription()%>">
+                        <input type="hidden" name="window" value="/Pages/product.jsp">
+                        <input type="hidden" name="idProducto" value="producto1">
+                        <input type="hidden" name="command" value="SeeProduct">
+                        <input class="seeProduct" type="submit" value="Ver">
+                    </form>
+                    <form method="post" action="FrontServlet">
+                        <input type="hidden" name="nameArticle" value="<%=articles.getNombre()%>">
+                        <input type="hidden" name="imageArticle" value="<%=articles.getImage()%>">
+                        <input type="hidden" name="pvpArticle" value="<%=articles.getPvp()%>">
+                        <input type="hidden" name="type" value="<%=articles.getType()%>">
+                        <input type="hidden" name="subtype1" value="<%=articles.getSubtype1()%>">
+                        <input type="hidden" name="subtype2" value="<%=articles.getSubtype2()%>">
+                        <input type="hidden" name="descriptionArticle" value="<%=articles.getDescription()%>">
+                        <input type="hidden" name="window" value="/index.jsp">
+                        <input type="hidden" name="command" value="Product">
+                        <input type="submit" value="Añadir al Carro">
+                    </form>
+                </div>
+            </div>
+        </div><%}%>
+
+        <!--<div class="responsive">
             <div class="gallery">
                 <div class="desc">Airport Mochila Azul</div>
                 <img src="images/articulos/papeleria/airport-mochila-azul-escalar.jpg" alt="Airport Mochila Azul">
@@ -274,6 +309,6 @@ Producto no recomendado para menores de 3 años.">
                     </form>
                 </div>
             </div>
-        </div>
+        </div>-->
     </body>
 </html>

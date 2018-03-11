@@ -17,10 +17,10 @@ public class Cart {
     
     public void addArticle(Article article) {
         if(isEmpty())
-            cart.add(new Article(article.getNombre(),article.getImage(),article.getPvp()));
+            cart.add(new Article(article.getNombre(),article.getImage(),article.getPvp(),article.getType(), article.getSubtype1(),article.getSubtype2(), article.getDescription()));
         else {
             if(!repeteadArticle(article.getNombre())) 
-                cart.add(new Article(article.getNombre(), article.getImage(), article.getPvp()));
+                cart.add(new Article(article.getNombre(), article.getImage(), article.getPvp(), article.getType(), article.getSubtype1(), article.getSubtype2(), article.getDescription()));
             else {
                 this.article = getArticle(article.getNombre());
                 getArticle(article.getNombre()).setCantidad(this.article.getCantidad()+1);

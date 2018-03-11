@@ -5,12 +5,31 @@ public class Article {
     private String image;
     private String pvp;
     private int cantidad;
+    private final String type;
+    private final String subtype1;
+    private final String subtype2;
+    private final String description;
+    private final int id;
+    private static int idUnique = 0;
 
-    public Article(String nombre, String image, String pvp) {
+    /*public Article(String nombre, String image, String pvp) {
         this.nombre = nombre;
         this.image = image;
-        this.pvp = pvp;
         this.cantidad = 1;
+        this.pvp = pvp;
+        this.id = getUniqueId();
+    }*/
+
+    public Article(String nombre, String image, String pvp, String type, String subtype1, String subtype2, String description) {
+        this.nombre = nombre;
+        this.image = image;
+        this.cantidad = 1;
+        this.pvp = pvp;
+        this.type = type;
+        this.subtype1 = subtype1;
+        this.subtype2 = subtype2;
+        this.description = description;
+        this.id = getUniqueId();
     }
 
     public String getNombre() {
@@ -43,6 +62,30 @@ public class Article {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getSubtype1() {
+        return subtype1;
+    }
+
+    public String getSubtype2() {
+        return subtype2;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public static int getUniqueId() {
+        return idUnique++;
+    }
+
+    public int getId() {
+        return id;
     }
     
     public double calculatePrice(String pvpArticle, int cantidad) {

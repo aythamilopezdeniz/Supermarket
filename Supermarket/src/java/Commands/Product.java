@@ -12,7 +12,11 @@ public class Product extends FrontCommand {
         Cart shoppingCart = getCart();
         shoppingCart.addArticle(new Article(request.getParameter("nameArticle"),
                 request.getParameter("imageArticle"),
-                request.getParameter("pvpArticle")));
+                request.getParameter("pvpArticle"), 
+                request.getParameter("type"),
+                request.getParameter("subtype1"),
+                request.getParameter("subtype2"),
+                request.getParameter("descriptionArticle")));
         forward(request.getParameter("window"));
     }
 }
