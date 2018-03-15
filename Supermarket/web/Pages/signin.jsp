@@ -28,10 +28,16 @@
                 <input class="password" type="password" name="password" value=""><br>
                 <label for="password">Repetir Contraseña</label>
                 <input class="password" type="text" name="password" value=""><br>
+                <input type="hidden" name="type" value="cliente">
                 <input type="hidden" name="command" value="SignIn">
-                <input class="register" type="submit" value="Registrarse">
+                <!--<input class="register" type="submit" value="Registrarse">-->
+                <button id="register" type="submit" class="btn btn-primary">Registrarse</button>
             </fieldset>
         </form>
+
+        <!-- Footer -->
+        <%@include file="/PageStyle/footer.jsp"%>
+
         <%} else response.sendRedirect("FrontServlet?command=Unknown");%>
     </body>
 </html>
