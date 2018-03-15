@@ -24,5 +24,8 @@
         <div class="link-container">
             <a target="_blank" href="index.jsp" class="more-link">Visite la página original</a>
         </div>
+
+        <!-- Footer -->
+        <%@include file="/PageStyle/footer.jsp"%>
     </body>
 </html>

@@ -16,13 +16,18 @@
             <fieldset>
                 <legend>Identificarse</legend>
                 <label for="usuario">Usuario</label>
-                <input class="user" type="text" name="user"><br>
+                <input class="user" type="text" name="name"><br>
                 <label for="usuario">Contraseña</label>
                 <input class="password" type="password" name="password"><br>
                 <input  type="hidden" name="command" value="Login">
-                <input class="session" type="submit" value="Iniciar Sesión">
+                <!--<input class="session" type="submit" value="Iniciar Sesión">-->
+                <button id="session" type="submit" class="btn btn-primary">Iniciar Sesión</button>
             </fieldset>
         </form>
+
+        <!-- Footer -->
+        <%@include file="/PageStyle/footer.jsp"%>
+
         <%} else response.sendRedirect("FrontServlet?command=Unknown");%>
     </body>
 </html>

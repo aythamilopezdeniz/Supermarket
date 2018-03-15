@@ -4,9 +4,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Dia {
-    private final int año;
-    private final int mes;
-    private final int dia;
+    private int año;
+    private int mes;
+    private int dia;
 
     public Dia(int hora, int minutos, int segundos) {
         this.año = hora;
@@ -30,6 +30,18 @@ public class Dia {
 
     public static int dameDia() {
         return GregorianCalendar.getInstance().get(Calendar.DATE);
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public void setAño(int año) {
+        this.año = año;
     }
 
     public String imprimirDia() {

@@ -152,9 +152,8 @@ nav li:hover > ul > li {
     color: black;
 }
 
-.login input.session, .Register input.register {
-    color: black;
-    margin: 5px 35%;
+.login #session, .Register #register {
+    margin: 2% 0% 2% 24%;
 }
 
 .Register fieldset {
@@ -204,7 +203,7 @@ div.gallery:hover {
     background: rgba(0,124,200,.6);
 }
 
-input.seeProduct {
+#seeProduct {
     margin-right: -10%;
     float: left;
     margin-left: 20%;
@@ -310,7 +309,6 @@ input.seeProduct {
 }
 body {
   background-color: #f4f4f4;
-  margin-bottom: 50px;
 }
 html, button, input, select, textarea {
     font-family: 'Montserrat', Helvetica, sans-serif;
@@ -344,16 +342,6 @@ a.more-link {
   margin-top: 50px;
   letter-spacing: 1px;
 }
-
-/*Registrar Pedido*/
-.modal-content {
-    padding: 2% 2% 2% 2%;
-}
-
-.modal-dialog form {
-    margin-bottom: 1%;
-}
-
 /*Ver Producto*/
 img.mr-3 {
     width: 5%;
@@ -375,4 +363,60 @@ th#price {
 
 .product button .glyphicon-shopping-cart {
     color: black;
+}
+
+/*Footer*/
+.text-center {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+.pie {
+    background-color: black;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.container {
+    width: 1300px;
+}
+
+.Register, .login, .error-container, .producto, .pedido {
+    min-height: 630px;
+}
+
+
+/*Registrar Pedido*/
+.modal-content {
+    padding: 2% 2% 2% 2%;
+}
+
+.modal-dialog form {
+    margin-bottom: 1%;
+}
+
+#establecimiento {
+    margin-top: 2%;
+    margin-bottom: -0.1%;
+}
+
+#domicilio {
+    margin-bottom: 1%;
+}
+
+#local3, #formPedido {
+    margin-bottom: 1%;
+}
+
+.formPedido {
+    margin-left: 1%;
 }

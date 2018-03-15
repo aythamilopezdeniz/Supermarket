@@ -1,5 +1,7 @@
 package Commands;
 
+import DB.UserDB;
+import Model.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
@@ -14,7 +16,15 @@ public class Login extends FrontCommand {
     }
 
     private void createSession(HttpSession session) {
-        session.setAttribute("user", request.getParameter("user"));
-        session.setAttribute("password", request.getParameter("password"));
+        if(existUser()){
+            session.setAttribute("user", request.getParameter("name"));
+            session.setAttribute("password", request.getParameter("password"));
+        } else {}
+    }
+
+    private boolean existUser() {
+        UserDB.getUsers();
+        User user = UserDB.getUser(request.getParameter("name"), request.getParameter("password"));
+        return user != null;
     }
 }
