@@ -3,54 +3,54 @@ package Model;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Dia {
+public class Date {
     private int año;
     private int mes;
     private int dia;
 
-    public Dia(int hora, int minutos, int segundos) {
+    public Date(int hora, int minutos, int segundos) {
         this.año = hora;
         this.mes = minutos;
         this.dia = segundos;
     }
 
-    public Dia() {
+    public Date() {
         this.año = 0;
         this.mes = 0;
         this.dia = 0;
     }
 
-    public static int dameAño() {
+    public static int getYear() {
         return GregorianCalendar.getInstance().get(Calendar.YEAR);
     }
 
-    public static int dameMes() {
-        return GregorianCalendar.getInstance().get(Calendar.MONTH);
+    public static int getMonth() {
+        return GregorianCalendar.getInstance().get(Calendar.MONTH)+1;
     }
 
-    public static int dameDia() {
+    public static int getDay() {
         return GregorianCalendar.getInstance().get(Calendar.DATE);
     }
 
-    public void setDia(int dia) {
+    public void setDay(int dia) {
         this.dia = dia;
     }
 
-    public void setMes(int mes) {
+    public void setMonth(int mes) {
         this.mes = mes;
     }
 
-    public void setAño(int año) {
+    public void setYear(int año) {
         this.año = año;
     }
 
-    public String imprimirDia() {
+    public String printDate() {
         if(mes<10&&dia<10)
-            return año+":0"+mes+":0"+dia;
+            return "0"+dia+":0"+mes+":"+año;
         else if(mes>=10&&dia<10)
-            return año+":"+mes+":0"+dia;
+            return "0"+dia+":"+mes+":"+año;
         else if(mes < 10)
-            return año+":0"+mes+":"+dia;
-        return año+":"+mes+":"+dia;
+            return dia+":0"+mes+":"+año;
+        return dia+":"+mes+":"+año;
     }
 }

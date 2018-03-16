@@ -1,3 +1,4 @@
+<%@page import="Model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,9 @@
         %>
             <%@include file="/PageStyle/sessionActive.jsp"%>
         <% } else
-                response.sendRedirect("FrontServlet?command=Unknown");%>
+                response.sendRedirect("FrontServlet?command=Unknown");
+            Cart shoppingCart = (Cart) session.getAttribute("shoppingCart");
+        %>
 
         <!-- Formulario Modal Pedido -->
         <div class="pedido">
@@ -44,11 +47,12 @@
                                     <input type="radio" name="local" value="2">Vecindario<br>
                                     <input id="local3" type="radio" name="local" value="3">Las Palmas de Gran Canaria<br>
                                 </fieldset>
-                                <input type="hidden" name="command" value="Redirect">
-                                <input type="hidden" name="window" value="">
+                                <input type="hidden" name="pvpCart" value="<%=shoppingCart.getPriceCart()%>">
+                                <input type="hidden" name="command" value="PurchaseOrder">
+                                <input type="hidden" name="window" value="/Pages/inCharges.jsp">
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Continuar</button>
+                                    <button type="submit" class="btn btn-primary">Realizar Pedido</button>
                                 </div>
                             </form>
                         </div>
@@ -69,15 +73,18 @@
                                     <label for="codigoPostal">C. P</label>
                                     <input type="text" name="codigoPostal" size="5">
                                     <label class="formPedido" for="direccion">c/</label>
-                                    <input id="formPedido" type="text" name="dirección" size="30">
-                                    <input type="hidden" name="window" value="/product.jsp">
-                                    <input type="hidden" name="command" value="Product">
+                                    <input id="formPedido" type="text" name="dirección" size="30"><br>
+                                    <label for="tarjeta">Nº Tarjeta</label>
+                                    <input type="text" name="tarjeta" size="30">
+                                    <label class="formPedido" for="fecha">Fecha Caducidad</label>
+                                    <input id="formPedido" type="text" name="caducidad" size="20">
                                 </fieldset>
-                                <input type="hidden" name="command" value="Redirect">
-                                <input type="hidden" name="window" value="">
+                                <input type="hidden" name="pvpCart" value="<%=shoppingCart.getPriceCart()%>">
+                                <input type="hidden" name="command" value="PurchaseOrder">
+                                <input type="hidden" name="window" value="/Pages/inCharges.jsp">
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Continuar</button>
+                                    <button type="submit" class="btn btn-primary">Pagar</button>
                                 </div>
                             </form>
                         </div>

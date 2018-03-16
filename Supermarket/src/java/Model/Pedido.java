@@ -1,25 +1,27 @@
 package Model;
 
-import java.util.ArrayList;
-
 public class Pedido {
-    private ArrayList<String> shoppingCart;
+    private Cart shoppingCart;
     private final String hora;
     private final String dia;
     private final double pvp;
+    private String state;
     
-    public Pedido(ArrayList<String> shoppingCart, double pvp) {
+    public Pedido(Cart shoppingCart, double pvp) {
         this.shoppingCart = shoppingCart;
-        this.hora = time(new Hora()).imprimirHora();
-        this.dia = day(new Dia()).imprimirDia();
+        this.hora = time(new Time()).printTime();
+        this.dia = day(new Date()).printDate();
         this.pvp = pvp;
+        this.state = "cola";/*3 Estados(cola->pedido realizado pero no preparado, 
+                preparado->pedido preparado para ser entregado en tienda o llevado a domicilio, 
+                historial->pedidos realizados ya entregados)*/
     }
 
-    public ArrayList<String> getShoppingCart() {
+    public Cart getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(ArrayList<String> shoppingCart) {
+    public void setShoppingCart(Cart shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 
@@ -35,11 +37,19 @@ public class Pedido {
         return pvp;
     }
 
-    private Hora time(Hora hora) {
-        return new Hora(hora.dameHoras(), hora.dameMinutos(), hora.dameSegundos());
+    public String getState() {
+        return state;
     }
 
-    private Dia day(Dia dia) {
-        return new Dia(dia.dameAño(), dia.dameMes(), dia.dameDia());
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    private Time time(Time hora) {
+        return new Time(hora.getHour(), hora.getMinutes(), hora.getSeconds());
+    }
+
+    private Date day(Date dia) {
+        return new Date(dia.getYear(), dia.getMonth(), dia.getDay());
     }
 }

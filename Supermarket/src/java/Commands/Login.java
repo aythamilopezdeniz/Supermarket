@@ -16,15 +16,19 @@ public class Login extends FrontCommand {
     }
 
     private void createSession(HttpSession session) {
-        if(existUser()){
-            session.setAttribute("user", request.getParameter("name"));
-            session.setAttribute("password", request.getParameter("password"));
+        if(existUser(session)){
+            User client = (User) session.getAttribute("client");
+            session.setAttribute("user", client.getUser());
+            session.setAttribute("password", client.getPassword());
+            //session.setAttribute("user", request.getParameter("name"));
+            //session.setAttribute("password", request.getParameter("password"));
         } else {}
     }
 
-    private boolean existUser() {
+    private boolean existUser(HttpSession session) {
         UserDB.getUsers();
-        User user = UserDB.getUser(request.getParameter("name"), request.getParameter("password"));
-        return user != null;
+        User client = UserDB.getUser(request.getParameter("name"), request.getParameter("password"));
+        session.setAttribute("client", client);
+        return client != null;
     }
 }

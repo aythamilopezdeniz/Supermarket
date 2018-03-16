@@ -35,7 +35,8 @@
                                 if (shoppingCart != null) {
                                     if (!shoppingCart.isEmpty()) {
                         %>
-                        <tr><% for (Article article : shoppingCart.getCart()) {%>
+                        <tr><% int id = 0;
+                            for (Article article : shoppingCart.getCart()) {%>
                             <td data-th="Product">
                                 <div class="row">
                                     <div class="col-sm-2 hidden-xs"><img src="<%=article.getImage()%>" alt="..." class="img-responsive"/></div>
@@ -54,18 +55,19 @@
                             <td class="actions" data-th="">
                                 <!--<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>-->
                                 <form method="post" action="FrontServlet">
+                                    <input type="hidden" name="idCart" value="<%=id%>">
                                     <input type="hidden" name="nameArticle" value="<%=article.getNombre()%>">
                                     <input type="hidden" name="imageArticle" value="<%=article.getImage()%>">
                                     <input type="hidden" name="pvpArticle" value="<%=article.getPvp()%>"><br>
                                     <input type="hidden" name="window" value="/Pages/shoppingCart.jsp">
                                     <input type="hidden" name="command" value="RemoveProduct">
                                     <!--<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i>-->
-                                    <%//shoppingCart.removeArticle(article);%>
                                     <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
                                 </form>
                             </td>
                         </tr>
-                        <%}%>
+                        <%id++;
+                        }%>
                     </tbody>
                     <tfoot>
                         <tr class="visible-xs">

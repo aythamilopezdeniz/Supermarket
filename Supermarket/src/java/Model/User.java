@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class User {
     private String name;
     private String surnames;
@@ -9,6 +11,9 @@ public class User {
     private String password;
     private CreditCard creditCardNumber;
     private final String type;
+    private final int id;
+    private static int uniqueId = 0;
+    private final ArrayList<Pedido> pedido;
 
     public User(String name, String surnames, String born, String user, String email, String password, String type) {
         this.name = name;
@@ -18,6 +23,8 @@ public class User {
         this.email = email;
         this.password = password;
         this.type = type;
+        this.id = getUniqueId();
+        this.pedido = new ArrayList();
     }
 
     public String getName() {
@@ -70,6 +77,22 @@ public class User {
 
     public String getType() {
         return type;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
+    public static int getUniqueId() {
+        return uniqueId++;
+    }
+
+    public ArrayList<Pedido> getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido.add(pedido);
     }
 
     public CreditCard getCreditCardNumber() {
