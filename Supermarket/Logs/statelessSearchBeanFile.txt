@@ -1,0 +1,4 @@
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::drogeria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::drogueria::Usuario::Anonimo
+::PreDestroy::

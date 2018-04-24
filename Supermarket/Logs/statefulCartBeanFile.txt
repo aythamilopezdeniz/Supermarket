@@ -1,0 +1,140 @@
+9:18:07::Comienza a añadir artículos al carrito
+9:18:07::StatefulCartBean::addArticle::Entities.Article@6a37d591
+9:18:07::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/accesories.jsp
+9:18:07::StatefulCartBean::getCart::[Entities.Article@14b06ca8]
+9:18:07::StatefulCartBean::existArticle::55
+9:18:07::StatefulCartBean::getArticle::55
+9:18:07::StatefulCartBean::addArticle::Entities.Article@6a37d591
+9:18:07::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/accesories.jsp
+9:18:07::StatefulCartBean::getCart::[Entities.Article@14b06ca8]
+9:18:13::StatefulCartBean::isEmpty::false
+9:18:13::StatefulCartBean::getCart::[Entities.Article@14b06ca8]
+9:18:13::StatefulCartBean::setPriceCart::59.9
+9:18:13::StatefulCartBean::calculatePriceCart::59.9
+9:18:15::StatefulCartBean::getPriceCart::59.9
+9:18:15::StatefulCartBean::getPriceCart::59.9
+9:18:26::Comienza a añadir artículos al carrito
+9:18:26::StatefulCartBean::getListArticles::2 Rolmovil Triangulo de Emergencia 
+9:18:26::StatefulCartBean::getListArticles::2 Rolmovil Triangulo de Emergencia 
+9:18:26::StatefulCartBean::getListArticles::2 Rolmovil Triangulo de Emergencia 
+9:18:26::StatelfulCartBean::remove::PreDestroy::
+9:20:41::Comienza a añadir artículos al carrito
+9:20:41::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:41::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:41::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:42::StatefulCartBean::existArticle::30
+9:20:42::StatefulCartBean::getArticle::30
+9:20:42::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:42::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:42::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:42::StatefulCartBean::existArticle::30
+9:20:42::StatefulCartBean::getArticle::30
+9:20:42::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:42::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:42::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:43::StatefulCartBean::existArticle::30
+9:20:43::StatefulCartBean::getArticle::30
+9:20:43::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:43::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:43::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:43::StatefulCartBean::existArticle::30
+9:20:43::StatefulCartBean::getArticle::30
+9:20:43::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:43::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:43::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:43::StatefulCartBean::existArticle::30
+9:20:43::StatefulCartBean::getArticle::30
+9:20:43::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:43::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:43::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:44::StatefulCartBean::existArticle::30
+9:20:44::StatefulCartBean::getArticle::30
+9:20:44::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:44::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:44::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:44::StatefulCartBean::existArticle::30
+9:20:44::StatefulCartBean::getArticle::30
+9:20:44::StatefulCartBean::addArticle::Entities.Article@188033ca
+9:20:44::StatefulCartBean::setBean::Artículo::Airport Mochila Vintage::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:44::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:46::StatefulCartBean::isEmpty::false
+9:20:46::StatefulCartBean::getCart::[Entities.Article@fc2c95e]
+9:20:46::StatefulCartBean::setPriceCart::89.36
+9:20:46::StatefulCartBean::calculatePriceCart::89.36
+9:20:51::StatefulCartBean::addArticle::Entities.Article@725fd84e
+9:20:51::StatefulCartBean::setBean::Artículo::Bic Cristal Soft Azul::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:51::StatefulCartBean::getCart::[Entities.Article@fc2c95e, Entities.Article@74aebe83]
+9:20:52::StatefulCartBean::existArticle::31
+9:20:52::StatefulCartBean::getArticle::31
+9:20:52::StatefulCartBean::addArticle::Entities.Article@725fd84e
+9:20:52::StatefulCartBean::setBean::Artículo::Bic Cristal Soft Azul::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:52::StatefulCartBean::getCart::[Entities.Article@fc2c95e, Entities.Article@74aebe83]
+9:20:52::StatefulCartBean::addArticle::Entities.Article@55db4fb2
+9:20:52::StatefulCartBean::setBean::Artículo::Oxford Cuaderno::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:52::StatefulCartBean::getCart::[Entities.Article@fc2c95e, Entities.Article@74aebe83, Entities.Article@33b82140]
+9:20:53::StatefulCartBean::existArticle::32
+9:20:53::StatefulCartBean::getArticle::32
+9:20:53::StatefulCartBean::addArticle::Entities.Article@55db4fb2
+9:20:53::StatefulCartBean::setBean::Artículo::Oxford Cuaderno::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:53::StatefulCartBean::getCart::[Entities.Article@fc2c95e, Entities.Article@74aebe83, Entities.Article@33b82140]
+9:20:53::StatefulCartBean::addArticle::Entities.Article@6106c20c
+9:20:53::StatefulCartBean::setBean::Artículo::Airport Mochila Azul::Usuario::Manuel::JSP::/Pages/StationerShop/stationerShop.jsp
+9:20:53::StatefulCartBean::getCart::[Entities.Article@fc2c95e, Entities.Article@74aebe83, Entities.Article@33b82140, Entities.Article@46ff6d2d]
+9:20:54::StatefulCartBean::isEmpty::false
+9:20:54::StatefulCartBean::getCart::[Entities.Article@fc2c95e, Entities.Article@74aebe83, Entities.Article@33b82140, Entities.Article@46ff6d2d]
+9:20:54::StatefulCartBean::setPriceCart::114.38
+9:20:54::StatefulCartBean::calculatePriceCart::114.38
+9:20:59::StatefulCartBean::getPriceCart::114.38
+9:20:59::StatefulCartBean::getPriceCart::114.38
+9:21:15::Comienza a añadir artículos al carrito
+9:21:15::StatefulCartBean::getListArticles::8 Airport Mochila Vintage 2 Bic Cristal Soft Azul 2 Oxford Cuaderno 1 Airport Mochila Azul 
+9:21:15::StatefulCartBean::getListArticles::8 Airport Mochila Vintage 2 Bic Cristal Soft Azul 2 Oxford Cuaderno 1 Airport Mochila Azul 
+9:21:15::StatefulCartBean::getListArticles::8 Airport Mochila Vintage 2 Bic Cristal Soft Azul 2 Oxford Cuaderno 1 Airport Mochila Azul 
+9:21:15::StatelfulCartBean::remove::PreDestroy::
+9:21:22::StatefulCartBean::addArticle::Entities.Article@3369a8d8
+9:21:22::StatefulCartBean::setBean::Artículo::Rolmovil Parasol::Usuario::Manuel::JSP::/Pages/Car/accesories.jsp
+9:21:22::StatefulCartBean::getCart::[Entities.Article@273be346]
+9:21:23::StatefulCartBean::existArticle::54
+9:21:23::StatefulCartBean::getArticle::54
+9:21:23::StatefulCartBean::addArticle::Entities.Article@3369a8d8
+9:21:23::StatefulCartBean::setBean::Artículo::Rolmovil Parasol::Usuario::Manuel::JSP::/Pages/Car/accesories.jsp
+9:21:23::StatefulCartBean::getCart::[Entities.Article@273be346]
+9:21:23::StatefulCartBean::addArticle::Entities.Article@3cdbdd15
+9:21:23::StatefulCartBean::setBean::Artículo::Rolmovil Extintor::Usuario::Manuel::JSP::/Pages/Car/accesories.jsp
+9:21:23::StatefulCartBean::getCart::[Entities.Article@273be346, Entities.Article@182daa16]
+9:21:25::StatefulCartBean::isEmpty::false
+9:21:25::StatefulCartBean::getCart::[Entities.Article@273be346, Entities.Article@182daa16]
+9:21:25::StatefulCartBean::setPriceCart::49.85
+9:21:25::StatefulCartBean::calculatePriceCart::49.849999999999994
+9:21:26::StatefulCartBean::getPriceCart::49.85
+9:21:26::StatefulCartBean::getPriceCart::49.85
+9:21:35::StatefulCartBean::isEmpty::true
+9:21:40::StatefulCartBean::addArticle::Entities.Article@6106c20c
+9:21:40::StatefulCartBean::setBean::Artículo::Airport Mochila Azul::Usuario::Aythami::JSP::/Pages/StationerShop/stationerShop.jsp
+9:21:40::StatefulCartBean::getCart::[Entities.Article@5bcd458d]
+9:21:40::StatefulCartBean::existArticle::29
+9:21:40::StatefulCartBean::getArticle::29
+9:21:40::StatefulCartBean::addArticle::Entities.Article@6106c20c
+9:21:40::StatefulCartBean::setBean::Artículo::Airport Mochila Azul::Usuario::Aythami::JSP::/Pages/StationerShop/stationerShop.jsp
+9:21:40::StatefulCartBean::getCart::[Entities.Article@5bcd458d]
+9:21:41::StatefulCartBean::existArticle::29
+9:21:41::StatefulCartBean::getArticle::29
+9:21:41::StatefulCartBean::addArticle::Entities.Article@6106c20c
+9:21:41::StatefulCartBean::setBean::Artículo::Airport Mochila Azul::Usuario::Aythami::JSP::/Pages/StationerShop/stationerShop.jsp
+9:21:41::StatefulCartBean::getCart::[Entities.Article@5bcd458d]
+9:21:41::StatefulCartBean::existArticle::29
+9:21:41::StatefulCartBean::getArticle::29
+9:21:41::StatefulCartBean::addArticle::Entities.Article@6106c20c
+9:21:41::StatefulCartBean::setBean::Artículo::Airport Mochila Azul::Usuario::Aythami::JSP::/Pages/StationerShop/stationerShop.jsp
+9:21:41::StatefulCartBean::getCart::[Entities.Article@5bcd458d]
+9:21:42::StatefulCartBean::isEmpty::false
+9:21:42::StatefulCartBean::getCart::[Entities.Article@5bcd458d]
+9:21:42::StatefulCartBean::setPriceCart::30.64
+9:21:42::StatefulCartBean::calculatePriceCart::30.64
+9:21:43::StatefulCartBean::getPriceCart::30.64
+9:21:43::StatefulCartBean::getPriceCart::30.64
+9:22:07::Comienza a añadir artículos al carrito
+9:22:07::StatefulCartBean::getListArticles::4 Airport Mochila Azul 
+9:22:07::StatefulCartBean::getListArticles::4 Airport Mochila Azul 
+9:22:07::StatefulCartBean::getListArticles::4 Airport Mochila Azul 
+9:22:07::StatelfulCartBean::remove::PreDestroy::

@@ -1,0 +1,18 @@
+9:18:15::Lista de Descuentos de Usuario
+9:18:26::StatefulDiscountBean::existDiscount::null
+9:18:26::StatefulDiscountBean::addDiscount::ticket1::Cliente::Aythami
+9:20:59::Lista de Descuentos de Usuario
+9:21:15::StatefulDiscountBean::existDiscount::null
+9:21:15::StatefulDiscountBean::addDiscount::ticket2::Cliente::Manuel
+9:21:26::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:26::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:26::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:26::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:43::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:43::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:43::StatefulDiscountBean::getList::getTicketsDiscount
+9:21:43::StatefulDiscountBean::getList::getTicketsDiscount
+9:22:07::StatefulDiscountBean::getDiscount::ticket1
+9:22:07::StatefulDiscountBean::repeteadDiscount::ticket1
+9:22:07::StatefulDiscountBean::getPositionDiscount::ticket1::Aythami
+9:22:07::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::Aythami

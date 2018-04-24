@@ -1,0 +1,4 @@
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+StatelessDiscount::remove::PreDestroy

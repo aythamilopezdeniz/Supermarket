@@ -1,0 +1,44 @@
+null::StatefulPedidoBean::writeFile::StatefulPedidoBean::time::
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::day::
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::setName::Pedido 1
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::crear::PostConstruct
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::setStatefulCart::shoppingCart
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::setPvpCart::59.9 €
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::setDirection::Entities.Direction@19178035
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getShoppingCart::2 Rolmovil Triangulo de Emergencia 
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getState::cola
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getName::Pedido 1
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::24:04:2018
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::9:18:26
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::59.9
+null::StatefulPedidoBean::writeFile::StatefulPedidoBean::time::
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::day::
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::setName::Pedido 2
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::crear::PostConstruct
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::setStatefulCart::shoppingCart
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::setPvpCart::114.38 €
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::setDirection::Entities.Direction@4d57b77e
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::getShoppingCart::8 Airport Mochila Vintage 2 Bic Cristal Soft Azul 2 Oxford Cuaderno 1 Airport Mochila Azul 
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::getState::cola
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::getName::Pedido 2
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::24:04:2018
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::9:21:15
+9:21:15::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::114.38
+null::StatefulPedidoBean::writeFile::StatefulPedidoBean::time::
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::day::
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::setName::Pedido 3
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::crear::PostConstruct
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::setStatefulCart::shoppingCart
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::setPvpCart::20.64 €
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::setDirection::Entities.Direction@72c78778
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getShoppingCart::4 Airport Mochila Azul 
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getState::cola
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getName::Pedido 1
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::24:04:2018
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::9:18:26
+9:18:26::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::59.9
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getState::cola
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getName::Pedido 3
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::24:04:2018
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::9:22:07
+9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::20.64
