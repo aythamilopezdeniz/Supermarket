@@ -3,16 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/Timers/TimerEstadisticas.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatefulBeans/StatefulDiscount.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatefulBeans/StatefulPedido.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/SingletonBeans/SingletonEstadisticasBean.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/Timers/TimerLog.java</file>
+            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatelessFacade/ArticleFacade.java</file>
+            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/Entities/Article.java</file>
             <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatefulBeans/StatefulCart.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/SingletonBeans/SingletonLogBean.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatelessBeans/StatelessSearch.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatelessBeans/StatelessSeeProduct.java</file>
-            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/StatelessBeans/StatelessDiscount.java</file>
+            <file>file:/C:/Users/aytha/Desktop/Supermarket/Supermarket-ejb/src/java/sql.txt</file>
         </group>
     </open-files>
 </project-private>

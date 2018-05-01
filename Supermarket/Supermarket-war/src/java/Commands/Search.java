@@ -1,12 +1,12 @@
 package Commands;
 
-import DB.ArticleDB;
 import Entities.Article;
 import Model.User;
 import SingletonBeans.SingletonEstadisticasBean;
 import StatelessBeans.StatelessSearch;
+import StatelessFacade.ArticleFacade;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -28,7 +28,9 @@ public class Search extends FrontCommand {
     }
 
     private void searchArticle(HttpSession session) {
-        ArrayList<Article> articles = (ArrayList<Article>) ArticleDB.searchArticle(request.getParameter("search"));
+        //ArrayList<Article> articles = (ArrayList<Article>) ArticleDB.searchArticle(request.getParameter("search"));
+        ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
+        List<Article> articles = articleFacade.findArticle(request.getParameter("search"));
         session.setAttribute("search", articles);
     }
     

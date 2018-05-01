@@ -1,6 +1,7 @@
 package Commands;
 
 import StatefulBeans.StatefulCart;
+import StatelessFacade.ArticleFacade;
 import java.io.IOException;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;

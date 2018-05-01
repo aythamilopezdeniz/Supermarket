@@ -3,12 +3,10 @@ Numero de accesos de usuario 1
 Componentes
 Componente /Supermarket-war/
 Componente FrontServlet
-Componente StatelessSearchBean
-Componente /Supermarket-war/Pages/search.jsp
 Componente /Supermarket-war/Pages/login.jsp
 Componente /Supermarket-war/index.jsp
-Componente /Supermarket-war/Pages/Car/accesories.jsp
 Componente StatelfulCartBean::addProductToCart
+Componente /Supermarket-war/Pages/Car/car.jsp
 Componente /Supermarket-war/Pages/shoppingCart.jsp
 Componente /Supermarket-war/Pages/registerCashOrder.jsp
 Componente StatefulDiscount::addDiscount
@@ -17,27 +15,12 @@ Componente StatefulPedido::setPvpCart
 Componente StatefulPedido::setDirection
 Componente StatefulPedido::setPedido
 Componente /Supermarket-war/Pages/inCharges.jsp
-Componente /Supermarket-war/Pages/StationerShop/stationerShop.jsp
-Componente StatefulDiscount::removeTickectDiscount
-Componente /Supermarket-war/Pages/log.jsp
-Componente /Supermarket-war/Pages/product.jsp
 
 Componentes de Usuario
-12:08:45::Componente StatelessSeeProductBean Usuario Anonimo
-12:08:45::Componente FrontServlet Usuario Aythami
-12:08:45::Componente StatelfulCartBean::addProductToCart Usuario Aythami
-12:08:45::Componente StatefulDiscount::addDiscount:: Usuario Aythami
-12:08:45::Componente StatefulPedido::setStatefulCart:: Usuario Aythami
-12:08:45::Componente StatefulPedido::setPvpCart:: Usuario Aythami
-12:08:45::Componente StatefulPedido::setDirection:: Usuario Aythami
-12:08:45::Componente StatefulPedido::setPedido:: Usuario Aythami
-12:08:45::Componente FrontServlet Usuario Manuel
-12:08:45::Componente StatelfulCartBean::addProductToCart Usuario Manuel
-12:08:45::Componente StatefulDiscount::addDiscount:: Usuario Manuel
-12:08:45::Componente StatefulPedido::setStatefulCart:: Usuario Manuel
-12:08:45::Componente StatefulPedido::setPvpCart:: Usuario Manuel
-12:08:45::Componente StatefulPedido::setDirection:: Usuario Manuel
-12:08:45::Componente StatefulPedido::setPedido:: Usuario Manuel
-12:08:45::Componente StatefulDiscount::removeTickectDiscount:: Usuario Aythami
-12:08:45::Componente StatelessSeeProductBean Usuario Aythami
-12:08:45::Componente StatelessSeeProductBean Usuario Manuel
+15:03:10::Componente FrontServlet Usuario Aythami
+15:03:10::Componente StatelfulCartBean::addProductToCart Usuario Aythami
+15:03:10::Componente StatefulDiscount::addDiscount:: Usuario Aythami
+15:03:10::Componente StatefulPedido::setStatefulCart:: Usuario Aythami
+15:03:10::Componente StatefulPedido::setPvpCart:: Usuario Aythami
+15:03:10::Componente StatefulPedido::setDirection:: Usuario Aythami
+15:03:10::Componente StatefulPedido::setPedido:: Usuario Aythami

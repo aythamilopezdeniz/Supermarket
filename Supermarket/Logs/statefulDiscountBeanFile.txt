@@ -16,3 +16,6 @@
 9:22:07::StatefulDiscountBean::repeteadDiscount::ticket1
 9:22:07::StatefulDiscountBean::getPositionDiscount::ticket1::Aythami
 9:22:07::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::Aythami
+14:49:47::Lista de Descuentos de Usuario
+14:49:52::StatefulDiscountBean::existDiscount::null
+14:49:52::StatefulDiscountBean::addDiscount::ticket1::Cliente::Aythami

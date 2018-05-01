@@ -42,3 +42,21 @@ null::StatefulPedidoBean::writeFile::StatefulPedidoBean::time::
 9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::24:04:2018
 9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::9:22:07
 9:22:07::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::20.64
+null::StatefulPedidoBean::writeFile::StatefulPedidoBean::time::
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::day::
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::setName::Pedido 1
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::crear::PostConstruct
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::setStatefulCart::shoppingCart
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::setPvpCart::61.33 €
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::setDirection::Entities.Direction@6f5ab578
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getShoppingCart::1 Don Simon Naranja 2 Rolmovil Triangulo de Emergencia 
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getState::cola
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getName::Pedido 1
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::01:05:2018
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::14:49:52
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::61.33
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getState::cola
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getName::Pedido 1
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getDia::01:05:2018
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getHora::14:49:52
+14:49:52::StatefulPedidoBean::writeFile::StatefulPedidoBean::getPvp::61.33

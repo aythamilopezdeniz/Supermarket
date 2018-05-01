@@ -2,10 +2,11 @@ package Commands;
 
 import Entities.Article;
 import StatefulBeans.StatefulCart;
-import DB.ArticleDB;
 import Model.User;
 import SingletonBeans.SingletonEstadisticasBean;
+import StatelessFacade.ArticleFacade;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -18,10 +19,11 @@ public class AddProduct extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        StatefulCart shoppingCart = getCart();
-        Article article = ArticleDB.getArticle(Integer.parseInt(request.getParameter("idProducto")));
-        shoppingCart.addArticle(article);
         HttpSession session = request.getSession();
+        StatefulCart shoppingCart = getCart();
+        ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
+        List<Article> article = articleFacade.findIDArticle(Integer.parseInt(request.getParameter("idProducto")));
+        shoppingCart.addArticle(article.get(0));
         User client = (User) session.getAttribute("client");
         shoppingCart.setBean("Artículo::" + request.getParameter("nameArticle") + "::Usuario::" + client.getName() + "::JSP::" + request.getParameter("window"));
         for (Article articles : shoppingCart.getCart())

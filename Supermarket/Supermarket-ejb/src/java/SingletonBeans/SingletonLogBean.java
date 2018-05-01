@@ -15,6 +15,7 @@ public class SingletonLogBean {
     @PostConstruct
     public void init() {
         log = new ArrayList();
+        lastInsert = "";
     }
 
     public void setLog(String message) {

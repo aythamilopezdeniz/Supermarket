@@ -2,3 +2,232 @@ Establecer Descuentos
 StatelessDiscount::setText::Comienza el descuento de artículos
 StatelessDiscount::setText::papeleria, limpieza, lacteos
 StatelessDiscount::remove::PreDestroy
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+StatelessDiscount::remove::PreDestroy
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+StatelessDiscount::remove::PreDestroy
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+StatelessDiscount::remove::PreDestroy
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos
+StatelessDiscount::remove::PreDestroy
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::vinos, preparados, congelados

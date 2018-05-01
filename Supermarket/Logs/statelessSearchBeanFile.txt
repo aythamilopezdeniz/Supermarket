@@ -2,3 +2,94 @@ Comienza las búsquedas
 StatelessSearchBean::setBean::Artículo::drogeria::Usuario::Anonimo
 StatelessSearchBean::setBean::Artículo::drogueria::Usuario::Anonimo
 ::PreDestroy::
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+::PreDestroy::
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::aythami
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::aythami
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::aythami
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::aythami
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::puleva::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Puleva::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Puleva::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::puleva::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::a::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::agu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::ref::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::refr::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::agu::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::agu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::ref::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::refr::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::lig::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::papel::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::est::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Estu::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::estuche::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::estuche::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::est::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::est::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::piÃ±a::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::piÃ±::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::PiÃ±a::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Juver::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::naranja::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::piÃ±a::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::melo::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::pi::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::pina::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Papeleria::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Papeleria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::PAPEL::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::DROGUERIA::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::drogueria::Usuario::Anonimo
+::PreDestroy::
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::agu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::drogueria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::est::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Juver::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::pina::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::pi::Usuario::Anonimo

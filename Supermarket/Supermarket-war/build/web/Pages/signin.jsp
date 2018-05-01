@@ -31,7 +31,6 @@
                 <input type="hidden" name="type" value="cliente">
                 <input type="hidden" name="window" value="/index.jsp">
                 <input type="hidden" name="command" value="SignIn">
-                <!--<input class="register" type="submit" value="Registrarse">-->
                 <button id="register" type="submit" class="btn btn-primary">Registrarse</button>
             </fieldset>
         </form>

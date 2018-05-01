@@ -138,3 +138,96 @@
 9:22:07::StatefulCartBean::getListArticles::4 Airport Mochila Azul 
 9:22:07::StatefulCartBean::getListArticles::4 Airport Mochila Azul 
 9:22:07::StatelfulCartBean::remove::PreDestroy::
+12:01:53::Comienza a añadir artículos al carrito
+12:01:53::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+12:01:53::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/index.jsp
+12:01:53::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+12:01:55::StatefulCartBean::isEmpty::false
+12:01:55::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+12:01:55::StatefulCartBean::setPriceCart::1.43
+12:01:55::StatefulCartBean::calculatePriceCart::1.43
+12:02:03::StatefulCartBean::addArticle::Entities.Article[ id=55 ]
+12:02:03::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/car.jsp
+12:02:03::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+12:04:29::Comienza a añadir artículos al carrito
+12:04:45::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+12:04:45::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/index.jsp
+12:04:45::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+12:08:15::StatefulCartBean::existArticle::1
+12:08:15::StatefulCartBean::getArticle::1
+12:08:15::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+12:08:15::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/index.jsp
+12:08:15::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+12:08:19::StatefulCartBean::isEmpty::false
+12:08:19::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+12:08:19::StatefulCartBean::setPriceCart::2.86
+12:08:19::StatefulCartBean::calculatePriceCart::2.86
+12:09:17::StatefulCartBean::addArticle::Entities.Article[ id=55 ]
+12:09:29::StatefulCartBean::isEmpty::false
+12:09:29::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+12:09:29::StatefulCartBean::setPriceCart::32.81
+12:09:29::StatefulCartBean::calculatePriceCart::32.81
+12:09:51::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/car.jsp
+12:09:53::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+12:10:22::StatefulCartBean::existArticle::55
+12:10:22::StatefulCartBean::getArticle::55
+12:10:22::StatefulCartBean::addArticle::Entities.Article[ id=55 ]
+12:10:22::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/car.jsp
+12:10:22::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+13:00:34::Comienza a añadir artículos al carrito
+13:00:34::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+13:00:34::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/index.jsp
+13:00:34::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+13:00:36::StatefulCartBean::isEmpty::false
+13:00:36::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+13:00:36::StatefulCartBean::setPriceCart::1.43
+13:00:36::StatefulCartBean::calculatePriceCart::1.43
+13:00:45::StatefulCartBean::addArticle::Entities.Article[ id=55 ]
+13:00:45::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/car.jsp
+13:00:45::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+13:00:47::StatefulCartBean::isEmpty::false
+13:00:47::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+13:00:47::StatefulCartBean::setPriceCart::31.38
+13:00:47::StatefulCartBean::calculatePriceCart::31.38
+13:00:51::StatefulCartBean::addArticle::Entities.Article[ id=3 ]
+13:00:51::StatefulCartBean::setBean::Artículo::Juver Pina::Usuario::Aythami::JSP::/index.jsp
+13:00:51::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ], Entities.Article[ id=3 ]]
+13:00:55::StatefulCartBean::addArticle::Entities.Article[ id=58 ]
+13:00:55::StatefulCartBean::setBean::Artículo::Krafft Limpia Parabrisas::Usuario::Aythami::JSP::/Pages/Car/cleaning.jsp
+13:00:55::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ], Entities.Article[ id=3 ], Entities.Article[ id=58 ]]
+13:00:56::StatefulCartBean::isEmpty::false
+13:00:56::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ], Entities.Article[ id=3 ], Entities.Article[ id=58 ]]
+13:00:56::StatefulCartBean::setPriceCart::51.77
+13:00:56::StatefulCartBean::calculatePriceCart::51.769999999999996
+13:01:13::StatefulCartBean::existArticle::1
+13:01:13::StatefulCartBean::getArticle::1
+13:01:13::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+13:01:13::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/index.jsp
+13:01:13::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ], Entities.Article[ id=3 ], Entities.Article[ id=58 ]]
+13:01:14::StatefulCartBean::isEmpty::false
+13:01:14::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ], Entities.Article[ id=3 ], Entities.Article[ id=58 ]]
+13:01:14::StatefulCartBean::setPriceCart::53.2
+13:01:14::StatefulCartBean::calculatePriceCart::53.2
+14:49:34::Comienza a añadir artículos al carrito
+14:49:34::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+14:49:34::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/index.jsp
+14:49:34::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+14:49:37::StatefulCartBean::addArticle::Entities.Article[ id=55 ]
+14:49:37::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/car.jsp
+14:49:37::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+14:49:38::StatefulCartBean::existArticle::55
+14:49:38::StatefulCartBean::getArticle::55
+14:49:38::StatefulCartBean::addArticle::Entities.Article[ id=55 ]
+14:49:38::StatefulCartBean::setBean::Artículo::Rolmovil Triangulo de Emergencia::Usuario::Aythami::JSP::/Pages/Car/car.jsp
+14:49:38::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+14:49:41::StatefulCartBean::isEmpty::false
+14:49:41::StatefulCartBean::getCart::[Entities.Article[ id=1 ], Entities.Article[ id=55 ]]
+14:49:41::StatefulCartBean::setPriceCart::61.33
+14:49:41::StatefulCartBean::calculatePriceCart::61.33
+14:49:47::StatefulCartBean::getPriceCart::61.33
+14:49:47::StatefulCartBean::getPriceCart::61.33
+14:49:52::Comienza a añadir artículos al carrito
+14:49:52::StatefulCartBean::getListArticles::1 Don Simon Naranja 2 Rolmovil Triangulo de Emergencia 
+14:49:52::StatefulCartBean::getListArticles::1 Don Simon Naranja 2 Rolmovil Triangulo de Emergencia 
+14:49:52::StatefulCartBean::getListArticles::1 Don Simon Naranja 2 Rolmovil Triangulo de Emergencia 
+14:49:52::StatelfulCartBean::remove::PreDestroy::

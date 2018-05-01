@@ -1,17 +1,18 @@
 package Commands;
 
+import Entities.Article;
 import Model.User;
 import SingletonBeans.SingletonEstadisticasBean;
 import StatelessBeans.StatelessSeeProduct;
+import StatelessFacade.ArticleFacade;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class SeeProduct extends FrontCommand {
@@ -27,11 +28,8 @@ public class SeeProduct extends FrontCommand {
     }
 
     private void createViewProducts(HttpSession session) {
-        ArrayList<String> producto = new ArrayList();
-        producto.add(request.getParameter("nameArticle"));
-        producto.add(request.getParameter("imageArticle"));
-        producto.add(request.getParameter("pvpArticle"));
-        producto.add(request.getParameter("descriptionArticle"));
+        ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
+        List<Article> producto = articleFacade.findIDArticle(Integer.parseInt(request.getParameter("idProducto")));
         session.setAttribute(request.getParameter("idProducto"), producto);
     }
 

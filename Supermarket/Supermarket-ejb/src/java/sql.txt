@@ -1,0 +1,338 @@
+/*TABLA 1*/
+/*BORRAR TABLA ARTICLE*/
+DROP TABLE ARTICLE;
+
+/*CREAR TABLA ARTICLE*/
+CREATE TABLE ARTICLE (
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(50) NOT NULL,
+    IMAGEN VARCHAR(100) NOT NULL,
+    PVP DOUBLE NOT NULL,
+    CANTIDAD INT NOT NULL,
+    TIPO VARCHAR(20) NOT NULL,
+    SUBTIPO1 VARCHAR(20),
+    SUBTIPO2 VARCHAR(20),
+    DESCRIPTION VARCHAR(500),
+    PRIMARY KEY(ID)
+);
+
+/*INSERTAR TABLA ARTICLE*/
+INSERT INTO ARTICLE VALUES (1, 'Don Simon Naranja', 'images/articulos/zumos/don-simon-naranja-escalar.jpg', 1.43, 0, 'bebidas', 'zumos', '', 'El nectar de naranja Don Simon es el unico en el mercado elaborado con zumo exprimido, diferenciandose de otros nectares de la competencia hechos con zumo de naranja a base de concentrado.');
+INSERT INTO ARTICLE VALUES (2, 'Juver Melocoton', 'images/articulos/zumos/juver-melocoton-escalar.jpg', 1.34, 0, 'bebidas', 'zumos', '', 'Juver Disfruta es la mejor opcion para controlar los azucares y calorias de tu dieta de una forma sana y deliciosa.');
+INSERT INTO ARTICLE VALUES (3, 'Juver Pina', 'images/articulos/zumos/juver-pina-escalar.jpg', 1.44, 0, 'bebidas', 'zumos', '', 'Todo el sabor de la fruta sin azúcares añadidos y pocas calorías. Juver Disfruta es la mejor opción para controlar los azúcares y calorías de tu dieta de una forma sana y deliciosa.');
+INSERT INTO ARTICLE VALUES (4, 'Libbys Naranja', 'images/articulos/zumos/libbys-naranja-1L-escalar.jpg', 1.60, 0, 'bebidas', 'zumos', '', 'Zumo de naranja a partir de zumo de naranja concentrado, pulpa de naranja.');
+INSERT INTO ARTICLE VALUES (5, 'Colimoro Montepulciano', 'images/articulos/vinos/Colimoro-Montepulciano-escalar.jpg', 2.60, 0, 'bebidas', 'vinos', '', 'Vino tinto producido en los viñedos que rodean la ciudad de Montepulciano, Italia. El vino se hace principalmente con uvas de la variedad Sangiovese (conocida localmente como Prugnolo) (mínimo de 70%), mezclado con Canaiolo Nero (10%-20%) y pequeñas cantidades de otras variedades locales como la Mammolo.');
+INSERT INTO ARTICLE VALUES (6, 'Romaneira', 'images/articulos/vinos/Romaneira-escalar.jpg', 3.60, 0, 'bebidas', 'vinos', '', 'Con su aroma floral delicado y su finura característica y la pureza de la fruta, la Romaneira Touriga Nacional es a la vez una auténtica expresión del terroir único de la Quinta y del carácter distintivo de esta variedad de uva notable. nariz floral delicado con notas de rosas silvestres y violetas. Elegante, fresco, armonioso, con taninos sedosos en el paladar y un acabado fino largo.');
+INSERT INTO ARTICLE VALUES (7, 'Fernando Castilla', 'images/articulos/vinos/Fernando-castilla-escalar.jpg', 2.89, 0, 'bebidas', 'vinos', '', 'Elaborado con uvas pasificadas de la variedad que le da nombre, Pedro Ximenez es un vino increíblemente dulce que, tras tres décadas de crianza en barrica, ha desarrollado unos aromas y sabores únicos, y un color caoba intenso, muy oscuro, apreciable desde su exterior como todos los vinos de la selecta gama Antique.');
+INSERT INTO ARTICLE VALUES (8, 'Joel Gott', 'images/articulos/vinos/Joel-Gott-escalar.jpg', 3.10, 0, 'bebidas', 'vinos', '', 'Desde nuestro comienzo en 1996, hemos seleccionado la mejor fruta de las regiones de cultivo en California, Oregon y Washington, que combinamos para crear vinos más equilibrados, limpios, complejos y elegantes. Estamos orientados a continuar ofreciendo a nuestros clientes vinos expresivos y amigables con los alimentos a excelentes precios. ¡Esperamos que lo disfrute y nos deje saber lo que piensa!');
+INSERT INTO ARTICLE VALUES (9, 'Pago de los Capellanes', 'images/articulos/vinos/Pago-de-los-Capellanes-escalar.jpg', 2.90, 0, 'bebidas', 'vinos', '', 'Llega la nueva añada de un habitual en nuestros rankings de vinos Más Vendidos y Mejor Valorados. Hablamos del Joven Roble de Pago de los Capellanes, el vino con mejor relación calidad/precio de la bodega. En esta nueva añada 2016 vuelve a hacer gala de su alegre carácter frutal, convirtiéndose en un tinto muy apto para la temporada estival. Su acidez refrescante y su sutil tanicidad terminan por modelarlo como el acompañante perfecto para una elegante noche de verano.');
+INSERT INTO ARTICLE VALUES (10, 'Pepsi 2L', 'images/articulos/refrescos/sabores/Pepsi-2L-escalar.png', 1.90, 0, 'bebidas', 'refrescos', 'sabores', 'El refresco carbonatado seña de identidad de PepsiCo. Desde sus humildes comienzos hace unos 100 años, Pepsi-Cola ha crecido hasta ser uno de los productos más conocidos y amados alrededor del mundo.');
+INSERT INTO ARTICLE VALUES (11, 'Coca cola', 'images/articulos/refrescos/sabores/coca-cola-lata-escalar.jpg', 1.20, 0, 'bebidas', 'refrescos', 'sabores', 'Corría el año 1886. Lugar: Atlanta (Georgia). Un farmacéutico llamado John Pemberton se propuso crear una bebida que fuera a la vez refrescante y vigorizante. Buscó la mezcla perfecta de ingredientes frescos de todo el mundo hasta que la encontró.\nLa mezcla exacta de los ingredientes y los extractos vegetales provenientes de todo el mundo que, hasta hoy, siguen formando parte de la fórmula secreta más famosa del mundo.');
+INSERT INTO ARTICLE VALUES (12, 'Fanta', 'images/articulos/refrescos/sabores/fanta-lata-escalar.jpg', 1.15, 0, 'bebidas', 'refrescos', 'sabores', 'Bebida refrescante de zumo de frutas. Con azúcares y edulcorantes.\nFanta es la bebida refrescante con zumo de frutas preferida por los jóvenes de nuestro país. Joven, alegre, extrovertida y siempre asociada a un sentimiento universal: la diversión con amigos');
+INSERT INTO ARTICLE VALUES (13, 'Pepsi Lata', 'images/articulos/refrescos/sabores/pepsi-lata-escalar.jpg', 1.35, 0, 'bebidas', 'refrescos', 'sabores', 'El refresco carbonatado seña de identidad de PepsiCo. Desde sus humildes comienzos hace unos 100 años, Pepsi-Cola ha crecido hasta ser uno de los productos más conocidos y amados alrededor del mundo.');
+INSERT INTO ARTICLE VALUES (14, 'Sprite 1.5L', 'images/articulos/refrescos/sabores/sprite-1.5L-escalar.jpg', 1.75, 0, 'bebidas', 'refrescos', 'sabores', 'Bebida refrescante de extractos. Con azúcares y edulcorantes. Ideal para esos momentos en los que te apetece una bebida con un sabor diferente.');
+INSERT INTO ARTICLE VALUES (15, 'Sprite Lata', 'images/articulos/refrescos/sabores/sprite-lata-escalar.jpg', 1.20, 0, 'bebidas', 'refrescos', 'sabores', 'Bebida refrescante de extractos. Con azúcares y edulcorantes. Ideal para esos momentos en los que te apetece una bebida con un sabor diferente.');
+INSERT INTO ARTICLE VALUES (16, 'Coca Cola Light', 'images/articulos/refrescos/light/coca-cola-light-escalar.jpg', 1.20, 0, 'bebidas', 'refrescos', 'light', 'Agua carbonatada, colorante E-150d, edulcorantes E-952, E-950 y aspartamo, acidulantes E-338 y E-330 y aromas naturales (incluyendo cafeína). Contiene una fuente de fenilalanina.');
+INSERT INTO ARTICLE VALUES (17, 'Fanta Light', 'images/articulos/refrescos/light/fanta-light-escalar.jpg', 1.15, 0, 'bebidas', 'refrescos', 'light', 'Bebida refrescante de zumo de frutas. Sin azúcares añadidos. Con edulcorantes.\nFanta es la bebida refrescante con zumo de frutas preferida por los jóvenes de nuestro país. Joven, alegre, extrovertida y siempre asociada a un sentimiento universal: la diversión con amigos.');
+INSERT INTO ARTICLE VALUES (18, 'Pepsi Light', 'images/articulos/refrescos/light/pepsi-Light-escalar.jpg', 1.35, 0, 'bebidas', 'refrescos', 'light', 'Sin azúcar. Bebida refrescante aromatizada con edulcorantes. Todo el sabor de la Pepsi, el refresco carbonatado seña de identidad de PepsiCo. Desde sus humildes comienzos hace unos 100 años, Pepsi-Cola ha crecido hasta ser uno de los productos más conocidos y amados alrededor del mundo.');
+INSERT INTO ARTICLE VALUES (19, 'Sprite Light', 'images/articulos/refrescos/light/sprite-light-escalar.jpg', 1.20, 0, 'bebidas', 'refrescos', 'light', 'Refresco Light sin azúcar añadido. Bebida refrescante de extractos con edulcorantes. Sprite Zero es una bebida refrescante de sabor lima-limón, transparente y con gas, con el auténtico sabor de Sprite y cero calorías.');
+INSERT INTO ARTICLE VALUES (20, 'Bezolla 1.5L', 'images/articulos/agua/bezolla-1.5L-escalar.jpg', 0.95, 0, 'bebidas', 'agua', '', 'De mineralización muy débil. Tiene un residuo seco muy bajo, que le hace diferente de la gran mayoría de las aguas. Uno de sus principales valores es que está indicada para dietas pobres en sodio y para la preparación de alimentos infantiles.\nEl Agua Bezoya procede de la Sierra de Guadarrama, ubicada en plena Naturaleza y en la provincia de Segovia.');
+INSERT INTO ARTICLE VALUES (21, 'Firgas 1.5L', 'images/articulos/agua/firgas-1.5L-escalar.jpg', 1.05, 0, 'bebidas', 'agua', '', 'Agua mineral natural con gas extra botella 1,5 L.');
+INSERT INTO ARTICLE VALUES (22, 'Font Vella 1.5L', 'images/articulos/agua/font-vella-1.5L-escalar.jpg', 1.15, 0, 'bebidas', 'agua', '', 'Font Vella es un agua equilibrada, de mineralización débil y 0% impurezas. Baja en sodio.\nDurante más de 15 años Font Vella recorre intacta un largo camino subterráneo, protegida por la naturaleza a más de 150 metros de profundidad, en el Parque Natural del Montseny y en el del Barranco del Río Dulce, dos parajes naturales.');
+INSERT INTO ARTICLE VALUES (23, 'Teror Sin Gas', 'images/articulos/agua/teror-sin-gas-1.5L-escalar.jpg', 1.10, 0, 'bebidas', 'agua', '', 'Agua mineral natural sin gas botella 1,5 L.');
+INSERT INTO ARTICLE VALUES (24, 'Ariel', 'images/articulos/drogueria/ariel-escalar.jpg', 3.45, 0, 'drogueria', '', '', 'Detergente líquido para lavadora regular ARIEL 70 ds.');
+INSERT INTO ARTICLE VALUES (25, 'Colon', 'images/articulos/drogueria/colon-escalar.jpg', 4.10, 0, 'drogueria', '', '', 'Detergente azul en polvo COLON 30 + 9ds.');
+INSERT INTO ARTICLE VALUES (26, 'Mimosin Vaporesse', 'images/articulos/drogueria/mimosin-vaporesse-escalar.jpg', 3.10, 0, 'drogueria', '', '', 'Agua de planchar perfumada MIMOSIN Vaporesse 1 L.');
+INSERT INTO ARTICLE VALUES (27, 'Norit', 'images/articulos/drogueria/norit-escalar.jpg', 3.60, 0, 'drogueria', '', '', 'Detergente delicado lavado a mano NORIT 45 lavados. 1125 ml.');
+INSERT INTO ARTICLE VALUES (28, 'Vanish', 'images/articulos/drogueria/vanish-escalar.jpg', 4.20, 0, 'drogueria', '', '', 'Activador de lavado en polvo para lavar la ropa de color con oxígeno VANISH 2 L.');
+INSERT INTO ARTICLE VALUES (29, 'Airport Mochila Azul', 'images/articulos/papeleria/airport-mochila-azul-escalar.jpg', 10.95, 0, 'papeleria', '', '', 'Para los que les gusta ir con colores llamativos, esta mochila turquesa les proporciona no solo diseño sino confort al usar.');
+INSERT INTO ARTICLE VALUES (30, 'Airport Mochila Vintage', 'images/articulos/papeleria/airport-mochila-vintage-escalar.jpg', 15.95, 0, 'papeleria', '', '', 'Mochila Vintage Puma con compartimentos y espaldar acolchado para mayor comodidad al transportar, AIRPORT.');
+INSERT INTO ARTICLE VALUES (31, 'Bic Cristal Soft Azul', 'images/articulos/papeleria/bic-cristal-soft-azul-escalar.jpg', 9.10, 0, 'papeleria', '', '', 'Duran hasta 2 veces más que un bolígrafo común.');
+INSERT INTO ARTICLE VALUES (32, 'Oxford Cuaderno', 'images/articulos/papeleria/oxford-cuaderno-escalar.jpg', 3.30, 0, 'papeleria', '', '', 'Cuaderno de tamaño A5, con cuadrícula de 4x4 mm, 80 hojas y tapas encuadernadas OXFORD.');
+INSERT INTO ARTICLE VALUES (33, 'Pacsa Cuaderno 3x3', 'images/articulos/papeleria/pacsa-cuaderno-3x3-escalar.jpg', 1.50, 0, 'papeleria', '', '', 'Cuaderno de cuadrícula de 3x3 con margen, 80 hojas y tapa dura, PACSA.');
+INSERT INTO ARTICLE VALUES (34, 'Pacsa Cuaderno 4x4', 'images/articulos/papeleria/pacsa-cuaderno-4x4-escalar.jpg', 3.10, 0, 'papeleria', '', '', 'Dispone de tapas de polipropileno de alta resistencia y microperforado con encuadernación con espiral metálica. Las hojas de este cuaderno son de papel extrablanco.');
+INSERT INTO ARTICLE VALUES (35, 'Estuche Patrulla Canina', 'images/articulos/papeleria/patrulla-canina-estuche-escalar.jpg', 5.10, 0, 'papeleria', '', '', 'El estuche incluye: 1 portaminas, 1 bolígrafo, 4 reglas, 1 sacapuntas, 1 libro para colorear y 18 rotuladores.\nProducto no recomendado para menores de 3 años.');
+INSERT INTO ARTICLE VALUES (36, 'Pilot Super Grip Azul', 'images/articulos/papeleria/pilot-super-grip-azul-escalar.jpg', 3.10, 0, 'papeleria', '', '', 'Tinta con base de aceite color azul. Estos bolígrafos al tener tinta con base de aceite, hace que escribir cueste muy poco esfuerzo, ya que se convierte en una acción muy fluida.');
+INSERT INTO ARTICLE VALUES (37, 'UniBall Eye Ub-150', 'images/articulos/papeleria/uni-ball-eye-ub-150-escalar.jpg', 2.95, 0, 'papeleria', '', '', 'La tinta pigmentada de estos bolígrafos es resistente al agua y a la luz, lo que los confiere una escritura suave y constante.');
+INSERT INTO ARTICLE VALUES (38, 'Ecolecera Espaguettis', 'images/articulos/pastas/ecolecera-espaguettis-escalar.jpg', 1.75, 0, 'alimentacion', 'pastas', '', 'Espaguetis ecológicos, pasta compuesta integral de calidad superior ECOLECERA 500 gr.');
+INSERT INTO ARTICLE VALUES (39, 'Gallo Espaguettis', 'images/articulos/pastas/gallo-espaguettis-escalar.jpg', 2.95, 0, 'alimentacion', 'pastas', '', 'Espagueti Nº 3 GALLO paquete de 500 grs.');
+INSERT INTO ARTICLE VALUES (40, 'Gallo Fideos', 'images/articulos/pastas/gallo-fideos-escalar.jpg', 3.65, 0, 'alimentacion', 'pastas', '', 'Estrellas GALLO paquete de 500 gr.');
+INSERT INTO ARTICLE VALUES (41, 'Gallo Macarrones', 'images/articulos/pastas/gallo-macarrones-escalar.jpg', 4.95, 0, 'alimentacion', 'pastas', '', 'Macarrón rayado GALLO paquete de 500 gr.');
+INSERT INTO ARTICLE VALUES (42, 'Gallo Sedalis Espaguettis', 'images/articulos/pastas/gallo-sedalis-espaguettis-escalar.jpg', 3.95, 0, 'alimentacion', 'pastas', '', 'Espagueti Nº 3 GALLO SEDALIS paquete de 500 grs.');
+INSERT INTO ARTICLE VALUES (43, 'Gallo Sin Gluten Macarrones', 'images/articulos/pastas/gallo-sin-gluten-macarrones-escalar.jpg', 4.95, 0, 'alimentacion', 'pastas', '', 'Gallo sin gluten GALLO, 500 gr,.');
+INSERT INTO ARTICLE VALUES (44, 'Romero Fideos', 'images/articulos/pastas/romero-fideos-escalar.jpg', 3.65, 0, 'alimentacion', 'pastas', '', 'Fideo cabellín ROMERO paquete de 500 gr.');
+INSERT INTO ARTICLE VALUES (45, 'Romero Macarrones', 'images/articulos/pastas/romero-macarrones-escalar.jpg', 4.95, 0, 'alimentacion', 'pastas', '', 'Espirales,pasta ROMERO 500 gr.');
+INSERT INTO ARTICLE VALUES (46, 'Sam Mills Macarrones', 'images/articulos/pastas/sam-mills-macarrones-escalar.jpg', 4.95, 0, 'alimentacion', 'pastas', '', 'Fusilli, pasta sin Gluten SAM MILLS 500 gr,.');
+INSERT INTO ARTICLE VALUES (47, 'Carretilla Alubias', 'images/articulos/preparados/Carretilla-alubias-escalar.jpg', 6.95, 0, 'alimentacion', 'preparados', '', 'Alubias al estilo casero CARRETILLA 300 g.');
+INSERT INTO ARTICLE VALUES (48, 'Carretilla Arroz con pollo al Curry', 'images/articulos/preparados/Carretilla-arroz-con-pollo-al-curry-escalar.jpg', 7.95, 0, 'alimentacion', 'preparados', '', 'Arroz con pollo al curry Carretilla 300 g.');
+INSERT INTO ARTICLE VALUES (49, 'Isabel Albondigas con Atun', 'images/articulos/preparados/Isabel-albondigas-con-atun-escalar.jpg', 5.95, 0, 'alimentacion', 'preparados', '', 'Albóndigas de atún con tomate ISABEL 100 g.');
+INSERT INTO ARTICLE VALUES (50, 'Lourino Albondigas con Guisantes', 'images/articulos/preparados/Lourino-albondigas-con-guisantes-escalar.jpg', 6.95, 0, 'alimentacion', 'preparados', '', 'Albóndigas con guisantes LOURIÑO lata de 425 g.');
+INSERT INTO ARTICLE VALUES (51, 'Yatekomo Arroz 3 Delicias', 'images/articulos/preparados/Yatekomo-arroz-3-delicias-escalar.jpg', 5.95, 0, 'alimentacion', 'preparados', '', 'Arroz 3 delicias YATEKOMO 100 grs.');
+INSERT INTO ARTICLE VALUES (52, 'Rolmovil Cubre Volante', 'images/articulos/automovil/accesorios/Rolmovil-cubre-volante-escalar.jpg', 15.95, 0, 'automovil', 'accesorios', '', 'Cubrevolante de 37-39 centímetros ROLMOVIL.');
+INSERT INTO ARTICLE VALUES (53, 'Rolmovil Extintor', 'images/articulos/automovil/accesorios/Rolmovil-extintor-escalar.jpg', 19.95, 0, 'automovil', 'accesorios', '', 'Extintor apagafuegos con manómetro y capacidad de 1 kilogramo ROLMOVIL.');
+INSERT INTO ARTICLE VALUES (54, 'Rolmovil Parasol', 'images/articulos/automovil/accesorios/Rolmovil-parasol-escalar.jpg', 14.95, 0, 'automovil', 'accesorios', '', 'Parasol aluminizado con cerrado meidnate correas elásticas, efecto laser, cortina térmica refelctora y medida de 145x90 centímetros ROLMOVIL.');
+INSERT INTO ARTICLE VALUES (55, 'Rolmovil Triangulo de Emergencia', 'images/articulos/automovil/accesorios/Rolmovil-triangulo-de-emergencia-escalar.jpg', 29.95, 0, 'automovil', 'accesorios', '', 'Se puede plegar quedando guardado en un práctico y reducido estuche, por lo que nos ocupará muy poco espacio en nuestro maletero.');
+INSERT INTO ARTICLE VALUES (56, 'Air-Wick 2D Ambientador', 'images/articulos/automovil/limpieza/air-wick-2d-ambientador-escalar.jpg', 9.95, 0, 'automovil', 'limpieza', '', 'El olor tiene una duración aproximada de 7 semanas.');
+INSERT INTO ARTICLE VALUES (57, 'Arbre Magique Ambientador', 'images/articulos/automovil/limpieza/arbre-magique-ambientador-escalar.jpg', 5.95, 0, 'automovil', 'limpieza', '', 'Difunde una agradable fragancia que elimina los malos olores de nuestro vehículo durante siete semanas aproximadamente.');
+INSERT INTO ARTICLE VALUES (58, 'Krafft Limpia Parabrisas', 'images/articulos/automovil/limpieza/krafft-limpia-parabrisas-escalar.jpg', 18.95, 0, 'automovil', 'limpieza', '', 'Listo para usar, no necesita añadir agua, siendo capaz de limpiar de forma eficaz las manchas de barro, insectos, grasa...que pueda haber en nuestro parabrisas o en nuestros faros.\nTemperatura de congelación de -5 ºC.');
+INSERT INTO ARTICLE VALUES (59, 'Rolmovil Ambientador', 'images/articulos/automovil/limpieza/rolmovil-ambientador-escalar.jpg', 19.95, 0, 'automovil', 'limpieza', '', 'Al ser un formato XXL, la fragancia tiene una duración aproximada de 60 días.');
+INSERT INTO ARTICLE VALUES (60, 'Abadan Alas de Pollo', 'images/articulos/congelados/carne/abadan-alas-de-pollo-escalar.jpg', 14.95, 0, 'alimentacion', 'congelados', 'carne', 'Alas de pollo ABADAN 900 gr.');
+INSERT INTO ARTICLE VALUES (61, 'Meet Beef Albondigas', 'images/articulos/congelados/carne/meet-beef-albondigas-escalar.jpg', 19.95, 0, 'alimentacion', 'congelados', 'carne', 'Albóndigas de vacuno MEAT BEEF 600 gr.');
+INSERT INTO ARTICLE VALUES (62, 'Meet Chicken Solomillo de Pollo', 'images/articulos/congelados/carne/meet-chicken-solomillo-de-pollo-escalar.jpg', 18.95, 0, 'alimentacion', 'congelados', 'carne', 'Solomillos de pollo MEAT CHICKEN 600 gr.');
+INSERT INTO ARTICLE VALUES (63, 'Campos Bocados de Atun', 'images/articulos/congelados/pescado/campos-bocados-de-atun-escalar.jpg', 14.95, 0, 'alimentacion', 'congelados', 'pescado', 'Atún en dados CAMPOS 250 gr.');
+INSERT INTO ARTICLE VALUES (64, 'Campos Filetes de Atun', 'images/articulos/congelados/pescado/campos-filetes-de-atun-escalar.jpg', 16.95, 0, 'alimentacion', 'congelados', 'pescado', 'Atún en solomillo CAMPOS 250 gr.');
+INSERT INTO ARTICLE VALUES (65, 'Findus Bacalado Rebosado', 'images/articulos/congelados/pescado/findus-bacalado-rebosado-escalar.jpg', 15.95, 0, 'alimentacion', 'congelados', 'pescado', 'Bacalao rebozado FINDUS 280 gr.');
+INSERT INTO ARTICLE VALUES (66, 'Pescanova Anillos a la Romana', 'images/articulos/congelados/pescado/pescanova-anillos-a-la-romana-escalar.jpg', 15.95, 0, 'alimentacion', 'congelados', 'pescado', 'Calamares a la romana en anillas PESCANOVA 400 gr.');
+INSERT INTO ARTICLE VALUES (67, 'Huevos Dagu 12 Unidades', 'images/articulos/lacteos/huevos/dagu-12u-escalar.jpg', 5.95, 0, 'alimentacion', 'lacteos', 'huevos', 'Huevos Clase L Chef DAGU 12 Unidades.');
+INSERT INTO ARTICLE VALUES (68, 'Huevos Los Rancheros 6 Unidades', 'images/articulos/lacteos/huevos/los-rancheros-6u-escalar.jpg', 4.55, 0, 'alimentacion', 'lacteos', 'huevos', 'Huevos clase M LOS RANCHEROS cartón de 6 uds.');
+INSERT INTO ARTICLE VALUES (69, 'Huevos Pazo de Vilane 6 Unidades', 'images/articulos/lacteos/huevos/pazo-de-vilane-6u-escalar.jpg', 4.95, 0, 'alimentacion', 'lacteos', 'huevos', 'En Vilane mantenemos la tradición, nuestras gallinas de crían al aire libre y completan su dieta a voluntad en los extensos campos del Pazo.');
+INSERT INTO ARTICLE VALUES (70, 'Huevos Pitas 12 Unidades', 'images/articulos/lacteos/huevos/pitas-12u-escalar.jpg', 6.95, 0, 'alimentacion', 'lacteos', 'huevos', 'Huevos Clase L PITAS 12 Unidades.');
+INSERT INTO ARTICLE VALUES (71, 'Yogur Activia Limon 4 Unidades', 'images/articulos/lacteos/yogur/activia-limon-4u-escalar.jpg', 2.45, 0, 'alimentacion', 'lacteos', 'yogur', 'Yogur bifidus con sabor a limón DANONE ACTIVIA CREMOSO pack de 4 uds de 120 gr.');
+INSERT INTO ARTICLE VALUES (72,'Yogur Danone 4 Unidades', 'images/articulos/lacteos/yogur/danone-4u-escalar.jpg', 2.35, 0, 'alimentacion', 'lacteos', 'yogur', 'El Yogur Danone está elaborado con leche fresca de ganaderos españoles que trabajan con Danone hace muchos años.\n"+"Es un alimento nutritivo, con fermentos activos exclusivos.');
+INSERT INTO ARTICLE VALUES (73, 'Yogur Danone Limon 4 Unidades', 'images/articulos/lacteos/yogur/danone-limon-4u-escalar.jpg', 2.25, 0, 'alimentacion', 'lacteos', 'yogur', 'El Yogur Danone está elaborado con leche fresca de ganaderos españoles que trabajan con Danone hace muchos años.\nEs un alimento nutritivo, con fermentos activos exclusivos.');
+INSERT INTO ARTICLE VALUES (74, 'Natillas Danone 4 Unidades', 'images/articulos/lacteos/yogur/danone-natillas-4u-escalar.jpg', 2.65, 0, 'alimentacion', 'lacteos', 'yogur', 'Ahora Danet Doble Placer te trae tus Danet con deliciosa base de vainilla o chocolate cubierta por una esponjosa mousse de nata o de chocolate. ¡Mires como lo mires, una combinación irresistible! Con Danet Sabor Vainilla con Nata, descubrirás la perfecta harmonía del sabor de la vainilla combinado con una deliciosa capa de mousse de nata.');
+INSERT INTO ARTICLE VALUES (75, 'Yogur Kalise Variado 8 Unidades', 'images/articulos/lacteos/yogur/kalise-variado-8u-escalar.jpg', 3.45, 0, 'alimentacion', 'lacteos', 'yogur', 'Gracias a sus fermentos naturales, facilita la digestión de la lactosa que contienen.');
+INSERT INTO ARTICLE VALUES (76, 'Leche Asturiana Desnatada', 'images/articulos/lacteos/leche/asturiana-desnatada-escalar.jpg', 2.95, 0, 'alimentacion', 'lacteos', 'leche', 'Leche desnatada 0,0% materia grasa CENTRAL LECHERA ASTURIANA.');
+INSERT INTO ARTICLE VALUES (77, 'Leche Asturiana Entera', 'images/articulos/lacteos/leche/asturiana-entera-escalar.jpg', 2.95, 0, 'alimentacion', 'lacteos', 'leche', 'Leche entera CENTRAL LECHERA ASTURIANA.');
+INSERT INTO ARTICLE VALUES (78, 'Leche Calo Entera', 'images/articulos/lacteos/leche/calo-entera-escalar.jpg', 2.75, 0, 'alimentacion', 'lacteos', 'leche', 'Leche entera Calo 1L.');
+INSERT INTO ARTICLE VALUES (79, 'Leche Celgan Desnatada', 'images/articulos/lacteos/leche/celgan-desnatada-escalar.jpg', 3.10, 0, 'alimentacion', 'lacteos', 'leche', 'Leche desnatada celga 1L.');
+INSERT INTO ARTICLE VALUES (80, 'Leche Celta Entera', 'images/articulos/lacteos/leche/celta-entera-escalar.jpg', 2.85, 0, 'alimentacion', 'lacteos', 'leche', 'Leche entera CELTA 1.5 L.');
+INSERT INTO ARTICLE VALUES (81, 'Leche Pascual Desnatada', 'images/articulos/lacteos/leche/pascual-desnatada-escalar.jpg', 3.25, 0, 'alimentacion', 'lacteos', 'leche', 'Leche desnatada PASCUAL 1.5 L.');
+INSERT INTO ARTICLE VALUES (82, 'Leche Pascual Entera', 'images/articulos/lacteos/leche/pascual-entera-escalar.jpg', 3.15, 0, 'alimentacion', 'lacteos', 'leche', 'Leche entera PASCUAL 1 L.');
+INSERT INTO ARTICLE VALUES (83, 'Leche Puleva Desnatada', 'images/articulos/lacteos/leche/puleva-desnatada-escalar.jpg', 3.45, 0, 'alimentacion', 'lacteos', 'leche', 'Leche desnatada con calcio PULEVA 1L.');
+INSERT INTO ARTICLE VALUES (84, 'Leche Puleva Entera', 'images/articulos/lacteos/leche/puleva-entera-escalar.jpg', 3.45, 0, 'alimentacion', 'lacteos', 'leche', 'Leche entera con calcio PULEVA 1L.');
+
+/*TABLA 2*/
+/*BORRAR TABLA USERS*/
+DROP TABLE USERS;
+
+/*CREAR TABLA USERS*/
+CREATE TABLE USERS(
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(30) NOT NULL,
+    APELLIDOS VARCHAR(50) NOT NULL,
+    FECHA DATE NOT NULL,
+    USUARIO VARCHAR(30) NOT NULL,
+    EMAIL VARCHAR(60) NOT NULL,
+    CONTRASEÑA VARCHAR(150) NOT NULL,
+    TIPO VARCHAR(20) NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+/*INSERTAR TABLA USERS*/
+INSERT INTO USERS VALUES(1, 'Aythami', 'López Déniz', '1990-07-21', 'aythami', 'aythami@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(2, 'Manuel', 'Perez Ruiz', '1970-02-05', 'manuel', 'manuel@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(3, 'Amparo', 'Mendez Alonso', '1967-04-12', 'amparo', 'amparo@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(4, 'Inés', 'Lopez Marin', '1970-02-05', 'inés', 'ines@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(5, 'Aya', 'Sala Diaz', '1984-09-22', 'aya', 'aya@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(6, 'Francisco Javier', 'Ibañez Jimenez', '1974-01-08', 'javier', 'franciscojavier@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(7, 'Javier', 'Romero Alvarez', '1986-10-25', 'javier', 'javier@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(8, 'Darío', 'Nuñez Benitez', '1977-11-19', 'darío', 'dario@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(9, 'Jimena', 'Segura Calvo', '1973-08-14', 'jimena', 'jimena@hotmail.com', '1234', 'cliente');
+INSERT INTO USERS VALUES(10, 'Aitana', 'Cabrera Herrero', '1989-06-23', 'aitana', 'aitana@hotmail.com', '1234', 'cliente');
+
+/*BORRAR CATEGORIA*/
+DROP TABLE CATEGORIA;
+
+/*CREAR TABLA CATEGORIA*/
+CREATE TABLE CATEGORIA(
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(50) NOT NULL,
+    /*ARTICLE INT NOT NULL,*/
+    PRIMARY KEY(ID)
+);
+
+/*INSERTAR TABLA CATEGORIA*/
+INSERT INTO CATEGORIA VALUES(1, 'bebidas');
+INSERT INTO CATEGORIA VALUES(2, 'drogueria');
+INSERT INTO CATEGORIA VALUES(3, 'papeleria');
+INSERT INTO CATEGORIA VALUES(4, 'alimentacion');
+INSERT INTO CATEGORIA VALUES(5, 'automovil');
+
+/*BORRAR SUBCATEGORIA 1*/
+DROP TABLE SUBCATEGORIA1;
+
+/*CREAR TABLA SUBCATEGORIA 1*/
+CREATE TABLE SUBCATEGORIA1(
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(50) NOT NULL,
+    CATEGORIA INT NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY (CATEGORIA) REFERENCES CATEGORIA(ID)
+);
+
+/*INSERTAR TABLA SUBCATEGORIA1*/
+INSERT INTO SUBCATEGORIA1 VALUES(1, 'zumos', 1);
+INSERT INTO SUBCATEGORIA1 VALUES(2, 'vinos', 1);
+INSERT INTO SUBCATEGORIA1 VALUES(3, 'refrescos', 1);
+INSERT INTO SUBCATEGORIA1 VALUES(4, 'agua', 1);
+INSERT INTO SUBCATEGORIA1 VALUES(5, 'pastas', 4);
+INSERT INTO SUBCATEGORIA1 VALUES(6, 'preparados', 4);
+INSERT INTO SUBCATEGORIA1 VALUES(7, 'congelados', 4);
+INSERT INTO SUBCATEGORIA1 VALUES(8, 'lacteos', 4);
+INSERT INTO SUBCATEGORIA1 VALUES(9, 'accesorios', 5);
+INSERT INTO SUBCATEGORIA1 VALUES(10, 'limpieza', 5);
+
+/*BORRAR SUBCATEGORIA 2*/
+DROP TABLE SUBCATEGORIA2;
+
+/*CREAR TABLA SUBCATEGORIA 2*/
+CREATE TABLE SUBCATEGORIA2(
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(30) NOT NULL,
+    CATEGORIA INT NOT NULL,
+    SUBCATEGORIA1 INT NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(CATEGORIA) REFERENCES CATEGORIA(ID),
+    FOREIGN KEY(SUBCATEGORIA1) REFERENCES SUBCATEGORIA1(ID)
+);
+
+/*INSERTAR TABLA SUBCATEGORIA2*/
+INSERT INTO SUBCATEGORIA2 VALUES(1, 'sabores', 1, 3);
+INSERT INTO SUBCATEGORIA2 VALUES(2, 'light', 1, 3);
+INSERT INTO SUBCATEGORIA2 VALUES(3, 'carne', 4, 7);
+INSERT INTO SUBCATEGORIA2 VALUES(4, 'pescado', 4, 7);
+INSERT INTO SUBCATEGORIA2 VALUES(5, 'huevos', 4, 8);
+INSERT INTO SUBCATEGORIA2 VALUES(6, 'yogur', 4, 8);
+INSERT INTO SUBCATEGORIA2 VALUES(7, 'leche', 4, 8);
+
+/*TABLA 3*/
+/*BORRAR TABLA CART*/
+DROP TABLE CART;
+
+/*CREAR TABLA CART*/
+CREATE TABLE CART(
+    ID INT NOT NULL,
+    USERS INT NOT NULL,
+    ARTICLE INT NOT NULL,
+    PVP INT,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(USERS) REFERENCES USERS(ID),
+    FOREIGN KEY(ARTICLE) REFERENCES ARTICLE(ID)
+);
+
+/*TABLA 4*/
+/*BORRAR TABLA DESCUENTO*/
+DROP TABLE DESCUENTO;
+
+/*CREAR TABLA DESCUENTO*/
+CREATE TABLE DESCUENTO(
+    ID INT NOT NULL,
+    VALUE INT NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+/*INSERTAR TABLA DESCUENTO*/
+INSERT INTO DESCUENTO VALUES(1, 1);
+INSERT INTO DESCUENTO VALUES(2, 2);
+INSERT INTO DESCUENTO VALUES(3, 3);
+
+/*BORRAR TABLA DESCUENTO1*/
+DROP TABLE DESCUENTO1;
+
+/*CREAR TABLA DESCUENTO1*/
+CREATE TABLE DESCUENTO1(
+    ID INT NOT NULL,
+    DESCUENTO INT NOT NULL,
+    CATEGORIA INT NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(DESCUENTO) REFERENCES DESCUENTO(ID),
+    FOREIGN KEY(CATEGORIA) REFERENCES CATEGORIA(ID)
+);
+
+/*INSERTAR TABLA DESCUENTO1*/
+INSERT INTO DESCUENTO1 VALUES (1, 1, 4);
+INSERT INTO DESCUENTO1 VALUES (2, 3, 5);
+INSERT INTO DESCUENTO1 VALUES (3, 2, 2);
+INSERT INTO DESCUENTO1 VALUES (4, 1, 1);
+INSERT INTO DESCUENTO1 VALUES (5, 3, 3);
+
+/*BORRAR TABLA DESCUENTO2*/
+DROP TABLE DESCUENTO2;
+
+/*CREAR TABLA DESCUENTO2*/
+CREATE TABLE DESCUENTO2(
+    ID INT NOT NULL,
+    DESCUENTO INT NOT NULL,
+    SUBCATEGORIA1 INT NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(DESCUENTO) REFERENCES DESCUENTO(ID),
+    FOREIGN KEY(SUBCATEGORIA1) REFERENCES SUBCATEGORIA1(ID)
+);
+
+/*INSERTAR TABLA DESCUENTO1*/
+INSERT INTO DESCUENTO2 VALUES (1, 3, 6);
+INSERT INTO DESCUENTO2 VALUES (2, 2, 6);
+INSERT INTO DESCUENTO2 VALUES (3, 3, 9);
+INSERT INTO DESCUENTO2 VALUES (4, 2, 7);
+INSERT INTO DESCUENTO2 VALUES (5, 1, 8);
+INSERT INTO DESCUENTO2 VALUES (6, 1, 2);
+
+/*TABLA 5*/
+/*BORRAR TABLA PEDIDO*/
+DROP TABLE PEDIDO;
+
+/*CREAR TABLA PEDIDO*/
+CREATE TABLE PEDIDO(
+    ID INT NOT NULL,
+    USERS INT NOT NULL,
+    CART INT NOT NULL,
+    PVP DOUBLE NOT NULL,
+    DIA DATE NOT NULL,
+    HORA TIME NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(USERS) REFERENCES USERS(ID),
+    FOREIGN KEY(CART) REFERENCES CART(ID)
+);
+
+/*TABLA 6*/
+/*BORRAR TABLA TICKETS_DESCUENTOS*/
+DROP TABLE TICKETS_DESCUENTOS;
+
+/*CREAR TABLA TICKETS_DESCUENTOS*/
+CREATE TABLE TICKETS_DESCUENTOS(
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(30) NOT NULL,
+    USERS INT NOT NULL,
+    CANTIDAD DOUBLE,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(USERS) REFERENCES USERS(ID)
+);
+
+/*TABLA 7*/
+/*BORRAR TABLA ESTADISTICAS*/
+DROP TABLE ESTADISTICAS;
+
+/*CREAR TABLA ESTADISTICAS*/
+
+/*TABLA 8*/
+/*BORRAR TABLA LOG*/
+DROP TABLE LOG;
+
+/*CREAR TABLA LOG*/
+
+/*TABLA 9*/
+/*BORRAR TABLA DIRECTION*/
+DROP TABLE DIRECTION;
+
+/*CREAR TABLA DIRECTION*/
+CREATE TABLE DIRECTION(
+    USERS INT NOT NULL,
+    NOMBRE VARCHAR(30) NOT NULL,
+    APELLIDOS VARCHAR(50) NOT NULL,
+    DIRECCION VARCHAR(100) NOT NULL,
+    CODIGO_POSTAL INT,
+    PRIMARY KEY(USERS)
+);
+
+/*TABLA 10*/
+/*BORRAR TABLA CREDIT_CARD*/
+DROP TABLE CREDIT_CARD;
+
+/*CREAR TABLA CREDIT_CARD*/
+CREATE TABLE CREDIT_CARD(
+    USERS INT NOT NULL,
+    NUMBER INT NOT NULL,
+    FECHA_CADUCIDAD DATE NOT NULL,
+    PRIMARY KEY(USERS)
+);

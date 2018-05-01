@@ -35,7 +35,7 @@
                             for (Article article : shoppingCart.getCart()) {%>
                             <td data-th="Product">
                                 <div class="row">
-                                    <div class="col-sm-2 hidden-xs"><img src="<%=article.getImage()%>" alt="..." class="img-responsive"/></div>
+                                    <div class="col-sm-2 hidden-xs"><img src="<%=article.getImagen()%>" alt="..." class="img-responsive"/></div>
                                     <div class="col-sm-10">
                                         <h4 class="nomargin"><%=article.getNombre()%></h4>
                                         <p><%=article.getDescription()%></p>
@@ -51,7 +51,7 @@
                                 <form method="post" action="FrontServlet">
                                     <input type="hidden" name="idArticle" value="<%=article.getId()%>">
                                     <input type="hidden" name="nameArticle" value="<%=article.getNombre()%>">
-                                    <input type="hidden" name="imageArticle" value="<%=article.getImage()%>">
+                                    <input type="hidden" name="imageArticle" value="<%=article.getImagen()%>">
                                     <input type="hidden" name="pvpArticle" value="<%=article.getPvp()%>"><br>
                                     <input type="hidden" name="window" value="/Pages/shoppingCart.jsp">
                                     <input type="hidden" name="command" value="RemoveProduct">

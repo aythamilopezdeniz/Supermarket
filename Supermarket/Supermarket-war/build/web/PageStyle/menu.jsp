@@ -1,4 +1,8 @@
-        <!-- Navegación -->
+<%@page import="java.util.List"%>
+<%@page import="Entities.Article"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="StatelessFacade.ArticleFacade"%>
+<!-- Navegación -->
         <nav>
             <ul class="menu">
                 <li><a href="FrontServlet?command=Redirect&window=/Pages/Drinks/drinks.jsp">Bebidas</a>
@@ -14,7 +18,7 @@
                         <li><a href="FrontServlet?command=Redirect&window=/Pages/Drinks/juices.jsp">Zumos</a></li>
                     </ul>
                 </li>
-                <li><a href="FrontServlet?command=Redirect&window=/Pages/Food/food.jsp">Alimentación</a>
+                <li><a href="FrontServlet?command=Redirect&window=/Pages/Food/food.jsp&type=alimentacion">Alimentación</a>
                     <ul>
                         <li><a href="FrontServlet?command=Redirect&window=/Pages/Food/diaryProducts.jsp">Lácteos</a></li>
                         <li><a href="FrontServlet?command=Redirect&window=/Pages/Food/pasta.jsp">Pastas</a></li>

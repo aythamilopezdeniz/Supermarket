@@ -3,3 +3,18 @@ StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::aythami
 StatelessSeeProductBean::setBean::Artículo::Coca cola::Usuario::Anonimo
 StatelessSeeProductBean::setBean::Artículo::Joel Gott::Usuario::manuel
 ::PreDestroy::
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+StatelessSeeProductBean::setBean::Artículo::Rolmovil Cubre Volante::Usuario::Anonimo

@@ -53,7 +53,7 @@ public class StatefulCart {
     public void createFile() {
         try {
             file = new File("C:\\Users\\aytha\\Desktop\\Supermarket\\Logs\\statefulCartBeanFile.txt");
-            //file = new File("C:\\Users\\Aythami\\Desktop\\Supermarket\\Logs\\statefulCartBeanFile.txt");
+//            file = new File("C:\\Users\\Aythami\\Desktop\\Supermarket\\Logs\\statefulCartBeanFile.txt");
             FileWriter statefulBeanFile = new FileWriter(file, true);
             cartFile = new PrintWriter(statefulBeanFile);
             singletonLogBean.setLog("StatefulCartBean::createFile::statefulCartBeanFile.txt");
@@ -147,7 +147,7 @@ public class StatefulCart {
     public double calculatePriceCart() {
         double price = 0;
         for (Article articles : cart) {
-            price += Double.parseDouble(articles.getPvp())*articles.getCantidad();
+            price += articles.getPvp()*articles.getCantidad();
         }
         setPriceCart(Math.round(price*100.0)/100.0);
         writeFile("StatefulCartBean::calculatePriceCart::" + price);
@@ -203,7 +203,7 @@ public class StatefulCart {
         writeFile("StatefulCartBean::saveCart::");
         for (Article article : cart) {
             writeFile("Producto: " + article.getNombre() + " " + article.getCantidad() + 
-                    "      " + (article.getCantidad()*Double.parseDouble(article.getPvp())) + " €");
+                    "      " + (article.getCantidad()*article.getPvp()) + " €");
         }
         singletonLogBean.setLog("StatefulCartBean::writeFile::PrePassivate");
     }
