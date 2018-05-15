@@ -1655,3 +1655,9 @@ StatelessDiscount::setText::papeleria, limpieza, lacteos
 Establecer Descuentos
 StatelessDiscount::setText::Comienza el descuento de artículos
 StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::pastas, agua, drogueria
+Establecer Descuentos
+StatelessDiscount::setText::Comienza el descuento de artículos
+StatelessDiscount::setText::papeleria, limpieza, lacteos

@@ -3,11 +3,21 @@ Numero de accesos de usuario 0
 Componentes
 Componente /Supermarket-war/
 Componente FrontServlet
-Componente /Supermarket-war/Pages/login.jsp
 Componente /Supermarket-war/index.jsp
-Componente /Supermarket-war/Pages/inCharges.jsp
-Componente /Supermarket-war/Pages/profile.jsp
-Componente /Supermarket-war/Pages/shoppingCart.jsp
+Componente /Supermarket-war/Pages/Car/accesories.jsp
+Componente /Supermarket-war/Pages/Car/cleaning.jsp
+Componente /Supermarket-war/Pages/StationerShop/stationerShop.jsp
+Componente /Supermarket-war/Pages/Drugstore/drugstore.jsp
+Componente /Supermarket-war/Pages/Food/food.jsp
+Componente /Supermarket-war/Pages/Food/diaryProducts.jsp
+Componente /Supermarket-war/Pages/Food/pasta.jsp
+Componente /Supermarket-war/Pages/Food/preparations.jsp
+Componente /Supermarket-war/Pages/Food/frozen.jsp
+Componente /Supermarket-war/Pages/Drinks/refreshments.jsp
+Componente /Supermarket-war/Pages/Drinks/Refreshments/flavor.jsp
+Componente /Supermarket-war/Pages/Drinks/Refreshments/light.jsp
+Componente /Supermarket-war/Pages/Drinks/wine.jsp
+Componente /Supermarket-war/Pages/Drinks/water.jsp
+Componente /Supermarket-war/Pages/Drinks/juices.jsp
 
 Componentes de Usuario
-9:40:35::Componente FrontServlet Usuario b

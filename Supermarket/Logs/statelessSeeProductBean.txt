@@ -33,3 +33,5 @@ StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::a
 StatelessSeeProductBean::setBean::Artículo::Yatekomo Arroz 3 Delicias::Usuario::a
 StatelessSeeProductBean::setBean::Artículo::Yatekomo Arroz 3 Delicias::Usuario::a
 ::PreDestroy::
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Juver Pina::Usuario::Anonimo
