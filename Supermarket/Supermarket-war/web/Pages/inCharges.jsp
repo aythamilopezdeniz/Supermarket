@@ -1,6 +1,7 @@
+<%@page import="Entities.Pedido"%>
+<%@page import="java.util.List"%>
+<%@page import="StatelessFacade.PedidoFacade"%>
 <%@page import="Entities.Article"%>
-<%@page import="StatefulBeans.StatefulPedido"%>
-<%@page import="Model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +14,7 @@
             if (session.getAttribute("user") != null && session.getAttribute("password") != null) {
         %>
             <%@include file="/PageStyle/sessionActive.jsp"%>
-        <% } else
+        <%  } else
                 response.sendRedirect("FrontServlet?command=Unknown");%>
             <table class="table table-dark">
                 <thead>
@@ -22,21 +23,30 @@
                         <th scope="col">Día</th>
                         <th scope="col">Hora</th>
                         <th scope="col">Pvp</th>
+                        <th scope="col" class="busquedaPedido">
+                            <form action="FrontServlet" method="POST">
+                                <input type="text" name="estado" placeholder="Search.." />
+                                <input type="hidden" name="command" value="InCharges" />
+                                <input type="hidden" name="window" value="/Pages/inCharges.jsp" />
+                            </form>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                 <%
-                    User client = (User)session.getAttribute("client");
-                    for (StatefulPedido pedido : client.getPedido()) {
-                        if(pedido.getState().equals("cola")) {%>
-                            <tr>
-                                <td><%=pedido.getName() + " Compuesto por: " + session.getAttribute("pedido") %></td>
-                                <td><%=pedido.getDia()%></td>
-                                <td><%=pedido.getHora()%></td>
-                                <td><%=pedido.getPvp() + " €"%></td>
-                                <td></td>
-                            </tr>
-                        <%}
+                    List<Pedido> pedidosCliente = (List<Pedido>) session.getAttribute("pedidosCliente");
+                    if(!pedidosCliente.isEmpty()) {
+                        for (Pedido pedido : pedidosCliente) {
+                            if(pedido.getEstado().equals("cola")) {%>
+                                <tr>
+                                    <td><%=pedido.getId()%></td>
+                                    <td><%=pedido.getDia()%></td>
+                                    <td><%=pedido.getHora()%></td>
+                                    <td><%=pedido.getPvp() + " €"%></td>
+                                    <td></td>
+                                </tr>
+                            <%}
+                        }
                     }%>
                 </tbody>
             </table>

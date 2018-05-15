@@ -20,7 +20,7 @@
                 </li>
                 <li><p><%=session.getAttribute("user")%></p></li>
                 <li><a href="FrontServlet?command=Redirect&window=/Pages/profile.jsp">Editar Perfil</a></li>
-                <li><a href="FrontServlet?command=Redirect&window=/Pages/inCharges.jsp">Pedidos</a></li>
+                <li><a href="FrontServlet?command=InCharges&window=/Pages/inCharges.jsp">Pedidos</a></li>
                 <li><a href="FrontServlet?command=Redirect&window=/Pages/log.jsp">Estadísticas</a></li>
                 <li><a href="FrontServlet?command=Logout">Cerrar Sesión</a></li>
                 <li><a href="FrontServlet?command=Redirect&window=/Pages/shoppingCart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span> Cesta</a></li>

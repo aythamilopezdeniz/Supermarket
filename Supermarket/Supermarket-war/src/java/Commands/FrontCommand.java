@@ -1,7 +1,6 @@
 package Commands;
 
-import StatefulBeans.StatefulCart;
-import StatelessFacade.ArticleFacade;
+import StatelessFacade.CartFacade;
 import java.io.IOException;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -24,16 +23,16 @@ public abstract class FrontCommand {
         this.response = response;
     }
 
-    protected StatefulCart getCart() {
+    protected CartFacade getCart() {
         HttpSession session = request.getSession();
-        StatefulCart shoppingCart = (StatefulCart) session.getAttribute("shoppingCart");
-        if (shoppingCart == null) {
+        CartFacade cartFacade = (CartFacade) session.getAttribute("cartFacade");
+        if (cartFacade == null) {
             try {
-                shoppingCart = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/StatefulCart!StatefulBeans.StatefulCart");
+                cartFacade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/CartFacade!StatelessFacade.CartFacade");
             } catch (NamingException ex) {}
-            session.setAttribute("shoppingCart", shoppingCart);
+            session.setAttribute("cartFacade", cartFacade);
         }
-        return shoppingCart;
+        return cartFacade;
     }
     
     abstract public void process() throws ServletException, IOException;

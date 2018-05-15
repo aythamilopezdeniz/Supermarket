@@ -1,7 +1,7 @@
 package StatefulBeans;
 
-import Entities.Discount;
-import Entities.Time;
+import NoEntities.Discount;
+import NoEntities.Time;
 import SingletonBeans.SingletonLogBean;
 import java.io.File;
 import java.io.FileWriter;

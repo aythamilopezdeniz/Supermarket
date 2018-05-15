@@ -38,7 +38,7 @@ button, input, #modalHome, #modalLocal, #search {
     padding: 1% 0% 1% 0%;
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"], input[type="email"] {
     color: black;
 }
 
@@ -153,11 +153,11 @@ nav li:hover > ul > li {
 }
 
 .login #session, .Register #register {
-    margin: 2% 0% 2% 20%;
-}
+    margin: 2% 0% 2% 22%;
+} 
 
-.Register #cancel {
-    margin-left: 10%; 
+.Register #editProfile {
+    margin: 2% 0% 2% 4%;
 }
 
 .Register fieldset {
@@ -369,6 +369,61 @@ th#price {
     margin-top: 20%;
 }
 
+/*Registrar Pedido*/
+.modal-content {
+    padding: 2% 2% 2% 2%;
+}
+
+.modal-dialog form {
+    margin-bottom: 1%;
+}
+
+#establecimiento {
+    margin-top: 2%;
+    margin-bottom: -0.1%;
+}
+
+#domicilio {
+    margin-bottom: 1%;
+}
+
+#local3, #formPedido {
+    margin-bottom: 1%;
+}
+
+.formPedido {
+    margin-left: 1%;
+}
+
+#formPedido {
+    color:black;
+}
+
+#Descuento, #tickets {
+    color: black;
+}
+
+/*Pedidos*/
+.busquedaPedido {
+    width: 15%;
+}
+
+/*Log*/
+#log {
+    width: 100%;
+    display: inline-block;
+}
+
+#logTitle {
+    text-align: center;
+}
+
+/*Paginación*/
+#pagination {
+    margin-top: 5%; 
+    text-align: center;
+}
+
 /*Footer*/
 .pie .text-center {
     color: white;
@@ -396,45 +451,4 @@ th#price {
 
 .Register, .login, .error-container, .producto, .pedido {
     min-height: 630px;
-}
-
-
-/*Registrar Pedido*/
-.modal-content {
-    padding: 2% 2% 2% 2%;
-}
-
-.modal-dialog form {
-    margin-bottom: 1%;
-}
-
-#establecimiento {
-    margin-top: 2%;
-    margin-bottom: -0.1%;
-}
-
-#domicilio {
-    margin-bottom: 1%;
-}
-
-#local3, #formPedido {
-    margin-bottom: 1%;
-}
-
-.formPedido {
-    margin-left: 1%;
-}
-
-#Descuento, #tickets {
-    color: black;
-}
-
-/*Log*/
-#log {
-    width: 100%;
-    display: inline-block;
-}
-
-#logTitle {
-    text-align: center;
 }

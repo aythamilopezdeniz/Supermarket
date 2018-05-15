@@ -1,7 +1,7 @@
 package Commands;
 
 import Entities.Article;
-import Model.User;
+import Entities.Users;
 import SingletonBeans.SingletonEstadisticasBean;
 import StatelessBeans.StatelessSearch;
 import StatelessFacade.ArticleFacade;
@@ -28,9 +28,8 @@ public class Search extends FrontCommand {
     }
 
     private void searchArticle(HttpSession session) {
-        //ArrayList<Article> articles = (ArrayList<Article>) ArticleDB.searchArticle(request.getParameter("search"));
         ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
-        List<Article> articles = articleFacade.findArticle(request.getParameter("search"));
+        List<Article> articles = articleFacade.findArticleAPI(request.getParameter("search"));
         session.setAttribute("search", articles);
     }
     
@@ -42,12 +41,12 @@ public class Search extends FrontCommand {
     }
     
     private void estadisticasComponenteUsuarioNoAnonimo(HttpSession session) {
-        User client = (User) session.getAttribute("client");
+        Users client = (Users) session.getAttribute("client");
         searchBean.setBean("Artículo::" + request.getParameter("search") + "::Usuario::" + (String) session.getAttribute("user"));
         estadisticasBean.setAccessComponents("StatelessSearchBean");
         System.out.println("Estadísticas Componentes: " + estadisticasBean.getListComponents());
-        estadisticasBean.setComponentsUser("StatelessSeeProductBean", client.getName());
-        System.out.println("Estadísticas componentes por " + client.getName() + " " + estadisticasBean.getComponentVisitedByUser(client.getName()));
+        estadisticasBean.setComponentsUser("StatelessSeeProductBean", client.getNombre());
+        System.out.println("Estadísticas componentes por " + client.getNombre() + " " + estadisticasBean.getComponentVisitedByUser(client.getNombre()));
     }
     
     private void estadisticasComponenteUsuarioAnonimo() {

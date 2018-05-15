@@ -18,3 +18,18 @@ StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
 Lista productos vistos
 StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
 StatelessSeeProductBean::setBean::Artículo::Rolmovil Cubre Volante::Usuario::Anonimo
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::Anonimo
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::aythami
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::aythami
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Mimosin Vaporesse::Usuario::a
+::PreDestroy::
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Ecolecera Espaguettis::Usuario::a
+Lista productos vistos
+StatelessSeeProductBean::setBean::Artículo::Don Simon Naranja::Usuario::a
+StatelessSeeProductBean::setBean::Artículo::Yatekomo Arroz 3 Delicias::Usuario::a
+StatelessSeeProductBean::setBean::Artículo::Yatekomo Arroz 3 Delicias::Usuario::a
+::PreDestroy::

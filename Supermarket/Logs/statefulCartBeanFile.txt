@@ -231,3 +231,11 @@
 14:49:52::StatefulCartBean::getListArticles::1 Don Simon Naranja 2 Rolmovil Triangulo de Emergencia 
 14:49:52::StatefulCartBean::getListArticles::1 Don Simon Naranja 2 Rolmovil Triangulo de Emergencia 
 14:49:52::StatelfulCartBean::remove::PreDestroy::
+16:08:07::Comienza a añadir artículos al carrito
+16:08:07::StatefulCartBean::addArticle::Entities.Article[ id=1 ]
+16:08:07::StatefulCartBean::setBean::Artículo::Don Simon Naranja::Usuario::Aythami::JSP::/Pages/product.jsp
+16:08:07::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+16:08:08::StatefulCartBean::isEmpty::false
+16:08:08::StatefulCartBean::getCart::[Entities.Article[ id=1 ]]
+16:08:08::StatefulCartBean::setPriceCart::1.43
+16:08:08::StatefulCartBean::calculatePriceCart::1.43

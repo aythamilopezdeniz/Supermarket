@@ -1,5 +1,7 @@
+<%@page import="NoEntities.NoDescuento"%>
+<%@page import="StatelessFacade.CartArticleFacade"%>
+<%@page import="StatelessFacade.CartFacade"%>
 <%@page import="DB.ArticleDB"%>
-<%@page import="Entities.Descuento"%>
 <%@page import="java.util.Random"%>
 <%@page import="StatelessBeans.StatelessDiscount"%>
 <%@page import="Timers.TimerLog"%>
@@ -18,13 +20,17 @@
     timerLog.setText("Comienza el Timer Log");
     Random rand = new Random();
     int random = rand.nextInt(3)+1;
-    Descuento descuento = new Descuento(random);
+    NoDescuento descuento = new NoDescuento(random);
     ArticleDB.setDiscount(descuento);
     StatelessDiscount statelessDiscount = (StatelessDiscount) c.lookup("java:global/Supermarket/Supermarket-ejb/StatelessDiscount!StatelessBeans.StatelessDiscount");
     if(statelessDiscount.isEstablished() == false) {
         statelessDiscount.setText("Comienza el descuento de artículos");
         statelessDiscount.setText(descuento.getDiscountArticle().get(0) + ", " + descuento.getDiscountArticle().get(1) + ", " + descuento.getDiscountArticle().get(2));
     }
+    CartFacade cartFacade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/CartFacade!StatelessFacade.CartFacade");
+    session.setAttribute("cartFacade", cartFacade);
+    CartArticleFacade cartArticleFacade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/CartArticleFacade!StatelessFacade.CartArticleFacade");
+    session.setAttribute("cartArticleFacade", cartArticleFacade);
 %>            
         <header class="SignIn-Login">
             <ul>

@@ -1,13 +1,13 @@
 package DB;
 
 import Entities.Article;
-import Entities.Descuento;
+import NoEntities.NoDescuento;
 import java.util.ArrayList;
 
 public class ArticleDB {
     private static final ArrayList<Article> articles = new ArrayList();
     private static boolean preparado = false;
-    private static Descuento discount;
+    private static NoDescuento discount;
     
     public static ArrayList getArticles() {
         if(preparado) return articles;
@@ -127,15 +127,15 @@ public class ArticleDB {
         return listArticles;
     }
     
-    public static void setDiscount(Descuento descuento) {
+    public static void setDiscount(NoDescuento descuento) {
         discount = descuento;
     }
 
-    public static Descuento getDiscount() {
+    public static NoDescuento getDiscount() {
         return discount;
     }
     
-    private static void establishedDiscount(Descuento descuento) {
+    private static void establishedDiscount(NoDescuento descuento) {
         ArrayList<String> types = descuento.getDiscountArticle();
         int sales = descuento.getValue();
         for (Article article : articles) {

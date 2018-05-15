@@ -19,3 +19,218 @@
 14:49:47::Lista de Descuentos de Usuario
 14:49:52::StatefulDiscountBean::existDiscount::null
 14:49:52::StatefulDiscountBean::addDiscount::ticket1::Cliente::Aythami
+10:26:28::Lista de Descuentos de Usuario
+10:27:45::StatefulDiscountBean::getList::getTicketsDiscount
+10:27:45::StatefulDiscountBean::getList::getTicketsDiscount
+11:02:40::Lista de Descuentos de Usuario
+11:03:24::StatefulDiscountBean::getList::getTicketsDiscount
+11:03:24::StatefulDiscountBean::getList::getTicketsDiscount
+11:03:56::Lista de Descuentos de Usuario
+11:04:45::StatefulDiscountBean::getList::getTicketsDiscount
+11:04:45::StatefulDiscountBean::getList::getTicketsDiscount
+11:46:44::Lista de Descuentos de Usuario
+11:47:15::StatefulDiscountBean::getList::getTicketsDiscount
+11:47:15::StatefulDiscountBean::getList::getTicketsDiscount
+11:47:44::Lista de Descuentos de Usuario
+12:01:08::Lista de Descuentos de Usuario
+12:08:06::Lista de Descuentos de Usuario
+15:09:42::Lista de Descuentos de Usuario
+15:41:11::Lista de Descuentos de Usuario
+22:57:50::Lista de Descuentos de Usuario
+16:07:40::Lista de Descuentos de Usuario
+16:17:46::Lista de Descuentos de Usuario
+20:02:18::Lista de Descuentos de Usuario
+20:03:55::Lista de Descuentos de Usuario
+20:08:45::Lista de Descuentos de Usuario
+20:17:12::Lista de Descuentos de Usuario
+22:52:45::Lista de Descuentos de Usuario
+22:53:28::StatefulDiscountBean::existDiscount::null
+22:53:28::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:54:43::Lista de Descuentos de Usuario
+22:55:32::StatefulDiscountBean::existDiscount::null
+22:55:32::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:06:59::Lista de Descuentos de Usuario
+23:07:12::StatefulDiscountBean::existDiscount::null
+23:07:12::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:19:15::Lista de Descuentos de Usuario
+23:19:19::StatefulDiscountBean::existDiscount::null
+23:19:19::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:22:58::Lista de Descuentos de Usuario
+23:23:08::StatefulDiscountBean::existDiscount::null
+23:23:08::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+0:11:46::Lista de Descuentos de Usuario
+0:11:50::StatefulDiscountBean::existDiscount::null
+0:11:50::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+11:06:52::Lista de Descuentos de Usuario
+11:06:58::StatefulDiscountBean::existDiscount::null
+11:06:58::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+11:18:10::Lista de Descuentos de Usuario
+11:18:16::StatefulDiscountBean::existDiscount::null
+11:18:16::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+12:42:58::Lista de Descuentos de Usuario
+13:22:02::Lista de Descuentos de Usuario
+13:25:09::Lista de Descuentos de Usuario
+13:32:49::Lista de Descuentos de Usuario
+13:32:55::StatefulDiscountBean::existDiscount::null
+13:32:55::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+16:36:27::Lista de Descuentos de Usuario
+16:52:41::Lista de Descuentos de Usuario
+20:34:21::Lista de Descuentos de Usuario
+20:36:09::Lista de Descuentos de Usuario
+20:36:46::StatefulDiscountBean::existDiscount::null
+20:36:46::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:11:13::Lista de Descuentos de Usuario
+22:11:30::StatefulDiscountBean::existDiscount::null
+22:11:30::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:25:56::Lista de Descuentos de Usuario
+22:26:18::StatefulDiscountBean::existDiscount::null
+22:26:18::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:35:10::Lista de Descuentos de Usuario
+22:35:25::StatefulDiscountBean::existDiscount::null
+22:35:25::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:40:05::Lista de Descuentos de Usuario
+22:40:21::StatefulDiscountBean::existDiscount::null
+22:40:21::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:41:57::Lista de Descuentos de Usuario
+22:42:18::StatefulDiscountBean::existDiscount::null
+22:42:18::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:44:22::StatefulDiscountBean::getList::getTicketsDiscount
+22:44:22::StatefulDiscountBean::getList::getTicketsDiscount
+22:44:22::StatefulDiscountBean::getList::getTicketsDiscount
+22:44:22::StatefulDiscountBean::getList::getTicketsDiscount
+22:44:49::StatefulDiscountBean::existDiscount::ticket1
+22:44:49::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:44:49::StatefulDiscountBean::getDiscount::ticket1
+22:44:49::StatefulDiscountBean::repeteadDiscount::ticket1
+22:44:49::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+22:55:42::Lista de Descuentos de Usuario
+22:55:57::StatefulDiscountBean::existDiscount::null
+22:55:57::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:56:46::StatefulDiscountBean::getList::getTicketsDiscount
+22:56:46::StatefulDiscountBean::getList::getTicketsDiscount
+22:56:46::StatefulDiscountBean::getList::getTicketsDiscount
+22:56:46::StatefulDiscountBean::getList::getTicketsDiscount
+22:57:36::StatefulDiscountBean::existDiscount::ticket1
+22:57:36::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+22:57:36::StatefulDiscountBean::getDiscount::ticket1
+22:57:36::StatefulDiscountBean::repeteadDiscount::ticket1
+22:57:36::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:02:34::Lista de Descuentos de Usuario
+23:02:40::StatefulDiscountBean::existDiscount::null
+23:02:40::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:03:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:03:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:03:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:03:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:03:52::StatefulDiscountBean::existDiscount::ticket1
+23:03:52::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:03:52::StatefulDiscountBean::getDiscount::ticket1
+23:03:52::StatefulDiscountBean::repeteadDiscount::ticket1
+23:03:52::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:09:06::Lista de Descuentos de Usuario
+23:09:11::StatefulDiscountBean::existDiscount::null
+23:09:11::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:09:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:09:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:09:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:09:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:09:33::StatefulDiscountBean::existDiscount::ticket1
+23:09:33::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:09:33::StatefulDiscountBean::getDiscount::ticket1
+23:09:33::StatefulDiscountBean::repeteadDiscount::ticket1
+23:09:33::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:11:16::Lista de Descuentos de Usuario
+23:11:22::StatefulDiscountBean::existDiscount::null
+23:11:22::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:11:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:11:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:11:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:11:38::StatefulDiscountBean::getList::getTicketsDiscount
+23:11:46::StatefulDiscountBean::existDiscount::ticket1
+23:11:46::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:11:46::StatefulDiscountBean::getDiscount::ticket1
+23:11:46::StatefulDiscountBean::repeteadDiscount::ticket1
+23:11:46::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:13:12::StatefulDiscountBean::getList::getTicketsDiscount
+23:13:12::StatefulDiscountBean::getList::getTicketsDiscount
+23:13:12::StatefulDiscountBean::getList::getTicketsDiscount
+23:13:12::StatefulDiscountBean::getList::getTicketsDiscount
+23:13:21::StatefulDiscountBean::existDiscount::ticket1
+23:13:21::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:13:21::StatefulDiscountBean::getDiscount::ticket1
+23:13:21::StatefulDiscountBean::repeteadDiscount::ticket1
+23:13:21::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:14:09::StatefulDiscountBean::getList::getTicketsDiscount
+23:14:09::StatefulDiscountBean::getList::getTicketsDiscount
+23:14:09::StatefulDiscountBean::getList::getTicketsDiscount
+23:14:09::StatefulDiscountBean::getList::getTicketsDiscount
+23:14:16::StatefulDiscountBean::existDiscount::ticket1
+23:14:16::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:14:16::StatefulDiscountBean::getDiscount::ticket1
+23:14:16::StatefulDiscountBean::repeteadDiscount::ticket1
+23:14:16::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:24:07::Lista de Descuentos de Usuario
+23:24:12::StatefulDiscountBean::existDiscount::null
+23:24:12::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:24:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:24:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:24:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:24:25::StatefulDiscountBean::getList::getTicketsDiscount
+23:24:34::StatefulDiscountBean::existDiscount::ticket1
+23:24:34::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:24:34::StatefulDiscountBean::getDiscount::ticket1
+23:24:34::StatefulDiscountBean::repeteadDiscount::ticket1
+23:24:34::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:32:03::Lista de Descuentos de Usuario
+23:32:08::StatefulDiscountBean::existDiscount::null
+23:32:08::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:32:20::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:20::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:20::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:20::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:28::StatefulDiscountBean::existDiscount::ticket1
+23:32:28::StatefulDiscountBean::addDiscount::ticket1::Cliente::a
+23:32:28::StatefulDiscountBean::getDiscount::ticket1
+23:32:28::StatefulDiscountBean::repeteadDiscount::ticket1
+23:32:28::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+23:32:55::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:55::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:55::StatefulDiscountBean::getList::getTicketsDiscount
+23:32:55::StatefulDiscountBean::getList::getTicketsDiscount
+23:33:28::StatefulDiscountBean::existDiscount::null
+23:33:28::StatefulDiscountBean::addDiscount::ticket2::Cliente::a
+23:33:28::StatefulDiscountBean::getDiscount::ticket1
+23:33:28::StatefulDiscountBean::repeteadDiscount::ticket1
+23:33:28::StatefulDiscountBean::getPositionDiscount::ticket1::a
+23:33:28::StatefulDiscountBean::removeTicketDiscount::ticket1::Cliente::a
+8:43:59::Lista de Descuentos de Usuario
+8:44:19::StatefulDiscountBean::existDiscount::null
+8:44:19::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+8:50:45::Lista de Descuentos de Usuario
+8:51:07::StatefulDiscountBean::existDiscount::null
+8:51:07::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+8:52:13::Lista de Descuentos de Usuario
+8:56:06::StatefulDiscountBean::existDiscount::null
+8:56:06::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+9:37:08::Lista de Descuentos de Usuario
+9:37:16::StatefulDiscountBean::existDiscount::null
+9:37:16::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+9:38:51::Lista de Descuentos de Usuario
+9:38:58::StatefulDiscountBean::existDiscount::null
+9:38:58::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+9:39:37::Lista de Descuentos de Usuario
+9:39:56::StatefulDiscountBean::existDiscount::null
+9:39:56::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+9:40:15::StatefulDiscountBean::getList::getTicketsDiscount
+9:40:15::StatefulDiscountBean::getList::getTicketsDiscount
+9:40:15::StatefulDiscountBean::getList::getTicketsDiscount
+9:40:15::StatefulDiscountBean::getList::getTicketsDiscount
+9:40:33::StatefulDiscountBean::existDiscount::ticket1
+9:40:33::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+9:49:26::Lista de Descuentos de Usuario
+9:50:01::StatefulDiscountBean::existDiscount::null
+9:50:01::StatefulDiscountBean::addDiscount::ticket1::Cliente::b
+9:50:21::StatefulDiscountBean::getList::getTicketsDiscount
+9:50:21::StatefulDiscountBean::getList::getTicketsDiscount
+9:50:21::StatefulDiscountBean::getList::getTicketsDiscount
+9:50:21::StatefulDiscountBean::getList::getTicketsDiscount

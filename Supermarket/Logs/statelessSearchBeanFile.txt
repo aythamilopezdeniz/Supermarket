@@ -93,3 +93,51 @@ StatelessSearchBean::setBean::Artículo::est::Usuario::Anonimo
 StatelessSearchBean::setBean::Artículo::Juver::Usuario::Anonimo
 StatelessSearchBean::setBean::Artículo::pina::Usuario::Anonimo
 StatelessSearchBean::setBean::Artículo::pi::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::papel::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::drogue::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::drogue::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::papel::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::papeleria::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Juver Pina::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Coca::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Coca cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::cola::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::drogue::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::estu::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::Juver Pina::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::papel::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::coca::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::cola::Usuario::Anonimo
+Comienza las búsquedas
+StatelessSearchBean::setBean::Artículo::drogue::Usuario::Anonimo
+StatelessSearchBean::setBean::Artículo::oc::Usuario::Anonimo

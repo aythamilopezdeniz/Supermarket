@@ -1,8 +1,8 @@
 package Commands;
 
-import DB.UserDB;
-import Model.User;
+import Entities.Users;
 import SingletonBeans.SingletonEstadisticasBean;
+import StatelessFacade.UsersFacade;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,15 +25,21 @@ public class Login extends FrontCommand {
 
     private void createSession(HttpSession session) {
         if(existUser(session)){
-            User client = (User) session.getAttribute("client");
-            session.setAttribute("user", client.getUser());
+            Users client = (Users) session.getAttribute("client");
+            session.setAttribute("user", client.getUsuario());
             session.setAttribute("password", client.getPassword());
         }
     }
 
     private boolean existUser(HttpSession session) {
-        UserDB.getUsers();
-        User client = UserDB.getUser(request.getParameter("name"), request.getParameter("password"));
+        UsersFacade usersFacade = (UsersFacade) session.getAttribute("usersFacade");
+        if(usersFacade == null) {
+            try {
+                usersFacade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/UsersFacade!StatelessFacade.UsersFacade");
+                session.setAttribute("usersFacade", usersFacade);
+            } catch (NamingException ex) {}
+        }
+        Users client = usersFacade.getUserAPI(request.getParameter("name"), request.getParameter("password"));
         session.setAttribute("client", client);
         return client != null;
     }

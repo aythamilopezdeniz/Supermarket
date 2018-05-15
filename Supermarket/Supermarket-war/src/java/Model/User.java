@@ -1,5 +1,6 @@
 package Model;
 
+import Entities.CreditCard;
 import StatefulBeans.StatefulPedido;
 import java.util.ArrayList;
 
@@ -100,7 +101,7 @@ public class User {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(String creditCardNumber, String expiration) {
-        this.creditCardNumber = new CreditCard(creditCardNumber, expiration);
-    }
+//    public void setCreditCardNumber(String creditCardNumber, String expiration) {
+//        this.creditCardNumber = new CreditCard(creditCardNumber, expiration);
+//    }
 }

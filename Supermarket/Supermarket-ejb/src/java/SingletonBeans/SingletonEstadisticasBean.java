@@ -1,7 +1,7 @@
 package SingletonBeans;
 
-import Entities.ComponentUser;
-import Entities.Component;
+import NoEntities.ComponentUser;
+import NoEntities.Component;
 import Timers.TimerEstadisticas;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;

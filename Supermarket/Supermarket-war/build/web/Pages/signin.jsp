@@ -27,7 +27,7 @@
                 <label for="password">Contraseña</label>
                 <input class="password" type="password" name="password" value="" required=""><br>
                 <label for="password">Repetir Contraseña</label>
-                <input class="password" type="text" name="password" value="" required=""><br>
+                <input class="password" type="password" name="password2" value="" required=""><br>
                 <input type="hidden" name="type" value="cliente">
                 <input type="hidden" name="window" value="/index.jsp">
                 <input type="hidden" name="command" value="SignIn">

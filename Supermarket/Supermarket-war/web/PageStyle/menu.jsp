@@ -1,3 +1,6 @@
+<%@page import="StatelessFacade.Subcategoria2Facade"%>
+<%@page import="StatelessFacade.Subcategoria1Facade"%>
+<%@page import="StatelessFacade.CategoriaFacade"%>
 <%@page import="java.util.List"%>
 <%@page import="Entities.Article"%>
 <%@page import="javax.naming.InitialContext"%>
@@ -36,3 +39,19 @@
                 </li>
             </ul>
         </nav>
+        <%  CategoriaFacade categoriaFacade = (CategoriaFacade) session.getAttribute("categoriaFacade");
+            Subcategoria1Facade subcategoria1Facade = (Subcategoria1Facade) session.getAttribute("subCategoria1Facade");
+            Subcategoria2Facade subcategoria2Facade = (Subcategoria2Facade) session.getAttribute("subCategoria2Facade");
+            if(categoriaFacade == null) { 
+                categoriaFacade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/CategoriaFacade!StatelessFacade.CategoriaFacade");
+                session.setAttribute("categoriaFacade", categoriaFacade);
+            }
+            if(subcategoria1Facade == null) {
+                subcategoria1Facade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/Subcategoria1Facade!StatelessFacade.Subcategoria1Facade");
+                session.setAttribute("subcategoria1Facade", subcategoria1Facade);
+            }
+            if(subcategoria2Facade == null) {
+                subcategoria2Facade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/Subcategoria2Facade!StatelessFacade.Subcategoria2Facade");
+                session.setAttribute("subcategoria2Facade", subcategoria2Facade);
+            }
+        %>

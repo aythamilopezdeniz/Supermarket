@@ -1,8 +1,8 @@
 package StatefulBeans;
 
+import NoEntities.Date;
 import Entities.Direction;
-import Entities.Time;
-import Entities.Date;
+import NoEntities.Time;
 import SingletonBeans.SingletonLogBean;
 import java.io.File;
 import java.io.FileWriter;
@@ -24,7 +24,7 @@ public class StatefulPedido {
     @EJB
     private SingletonLogBean singletonLogBean;
     @EJB
-    private StatefulCart statefulCart;
+//    private StatefulCart statefulCart;
     private PrintWriter chargeFile;
     private File file;
     private String hora;
@@ -77,11 +77,11 @@ public class StatefulPedido {
         singletonLogBean.setLog("StatefulPedidoBean::postActivateFile::PostActivate");
     }
 
-    public StatefulCart getShoppingCart() {
-        writeFile("StatefulPedidoBean::getShoppingCart::" + statefulCart.getListArticles());
-        singletonLogBean.setLog("StatefulPedidoBean::getShoppingCart::" + statefulCart.getListArticles());
-        return statefulCart;
-    }
+//    public StatefulCart getShoppingCart() {
+//        writeFile("StatefulPedidoBean::getShoppingCart::" + statefulCart.getListArticles());
+//        singletonLogBean.setLog("StatefulPedidoBean::getShoppingCart::" + statefulCart.getListArticles());
+//        return statefulCart;
+//    }
 
     public String getHora() {
         writeFile("StatefulPedidoBean::getHora::" + hora);
@@ -125,11 +125,11 @@ public class StatefulPedido {
         singletonLogBean.setLog("StatefulPedidoBean::setDirection::" + direction);
     }
 
-    public void setStatefulCart(StatefulCart shoppingCart) {
-        this.statefulCart = shoppingCart;
-        writeFile("StatefulPedidoBean::setStatefulCart::shoppingCart");
-        singletonLogBean.setLog("StatefulPedidoBean::setStatefulCart::shoppingCart");
-    }
+//    public void setStatefulCart(StatefulCart shoppingCart) {
+//        this.statefulCart = shoppingCart;
+//        writeFile("StatefulPedidoBean::setStatefulCart::shoppingCart");
+//        singletonLogBean.setLog("StatefulPedidoBean::setStatefulCart::shoppingCart");
+//    }
 
     public void setPvpCart(double pvpCart) {
         this.pvp = pvpCart;

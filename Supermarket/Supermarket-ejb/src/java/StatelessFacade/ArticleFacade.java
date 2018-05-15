@@ -5,6 +5,11 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 @Stateless
 public class ArticleFacade extends AbstractFacade<Article> {
@@ -42,6 +47,21 @@ public class ArticleFacade extends AbstractFacade<Article> {
         if(result.isEmpty())
             result = em.createNamedQuery("Article.findBySubtype2").setParameter("subtipo2", "%" + name + "%").getResultList();
         return result;
+    }
+    
+    public List<Article> findArticleAPI(String name) {
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Article> criteriaQuery = criteriaBuilder.createQuery(Article.class);
+        Root<Article> articles = criteriaQuery.from(Article.class);
+        criteriaQuery.select(articles);
+        Predicate predicate = criteriaBuilder.or(criteriaBuilder.like(criteriaBuilder.upper(articles.get("nombre")), "%" + name.toUpperCase() + "%"), 
+                criteriaBuilder.like(criteriaBuilder.upper(articles.get("tipo")), "%" + name.toUpperCase() + "%"), 
+                criteriaBuilder.like(criteriaBuilder.upper(articles.get("subtipo1")), "%" + name.toUpperCase() + "%"), 
+                criteriaBuilder.like(criteriaBuilder.upper(articles.get("subtipo2")), "%" + name.toUpperCase() + "%"));
+        criteriaQuery.where(predicate);
+        criteriaQuery.orderBy(criteriaBuilder.asc(articles.get("id")));
+        TypedQuery<Article> typedQuery = em.createQuery(criteriaQuery);
+        return typedQuery.getResultList();
     }
     
     public List<Article> findIDArticle(int id) {

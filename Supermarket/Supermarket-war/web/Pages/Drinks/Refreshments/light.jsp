@@ -16,8 +16,7 @@
         <!-- Artículos -->
         <div class="producto">
             <div class="container">
-                <%  ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
-                    List<Article> light = articleFacade.findSubTypes2Articles("light");
+                <%  List<Article> light = subcategoria2Facade.findArticulos("light");
                     for (Article articles : light) {%>
                     <div class="responsive">
                         <div class="gallery">

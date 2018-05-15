@@ -15,15 +15,22 @@
 
         <!-- Navegación -->
         <%@include file="/PageStyle/menu.jsp"%>
+        
+        <!-- Paginación -->
+        <%@include file="/PageStyle/pagination.jsp"%>
 
         <!-- Artículos -->
         <div class="container">
         <%  ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
+            List<Article> listArticles = null;
             if(articleFacade == null) {
                 articleFacade = InitialContext.doLookup("java:global/Supermarket/Supermarket-ejb/ArticleFacade!StatelessFacade.ArticleFacade");
+                listArticles = articleFacade.findRange(new int[]{1,12});
                 session.setAttribute("articleFacade", articleFacade);
+                session.setAttribute("listArticles", listArticles);
+                session.setAttribute("pagina", 1);
             }
-            List<Article> listArticles = articleFacade.findAll();
+            listArticles = (List<Article>) session.getAttribute("listArticles");
             for (Article articles : listArticles) {%>
                 <div class="responsive">
                     <div class="gallery">
@@ -61,6 +68,9 @@
                 </div>
             <%}%>
         </div>
+
+        <!-- Paginación -->
+        <%@include file="/PageStyle/pagination.jsp"%>
 
         <!-- Footer -->
         <%@include file="/PageStyle/footer.jsp"%>

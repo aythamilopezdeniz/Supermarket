@@ -16,8 +16,7 @@
         <!-- Artículos -->
         <div class="producto">
             <div class="container">
-                <%  ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
-                    List<Article> alimentacion = articleFacade.findTypesArticles("alimentacion");
+                <%  List<Article> alimentacion = categoriaFacade.findArticulos("alimentacion");
                     for (Article articles : alimentacion) {%>
                     <div class="responsive">
                         <div class="gallery">
@@ -44,7 +43,7 @@
                                         <input type="hidden" name="subtype1" value="<%=articles.getSubtipo1()%>">
                                         <input type="hidden" name="subtype2" value="<%=articles.getSubtipo2()%>">
                                         <input type="hidden" name="descriptionArticle" value="<%=articles.getDescription()%>">
-                                        <input type="hidden" name="window" value="/Pages/Drinks/Refreshents/light.jsp">
+                                        <input type="hidden" name="window" value="/Pages/Food/food.jsp">
                                         <input type="hidden" name="idProducto" value="<%=articles.getId()%>">
                                         <input type="hidden" name="command" value="AddProduct">
                                         <button type="submit" class="btn btn-primary">Añadir</button>

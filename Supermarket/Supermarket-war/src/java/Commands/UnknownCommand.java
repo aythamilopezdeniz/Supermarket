@@ -1,6 +1,6 @@
 package Commands;
 
-import Model.User;
+import Entities.Users;
 import SingletonBeans.SingletonEstadisticasBean;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -31,9 +31,9 @@ public class UnknownCommand extends FrontCommand {
     }
     
     private void estadisticasComponenteUsuario(HttpServletRequest request, HttpSession session) {
-        User client = (User) session.getAttribute("client");
-        estadisticasBean.setComponentsUser(request.getParameter("command"), client.getName());
-        System.out.println("Estadísticas componentes por " + client.getName() + " " + estadisticasBean.getComponentVisitedByUser(client.getName()));
+        Users client = (Users) session.getAttribute("client");
+        estadisticasBean.setComponentsUser(request.getParameter("command"), client.getNombre());
+        System.out.println("Estadísticas componentes por " + client.getNombre() + " " + estadisticasBean.getComponentVisitedByUser(client.getNombre()));
     }
     
     private void estadisticasComponente() {

@@ -1,26 +1,13 @@
-Numero de accesos de usuario 1
+Numero de accesos de usuario 0
 
 Componentes
 Componente /Supermarket-war/
 Componente FrontServlet
 Componente /Supermarket-war/Pages/login.jsp
 Componente /Supermarket-war/index.jsp
-Componente StatelfulCartBean::addProductToCart
-Componente /Supermarket-war/Pages/Car/car.jsp
-Componente /Supermarket-war/Pages/shoppingCart.jsp
-Componente /Supermarket-war/Pages/registerCashOrder.jsp
-Componente StatefulDiscount::addDiscount
-Componente StatefulPedido::setStatefulCart
-Componente StatefulPedido::setPvpCart
-Componente StatefulPedido::setDirection
-Componente StatefulPedido::setPedido
 Componente /Supermarket-war/Pages/inCharges.jsp
+Componente /Supermarket-war/Pages/profile.jsp
+Componente /Supermarket-war/Pages/shoppingCart.jsp
 
 Componentes de Usuario
-15:03:10::Componente FrontServlet Usuario Aythami
-15:03:10::Componente StatelfulCartBean::addProductToCart Usuario Aythami
-15:03:10::Componente StatefulDiscount::addDiscount:: Usuario Aythami
-15:03:10::Componente StatefulPedido::setStatefulCart:: Usuario Aythami
-15:03:10::Componente StatefulPedido::setPvpCart:: Usuario Aythami
-15:03:10::Componente StatefulPedido::setDirection:: Usuario Aythami
-15:03:10::Componente StatefulPedido::setPedido:: Usuario Aythami
+9:40:35::Componente FrontServlet Usuario b

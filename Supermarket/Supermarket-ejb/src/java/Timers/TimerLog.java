@@ -1,6 +1,6 @@
 package Timers;
 
-import Entities.Time;
+import NoEntities.Time;
 import SingletonBeans.SingletonLogBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;

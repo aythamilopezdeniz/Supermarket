@@ -2,5 +2,5 @@
 <%@page import="DB.ArticleDB"%>
 <%@page import="java.util.ArrayList"%>
 
-<%@page import="Entities.Descuento"%>
+<%@page import="NoEntities.NoDescuento"%>
 <%@page import="java.util.Random"%>

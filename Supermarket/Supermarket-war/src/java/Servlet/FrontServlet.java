@@ -2,11 +2,11 @@ package Servlet;
 
 import Commands.UnknownCommand;
 import Commands.FrontCommand;
+import Entities.Users;
 import SingletonBeans.SingletonEstadisticasBean;
 import SingletonBeans.SingletonLogBean;
 import StatelessBeans.StatelessSearch;
 import StatelessBeans.StatelessSeeProduct;
-import Model.User;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -35,14 +35,14 @@ public class FrontServlet extends HttpServlet {
     }
     
     private void singletonBeans(HttpServletRequest request) {
-        User client = (User) request.getSession().getAttribute("client");
+        Users client = (Users) request.getSession().getAttribute("client");
         if(client == null) {
             estadisticasBean.setAccessComponents("FrontServlet");
             logBean.setLog("FrontServlet::singletonBeans::null");
         }
         else {
-            estadisticasBean.setComponentsUser("FrontServlet", client.getName());
-            logBean.setLog("FrontServlet::singletonBeans::" + client.getName());
+            estadisticasBean.setComponentsUser("FrontServlet", client.getNombre());
+            logBean.setLog("FrontServlet::singletonBeans::" + client.getNombre());
         }
     }
     

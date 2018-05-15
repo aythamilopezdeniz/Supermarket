@@ -15,8 +15,7 @@
         
         <!-- Artículos -->
         <div class="container">
-                <%  ArticleFacade articleFacade = (ArticleFacade) session.getAttribute("articleFacade");
-                    List<Article> automovil = articleFacade.findTypesArticles("automovil");
+                <%  List<Article> automovil = categoriaFacade.findArticulos("automovil");
                     for (Article articles : automovil) {%>
                     <div class="responsive">
                         <div class="gallery">

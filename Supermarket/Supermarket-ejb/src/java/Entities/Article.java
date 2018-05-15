@@ -1,16 +1,20 @@
 package Entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "ARTICLE")
@@ -22,7 +26,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Article.findByPalabra", query = "SELECT a FROM Article a WHERE upper(a.nombre) LIKE upper(:nombre)")
     , @NamedQuery(name = "Article.findByImagen", query = "SELECT a FROM Article a WHERE a.imagen = :imagen")
     , @NamedQuery(name = "Article.findByPvp", query = "SELECT a FROM Article a WHERE a.pvp = :pvp")
-    , @NamedQuery(name = "Article.findByCantidad", query = "SELECT a FROM Article a WHERE a.cantidad = :cantidad")
     , @NamedQuery(name = "Article.findByTipo", query = "SELECT a FROM Article a WHERE a.tipo = :tipo")
     , @NamedQuery(name = "Article.findByType", query = "SELECT a FROM Article a WHERE upper(a.tipo) LIKE upper(:tipo)")
     , @NamedQuery(name = "Article.findBySubtipo1", query = "SELECT a FROM Article a WHERE a.subtipo1 = :subtipo1")
@@ -54,10 +57,6 @@ public class Article implements Serializable {
     private double pvp;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CANTIDAD")
-    private int cantidad;
-    @Basic(optional = false)
-    @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "TIPO")
     private String tipo;
@@ -70,6 +69,8 @@ public class Article implements Serializable {
     @Size(max = 500)
     @Column(name = "DESCRIPTION")
     private String description;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "article")
+    private Collection<CartArticle> cartArticleCollection;
 
     public Article() {
     }
@@ -78,12 +79,11 @@ public class Article implements Serializable {
         this.id = id;
     }
 
-    public Article(Integer id, String nombre, String imagen, double pvp, int cantidad, String tipo) {
+    public Article(Integer id, String nombre, String imagen, double pvp, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.imagen = imagen;
         this.pvp = pvp;
-        this.cantidad = cantidad;
         this.tipo = tipo;
     }
 
@@ -119,22 +119,6 @@ public class Article implements Serializable {
         this.pvp = pvp;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-    
-    public void addCantidad() {
-        this.cantidad++;
-    }
-    
-    public void removeCantidad() {
-        this.cantidad--;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -167,6 +151,15 @@ public class Article implements Serializable {
         this.description = description;
     }
 
+    @XmlTransient
+    public Collection<CartArticle> getCartArticleCollection() {
+        return cartArticleCollection;
+    }
+
+    public void setCartArticleCollection(Collection<CartArticle> cartArticleCollection) {
+        this.cartArticleCollection = cartArticleCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -188,7 +181,7 @@ public class Article implements Serializable {
     }
 
     @Override
-    public Article clone() {
+    public Article clone(){
         Article clon=null;
         try{
             clon=(Article) super.clone();
@@ -196,10 +189,6 @@ public class Article implements Serializable {
             System.out.println(" no se puede duplicar");
         }
         return clon;
-    }
-    
-    public double calculatePrice(double pvpArticle, int cantidad) {
-        return (pvp*Math.round(cantidad*100)/100);
     }
 
     @Override

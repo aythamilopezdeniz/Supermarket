@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="Entities.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,6 +10,7 @@
     <body>
         <%
             if (session.getAttribute("user") != null && session.getAttribute("password") != null) {
+                Users client = (Users) session.getAttribute("client");
         %>
             <%@include file="/PageStyle/sessionActive.jsp"%>
 
@@ -16,24 +19,23 @@
                 <fieldset>
                     <legend>Editar Perfil de Usuario</legend>
                     <label for="nombre">Nombre</label>
-                    <input class="nombre" type="text" name="nombre" value="" required=""><br>
+                    <input class="nombre" type="text" name="nombre" value="<%=client.getNombre()%>" required=""><br>
                     <label for="apellido1">Apellidos</label>
-                    <input class="appellidos" type="text" name="apellidos" value="" required=""><br>
+                    <input class="appellidos" type="text" name="apellidos" value="<%=client.getApellidos()%>" required=""><br>
                     <label for="usuario">Fecha de Nacimiento</label>
-                    <input class="date" type="date" name="date" value="" required=""><br>
+                    <input class="date" type="date" name="date" value="<%=new SimpleDateFormat("yyyy-MM-dd").format(client.getFecha())%>" m required=""><br>
                     <label for="usuario">Usuario</label>
-                    <input class="user" type="text" name="user" value="" required=""><br>
+                    <input class="user" type="text" name="user" value="<%=client.getUsuario()%>" required=""><br>
                     <label for="correo">Correo Electrónico</label>
-                    <input class="correo" type="email" name="email" value="" required=""><br>
+                    <input class="correo" type="email" name="email" value="<%=client.getEmail()%>" required=""><br>
                     <label for="password">Contraseña</label>
                     <input class="password" type="password" name="password" value="" required=""><br>
                     <label for="password">Repetir Contraseña</label>
-                    <input class="password" type="text" name="password" value="" required=""><br>
-                    <input type="hidden" name="window" value="/Pages/profile.jsp">
-                    <input type="hidden" name="command" value="SignIn">
-                    <!--<input class="register" type="submit" value="Registrarse">-->
-                    <button id="cancel" type="submit" name="cancel" class="btn btn-primary">Cancelar</button>
-                    <button id="register" type="submit" class="btn btn-primary">Guardar</button>
+                    <input class="password" type="password" name="password" value="" required=""><br>
+                    <input type="hidden" name="window" value="/index.jsp">
+                    <input type="hidden" name="command" value="EditProfile">
+                    <button type="submit" name="cancel" class="btn btn-primary">Eliminar cuenta</button>
+                    <button id="editProfile" type="submit" name="save" class="btn btn-primary">Guardar</button>
                 </fieldset>
             </form>
 

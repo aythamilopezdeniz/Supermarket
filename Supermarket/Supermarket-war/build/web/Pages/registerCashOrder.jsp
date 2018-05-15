@@ -1,7 +1,13 @@
-<%@page import="StatefulBeans.StatefulCart"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="NoEntities.Discount"%>
+<%@page import="Entities.CreditCard"%>
+<%@page import="Entities.Cart"%>
+<%@page import="StatelessFacade.CartFacade"%>
+<%@page import="Entities.Users"%>
+<%@page import="java.util.List"%>
+<%@page import="StatelessFacade.CreditCardFacade"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="StatefulBeans.StatefulDiscount"%>
-<%@page import="Entities.Discount"%>
 <%@page import="javax.naming.InitialContext"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,12 +23,20 @@
             <%@include file="/PageStyle/sessionActive.jsp"%>
         <% } else
                 response.sendRedirect("FrontServlet?command=Unknown");
-            StatefulCart shoppingCart = (StatefulCart) session.getAttribute("shoppingCart");
+            Users client = (Users) session.getAttribute("client");
+            CartFacade cartFacade = (CartFacade) session.getAttribute("cartFacade");
+            Cart cartClientOpen = cartFacade.findOpenCart(client.getId());
             StatefulDiscount discount = (StatefulDiscount) session.getAttribute("statefulDiscount");
+            CreditCardFacade creditCardFacade = (CreditCardFacade) session.getAttribute("creditCardFacade");
             if(discount == null) {
                 StatefulDiscount statefulDiscount = (StatefulDiscount) new InitialContext().lookup("java:global/Supermarket/Supermarket-ejb/StatefulDiscount!StatefulBeans.StatefulDiscount");
                 session.setAttribute("statefulDiscount", statefulDiscount);
             }
+            if(creditCardFacade == null) {
+                creditCardFacade = (CreditCardFacade) new InitialContext().lookup("java:global/Supermarket/Supermarket-ejb/CreditCardFacade!StatelessFacade.CreditCardFacade");
+                session.setAttribute("creditCardFacade", creditCardFacade);
+            }
+            List<CreditCard> creditCard = creditCardFacade.findCreditId(client.getId());
         %>
 
         <!-- Formulario Modal Pedido -->
@@ -58,12 +72,13 @@
                                 </fieldset>
                                 <fieldset>
                                     <legend id="establecimiento">Establecimiento</legend>
-                                    <input type="radio" name="local" value="1" checked>Telde<br>
-                                    <input type="radio" name="local" value="2">Vecindario<br>
-                                    <input id="local3" type="radio" name="local" value="3">Las Palmas de Gran Canaria<br>
+                                    <input type="radio" name="local" value="Telde" checked>Telde<br>
+                                    <input type="radio" name="local" value="Vecindario">Vecindario<br>
+                                    <input id="local3" type="radio" name="local" value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria<br>
                                 </fieldset>
-                                <input type="hidden" name="pvpCart" value="<%=shoppingCart.getPriceCart()%>">
+                                <input type="hidden" name="pvpCart" value="<%=cartClientOpen.getPvp()%>">
                                 <input type="hidden" name="tienda" value="local">
+                                <input type="hidden" name="estado" value="id">
                                 <input type="hidden" name="command" value="PurchaseOrder">
                                 <input type="hidden" name="window" value="/Pages/inCharges.jsp">
                                 <div class="modal-footer">
@@ -90,10 +105,17 @@
                                     <input type="text" name="codigoPostal" size="5" required="">
                                     <label class="formPedido" for="direccion">c/</label>
                                     <input id="formPedido" type="text" name="direccion" size="30" required=""><br>
-                                    <label for="tarjeta">Nº Tarjeta</label>
-                                    <input type="text" name="tarjeta" size="30" required="">
-                                    <label class="formPedido" for="fecha">Fecha Caducidad</label>
-                                    <input id="formPedido" type="text" name="caducidad" size="20" required=""><br>
+                                    <%if(creditCard.isEmpty()) {%>
+                                        <label for="tarjeta">Nº Tarjeta</label>
+                                        <input type="text" name="tarjeta" size="30" required="">
+                                        <label class="formPedido" for="fecha">Fecha Caducidad</label>
+                                        <input id="formPedido" type="date" name="caducidad" size="20" required=""><br>
+                                    <%} else {%>
+                                        <label for="tarjeta">Nº Tarjeta</label>
+                                        <input type="text" name="tarjeta" value="<%=creditCard.get(0).getNumber()%>" size="30" required="">
+                                        <label class="formPedido" for="fecha">Fecha Caducidad</label>
+                                        <input id="formPedido" type="date" name="caducidad" value="<%=new SimpleDateFormat("yyyy-MM-dd").format(creditCard.get(0).getFechaCaducidad())%>" size="20" required=""><br>
+                                    <%}%>
                                     <%if(discount != null){
                                         if(discount.getList().size() > 0) {%>
                                         <label id="Descuento" for="descuento">Descuento</label>
@@ -106,8 +128,9 @@
                                         <%}
                                     }%>
                                 </fieldset>
-                                <input type="hidden" name="pvpCart" value="<%=shoppingCart.getPriceCart()%>">
+                                <input type="hidden" name="pvpCart" value="<%=cartClientOpen.getPvp()%>">
                                 <input type="hidden" name="tienda" value="domicilio">
+                                <input type="hidden" name="estado" value="id">
                                 <input type="hidden" name="command" value="PurchaseOrder">
                                 <input type="hidden" name="window" value="/Pages/inCharges.jsp">
                                 <div class="modal-footer">

@@ -1,8 +1,8 @@
 package Timers;
 
-import Entities.Time;
-import Entities.Component;
-import Entities.ComponentUser;
+import NoEntities.Time;
+import NoEntities.Component;
+import NoEntities.ComponentUser;
 import SingletonBeans.SingletonEstadisticasBean;
 import java.io.File;
 import java.io.FileWriter;
