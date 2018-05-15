@@ -3,21 +3,19 @@ Numero de accesos de usuario 0
 Componentes
 Componente /Supermarket-war/
 Componente FrontServlet
+Componente /Supermarket-war/Pages/login.jsp
 Componente /Supermarket-war/index.jsp
-Componente /Supermarket-war/Pages/Car/accesories.jsp
-Componente /Supermarket-war/Pages/Car/cleaning.jsp
-Componente /Supermarket-war/Pages/StationerShop/stationerShop.jsp
-Componente /Supermarket-war/Pages/Drugstore/drugstore.jsp
-Componente /Supermarket-war/Pages/Food/food.jsp
-Componente /Supermarket-war/Pages/Food/diaryProducts.jsp
-Componente /Supermarket-war/Pages/Food/pasta.jsp
-Componente /Supermarket-war/Pages/Food/preparations.jsp
-Componente /Supermarket-war/Pages/Food/frozen.jsp
-Componente /Supermarket-war/Pages/Drinks/refreshments.jsp
-Componente /Supermarket-war/Pages/Drinks/Refreshments/flavor.jsp
-Componente /Supermarket-war/Pages/Drinks/Refreshments/light.jsp
-Componente /Supermarket-war/Pages/Drinks/wine.jsp
-Componente /Supermarket-war/Pages/Drinks/water.jsp
-Componente /Supermarket-war/Pages/Drinks/juices.jsp
+Componente /Supermarket-war/Pages/shoppingCart.jsp
+Componente ArticleFacade::obtenerArticle
+Componente CartArticleFacade::insertarRegistroCartArticle
+Componente CartArticleFacade::añadirArtículo
+Componente CartFacade::getCartArticle
+Componente CartArticleFacade::removerArticle
 
 Componentes de Usuario
+20:03:25::Componente FrontServlet Usuario Aythami
+20:03:25::Componente ArticleFacade::obtenerArticle:: Usuario Aythami
+20:03:25::Componente CartArticleFacade::insertarRegistroCartArticle:: Usuario Aythami
+20:03:25::Componente CartArticleFacade::añadirArtículo:: Usuario Aythami
+20:03:25::Componente CartFacade::getCartArticle:: Usuario Aythami
+20:03:25::Componente CartArticleFacade::removerArticle:: Usuario Aythami

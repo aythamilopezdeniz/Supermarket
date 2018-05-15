@@ -1,7 +1,6 @@
 <%@page import="NoEntities.NoDescuento"%>
 <%@page import="StatelessFacade.CartArticleFacade"%>
 <%@page import="StatelessFacade.CartFacade"%>
-<%@page import="DB.ArticleDB"%>
 <%@page import="java.util.Random"%>
 <%@page import="StatelessBeans.StatelessDiscount"%>
 <%@page import="Timers.TimerLog"%>
@@ -21,7 +20,7 @@
     Random rand = new Random();
     int random = rand.nextInt(3)+1;
     NoDescuento descuento = new NoDescuento(random);
-    ArticleDB.setDiscount(descuento);
+    //ArticleDB.setDiscount(descuento);
     StatelessDiscount statelessDiscount = (StatelessDiscount) c.lookup("java:global/Supermarket/Supermarket-ejb/StatelessDiscount!StatelessBeans.StatelessDiscount");
     if(statelessDiscount.isEstablished() == false) {
         statelessDiscount.setText("Comienza el descuento de artículos");
